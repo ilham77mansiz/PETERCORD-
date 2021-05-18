@@ -1,6 +1,6 @@
 # Port By Ilham/Dara For Petercord Userbot From Ultroid, Thanks
 # Based Plugins
-# Fixed By ManusiaRakitann/Koala
+#
 # Dont Remove
 
 
@@ -10,6 +10,7 @@ from PIL import Image
 import os
 from userbot.events import register
 from userbot import CMD_HELP, bot
+from userbot.cmdhelp import CmdHelp
 
 # TENTANG AKU DAN DIA
 
@@ -89,5 +90,6 @@ async def ultiny(event):
 # Port By Ilham/Dara
 # Petercord - Userbot
 
-CMD_HELP.update({"tiny": "`.tiny`\
-    \nPenjelasan: Untuk Memperkecil Sticker."})
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
