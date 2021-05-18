@@ -12,7 +12,7 @@ import re
 import userbot.modules.sql_helper.blacklist_sql as sql
 from userbot import CMD_HELP
 from userbot.events import register
-
+from userbot.cmdhelp import CmdHelp
 
 @register(incoming=True, disable_edited=True, disable_errors=True)
 async def on_new_message(event):
@@ -88,10 +88,6 @@ async def on_delete_blacklist(rmbl):
         await rmbl.edit("`Berhasil Menghapus` **{}** `Di Blacklist`".format(text))
 
 
-CMD_HELP.update({"blacklist": ">`.listbl`"
-                 "\nUsage: Melihat daftar blacklist yang aktif di obrolan."
-                 "\n\n>`.addbl <kata>`"
-                 "\nUsage: Memasukan pesan ke blacklist 'kata blacklist'."
-                 "\nPetercord bot akan otomatis menghapus 'kata blacklist'."
-                 "\n\n>`.rmbl <kata>`"
-                 "\nUsage: Menghapus kata blacklist."})
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
