@@ -1,5 +1,3 @@
-from userbot.cmdhelp import CmdHelp
-from userbot import cmdhelp
 from userbot import CMD_HELP
 from userbot.events import register
 
