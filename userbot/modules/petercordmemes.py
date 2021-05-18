@@ -6,7 +6,7 @@ from telethon import events
 import asyncio
 
 from userbot.events import register
-from userbot import CMD_HELP, bot, ALIVE_NAME
+from userbot import ALIVE_NAME, bot
 from collections import deque
 from telethon.errors.rpcerrorlist import MessageIdInvalidError
 import random
@@ -2981,6 +2981,5 @@ async def _(event):
         deq.rotate(1)
 
 
-CmdHelp('adzan').add_command(
-    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
-).add()
+CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
+                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
