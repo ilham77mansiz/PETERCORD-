@@ -2,7 +2,7 @@
 
 import os
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-
+from userbot.cmdhelp import CmdHelp
 from userbot.events import register
 from userbot import bot, TEMP_DOWNLOAD_DIRECTORY, CMD_HELP
 
@@ -50,9 +50,6 @@ async def _(event):
     return os.remove(downloaded_file_name)
 
 
-CMD_HELP.update({
-    "spotifynow":
-    ">`.spotnow`"
-    "\nUsage: Show what you're listening on spotify."
-    "\n@SpotifyNowBot"
-})
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
