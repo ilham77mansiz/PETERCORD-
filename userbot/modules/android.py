@@ -17,6 +17,7 @@ from requests import get
 from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
 from userbot.events import register
 from userbot.utils.tools import human_to_bytes, humanbytes, md5, time_formatter
+from userbot.cmdhelp import CmdHelp
 
 GITHUB = "https://github.com"
 
@@ -301,19 +302,6 @@ async def twrp(request):
     await request.edit(reply)
 
 
-CMD_HELP.update(
-    {
-        "android": ">`.magisk`"
-        "\nGet latest Magisk releases"
-        "\n\n>`.device <codename>`"
-        "\nUsage: Get info about android device codename or model."
-        "\n\n>`.codename <brand> <device>`"
-        "\nUsage: Search for android device codename."
-        "\n\n>`.pixeldl` **<download.pixelexperience.org>**"
-        "\nUsage: Download pixel experience ROM into your userbot server."
-        "\n\n>`.specs <brand> <device>`"
-        "\nUsage: Get device specifications info."
-        "\n\n>`.twrp <codename>`"
-        "\nUsage: Get latest twrp download for android device."
-    }
-)
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
