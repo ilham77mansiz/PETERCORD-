@@ -8,8 +8,9 @@
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot import bot, CMD_HELP
 from userbot.events import register
+from userbot.cmdhelp import CmdHelp
 
-# Alvin Gans
+# 
 
 
 @register(outgoing=True, pattern="^.tiktok(?: |$)(.*)")
@@ -40,9 +41,6 @@ async def _(event):
         await event.delete()
 
 
-CMD_HELP.update(
-    {
-        "tiktok": ">`.tiktok <Link>`"
-        "\nUsage: Download Video Tiktok Tanpa Watermark"
-    }
-)
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
