@@ -5,7 +5,7 @@
 """ Userbot module containing commands for keeping global notes. """
 
 from userbot.events import register
-from userbot import CMD_HELP, BOTLOG_CHATID
+from userbot import BOTLOG_CHATID
 from userbot.cmdhelp import CmdHelp
 
 
@@ -115,6 +115,5 @@ async def on_snip_delete(event):
         await event.edit(f"`Couldn't find snip:` **{name}**")
 
 
-CmdHelp('adzan').add_command(
-    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
-).add()
+CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
+                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()

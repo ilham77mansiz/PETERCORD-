@@ -10,7 +10,7 @@ import time
 
 from telethon.tl.types import DocumentAttributeFilename
 
-from userbot import CMD_HELP, bot
+from userbot import bot
 from userbot.events import register
 from userbot.utils import progress
 from userbot.cmdhelp import CmdHelp
@@ -70,6 +70,5 @@ async def ssvideo(event):
         return await event.edit(f"{e}")
 
 
-CmdHelp('adzan').add_command(
-    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
-).add()
+CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
+                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()

@@ -6,10 +6,11 @@
 import asyncio
 from asyncio import sleep
 
-from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP
+from userbot import BOTLOG, BOTLOG_CHATID
 from userbot.events import register
 
 from userbot.cmdhelp import CmdHelp
+
 
 @register(outgoing=True, pattern="^.cspam (.*)")
 async def tmeme(e):
@@ -78,6 +79,5 @@ async def spammer(e):
             "DelaySpam was executed successfully")
 
 
-CmdHelp('adzan').add_command(
-    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
-).add()
+CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
+                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()

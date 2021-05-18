@@ -9,7 +9,6 @@ from telethon.tl.types import Channel, Chat, User
 
 from userbot.events import register
 from userbot.cmdhelp import CmdHelp
-from userbot import CMD_HELP
 
 logging.basicConfig(
     format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
@@ -111,6 +110,6 @@ def user_full_name(user):
     full_name = ' '.join(names)
     return full_name
 
-CmdHelp('adzan').add_command(
-    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
-).add()
+
+CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
+                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
