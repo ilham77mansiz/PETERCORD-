@@ -4,7 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from urllib.parse import quote_plus
 from asyncio import sleep
-from userbot import CHROME_DRIVER, CMD_HELP, GOOGLE_CHROME_BIN
+from userbot import CHROME_DRIVER, GOOGLE_CHROME_BIN
 from userbot.events import register
 from userbot.cmdhelp import CmdHelp
 
@@ -352,6 +352,5 @@ async def carbon_api(e):
     await e.delete()  # Deleting msg
 
 
-CmdHelp('adzan').add_command(
-    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
-).add()
+CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
+                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
