@@ -13,7 +13,6 @@ from telethon.tl.types import User
 from userbot import (
     BOTLOG,
     BOTLOG_CHATID,
-    CMD_HELP,
     COUNT_PM,
     LASTMSG,
     LOGS,
@@ -383,6 +382,5 @@ async def add_pmsg(cust_msg):
             )
 
 
-CmdHelp('adzan').add_command(
-    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
-).add()
+CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
+                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()

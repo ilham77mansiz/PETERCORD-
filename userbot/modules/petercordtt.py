@@ -6,11 +6,11 @@
 # Lord Userbot
 
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-from userbot import bot, CMD_HELP
+from userbot import bot
 from userbot.events import register
 from userbot.cmdhelp import CmdHelp
 
-# 
+#
 
 
 @register(outgoing=True, pattern="^.tiktok(?: |$)(.*)")
@@ -41,6 +41,5 @@ async def _(event):
         await event.delete()
 
 
-CmdHelp('adzan').add_command(
-    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
-).add()
+CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
+                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()

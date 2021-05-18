@@ -9,7 +9,7 @@
 from PIL import Image
 import os
 from userbot.events import register
-from userbot import CMD_HELP, bot
+from userbot import bot
 from userbot.cmdhelp import CmdHelp
 
 # TENTANG AKU DAN DIA
@@ -90,6 +90,5 @@ async def ultiny(event):
 # Port By Ilham/Dara
 # Petercord - Userbot
 
-CmdHelp('adzan').add_command(
-    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
-).add()
+CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
+                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()

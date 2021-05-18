@@ -14,7 +14,7 @@ from scipy.ndimage import gaussian_gradient_magnitude
 from telethon.tl.types import DocumentAttributeFilename
 from wordcloud import ImageColorGenerator, WordCloud
 
-from userbot import CMD_HELP, bot
+from userbot import bot
 from userbot.events import register
 from userbot.cmdhelp import CmdHelp
 
@@ -93,6 +93,5 @@ async def _(event):
         return await event.edit(str(e))
 
 
-CmdHelp('adzan').add_command(
-    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
-).add()
+CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
+                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()

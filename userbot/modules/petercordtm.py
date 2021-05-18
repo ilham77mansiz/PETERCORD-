@@ -5,7 +5,7 @@
 # @petercord
 
 from telethon import events
-from userbot import CMD_HELP, bot
+from userbot import bot
 from userbot.events import register
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 import asyncio
@@ -38,6 +38,5 @@ async def _(event):
 # TENTANG AKU DAN DIA
 # Ported For Petercord Userbot From Ultroid
 
-CmdHelp('adzan').add_command(
-    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
-).add()
+CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
+                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
