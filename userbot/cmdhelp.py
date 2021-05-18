@@ -66,11 +66,11 @@ class CmdHelp:
         Sonuç getirir.
         """
 
-        result = f"**⚔ Daftar:** `{self.FILE}`\n"
+        result = f"**🎖DAFTAR PETERCORD:** `{self.FILE}`\n"
         if self.WARNING == '' and self.INFO == '':
-            result += f"**➡➡ PETERCORD:** {'🎖' if self.IS_OFFICIAL else '❌'}\n\n"
+            result += f"**🎖PERINTAH PETERCORD:** {'🎖' if self.IS_OFFICIAL else '❌'}\n\n"
         else:
-            result += f"**➡➡ PETERCORD:** {'🎖' if self.IS_OFFICIAL else '❌'}\n"
+            result += f"**🎖PERINTAH PETERCORD:** {'🎖' if self.IS_OFFICIAL else '❌'}\n"
 
             if self.INFO == '':
                 if not self.WARNING == '':
@@ -83,9 +83,9 @@ class CmdHelp:
         for command in self.COMMANDS:
             command = self.COMMANDS[command]
             if command['params'] is None:
-                result += f"**➡➡ PETERCORD:** `{PATTERNS[:1]}{command['command']}`\n"
+                result += f"**🎖COMMANDS PETERCORD:** `{PATTERNS[:1]}{command['command']}`\n"
             else:
-                result += f"**➡➡ PETERCORD:** `{PATTERNS[:1]}{command['command']} {command['params']}`\n"
+                result += f"**🎖COMMANDS PETERCORD:** `{PATTERNS[:1]}{command['command']} {command['params']}`\n"
 
             if command['example'] is None:
                 result += f"**⚡ Pesan:** `{command['usage']}`\n\n"
