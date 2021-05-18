@@ -16,7 +16,8 @@ from userbot import DEEZER_ARL_TOKEN, TEMP_DOWNLOAD_DIRECTORY
 from hachoir.metadata import extractMetadata
 from hachoir.parser import createParser
 from telethon.tl.types import DocumentAttributeAudio
-
+from userbot.cmdhelp import CmdHelp
+from userbot import CMD_HELP
 
 @register(outgoing=True,
           pattern=r"^\.deezload (.+?|) (FLAC|MP3\_320|MP3\_256|MP3\_128)")
@@ -155,3 +156,7 @@ async def upload_track(track_location, message):
         attributes=document_attributes,
     )
     os.remove(track_location)
+
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
