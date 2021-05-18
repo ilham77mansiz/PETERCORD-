@@ -1,6 +1,8 @@
 from platform import uname
 from userbot import ALIVE_NAME, CMD_HELP
 from userbot.events import register
+from userbot.cmdhelp import CmdHelp
+
 
 # ================= CONSTANT =================
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
@@ -31,10 +33,6 @@ async def typewriter(typew):
     await typew.edit("Wa'alaikumussalam Semoga bermanfaat salamnya")
 
 
-CMD_HELP.update({
-    "salam":
-    "`.P`\
-\nUsage: Untuk Memberi salam.\
-\n\n`.L`\
-\nUsage: Untuk Menjawab Salam."
-})
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
