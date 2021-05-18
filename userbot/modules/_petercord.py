@@ -2,7 +2,7 @@ from userbot import CMD_HELP
 from userbot.events import register
 
 
-@register(outgoing=True, pattern="^.petercordhelp(?: |$)(.*)")
+@register(outgoing=True, pattern="^.perintah(?: |$)(.*)")
 async def master(event):
     """ .master ketik """
     args = event.pattern_match.group(1).lower()
