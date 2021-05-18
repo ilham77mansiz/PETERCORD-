@@ -9,7 +9,8 @@ from bitlyshortener import Shortener
 from re import match
 from userbot import BITLY_TOKEN, BOTLOG, BOTLOG_CHATID
 from userbot.events import register
-
+from userbot.cmdhelp import CmdHelp
+from userbot import CMD_HELP
 
 @register(outgoing=True, pattern=r"^\.bitly(?: |$)(.*)")
 async def shortener(short):
@@ -41,3 +42,7 @@ async def shortener(short):
             await short.client.send_message(BOTLOG_CHATID, f"`#SHORTLINK \nThis Your Link!`\n {output}")
     else:
         await short.edit("Set bit.ly API token first\nGet from [here](https://bitly.com/a/sign_up)")
+
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
