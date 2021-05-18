@@ -13,6 +13,7 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot import CMD_HELP, bot
 from userbot.events import register
 
+from userbot.cmdhelp import CmdHelp
 
 @register(outgoing=True, pattern=r"^\.wall(?: |$)(.*)")
 async def _(event):
@@ -57,5 +58,6 @@ async def _(event):
         return await event.edit("`Saya Tidak Menemukan Wallpaper Yang Anda Cari`")
 
 
-CMD_HELP.update({"wallpaper": ">`.wall <query>`"
-                 "\nUsage: Mencari Wallpaper Bagus."})
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
