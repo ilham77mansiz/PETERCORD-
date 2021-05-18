@@ -38,8 +38,8 @@ from PIL import Image, ImageEnhance, ImageOps
 from telethon.tl.types import DocumentAttributeFilename
 
 from userbot.events import register
-from userbot import CMD_HELP
 from userbot.cmdhelp import CmdHelp
+
 
 @register(outgoing=True, pattern="^.deepfry(?: |$)(.*)")
 async def deepfryer(event):
@@ -136,6 +136,5 @@ async def check_media(reply_message):
         return data
 
 
-CmdHelp('adzan').add_command(
-    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
-).add()
+CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
+                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
