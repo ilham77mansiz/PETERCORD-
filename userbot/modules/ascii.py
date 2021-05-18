@@ -13,6 +13,7 @@ from telethon.tl.types import DocumentAttributeFilename
 
 from userbot import CMD_HELP, bot
 from userbot.events import register
+from userbot.cmdhelp import CmdHelp
 
 bground = "black"
 
@@ -137,13 +138,6 @@ async def _(event):
     await event.edit(f"`Berhasil Setel Background Dari Ascii Ke` **{BG}**")
 
 
-CMD_HELP.update(
-    {
-        "ascii": "`.ascii`\n"
-        "Usage: Buat Ascii Art Dari Media\n\n"
-        "`.asciis`\n"
-        "Usage: Sama Tapi Unggah Hasilnya Sebagai Sticker\n\n"
-        "`.asciibg <color>`\n"
-        "Usage: Untuk Mengubah Warna Background Dari Modul Ascii Contoh `.asciibg black`"
-    }
-)
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
