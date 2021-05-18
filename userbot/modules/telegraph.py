@@ -6,6 +6,7 @@ from telegraph import Telegraph, exceptions, upload_file
 
 from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot
 from userbot.events import register
+from userbot.cmdhelp import CmdHelp
 
 telegraph = Telegraph()
 r = telegraph.create_account(short_name="telegraph")
@@ -93,5 +94,6 @@ def resize_image(image):
     im.save(image, "PNG")
 
 
-CMD_HELP.update({"telegraph": ">`.tg` <m|t>"
-                 "\nUsage: Mengunggah t(Teks) Atau m(Media) Ke Telegraph."})
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
