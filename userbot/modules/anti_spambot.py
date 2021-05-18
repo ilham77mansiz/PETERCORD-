@@ -9,6 +9,7 @@ from asyncio import sleep
 from requests import get
 from telethon.events import ChatAction
 from telethon.tl.types import ChannelParticipantsAdmins, Message
+from userbot.cmdhelp import CmdHelp
 
 from userbot import (
     ANTI_SPAMBOT,
@@ -194,10 +195,6 @@ async def ANTI_SPAMBOTS(welcm):
         pass
 
 
-CMD_HELP.update(
-    {
-        "anti_spambot": "If enabled in config.env or env var,"
-        "\nthis module will ban(or inform the admins of the group about) the"
-        "\nspammer(s) if they match the userbot's anti-spam algorithm."
-    }
-)
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
