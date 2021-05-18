@@ -9,7 +9,7 @@ import os
 
 from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot
 from userbot.events import register
-
+from userbot.cmdhelp import CmdHelp
 
 EMOJI_PATTERN = re.compile(
     "["
@@ -130,10 +130,6 @@ async def _(hazmat):
     await hazmat.delete()
     return os.remove(downloaded_file_name)
 
-CMD_HELP.update({
-    "waifu":
-    "`.waifu` text\
-\nUsage: for custom stickers.\
-\n\n`.hz` or `.hz [flip, x2, rotate (degree), background (number), black]`\
-\nUsage: Reply to a image / sticker to suit up!."
-})
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
