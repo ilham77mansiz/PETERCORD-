@@ -7,7 +7,7 @@ import random
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 import os
 
-from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot
+from userbot import TEMP_DOWNLOAD_DIRECTORY, bot
 from userbot.events import register
 from userbot.cmdhelp import CmdHelp
 
@@ -130,6 +130,5 @@ async def _(hazmat):
     await hazmat.delete()
     return os.remove(downloaded_file_name)
 
-CmdHelp('adzan').add_command(
-    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
-).add()
+CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
+                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
