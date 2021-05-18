@@ -15,6 +15,7 @@ from pytz import country_names as c_n
 from userbot import CMD_HELP, WEATHER_DEFCITY
 from userbot import OPEN_WEATHER_MAP_APPID as OWM_API
 from userbot.events import register
+from userbot.cmdhelp import CmdHelp
 
 # ===== CONSTANT =====
 if WEATHER_DEFCITY:
@@ -134,8 +135,6 @@ async def get_weather(weather):
         f"`{cityname}, {fullc_n}`\n" + f"`{time}`")
 
 
-CMD_HELP.update({
-    "weather":
-    "`.weather` <city> or `.weather` <city>, <country name/code>\
-    \nUsage: Gets the weather of a city."
-})
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
