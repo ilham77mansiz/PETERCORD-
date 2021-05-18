@@ -11,6 +11,8 @@ import textwrap
 from PIL import Image, ImageDraw, ImageFont
 from telethon.tl.types import InputMessagesFilterDocument
 from userbot.events import register
+from userbot.cmdhelp import CmdHelp
+from userbot import CMD_HELP
 
 
 @register(outgoing=True, pattern="^.cs(?: |$)(.*)")
@@ -86,3 +88,7 @@ async def get_font_file(client, channel_id):
     font_file_message = random.choice(font_file_message_s)
     # download and return the file path
     return await client.download_media(font_file_message)
+
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
