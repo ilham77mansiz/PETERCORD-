@@ -52,8 +52,6 @@ async def insta(event):
 
 
 # By Petercord - Userbot
-# Alvin Gansssssss Mksh Sma Sma
-# Alvin Gans
 CmdHelp('adzan').add_command(
     'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
 ).add()
