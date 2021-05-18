@@ -22,6 +22,7 @@ from redis import StrictRedis
 from dotenv import load_dotenv
 from requests import get
 from telethon.sync import TelegramClient, custom, events
+from telethon.events import callbackquery, InlineQuery, NewMessage
 from telethon.sessions import StringSession
 
 load_dotenv("config.env")
@@ -37,6 +38,7 @@ LOAD_PLUG = {}
 PETERCORD_ID = ["1593802955", "1719806612"]
 SUDO_LIST = {}
 CMD_HELP_BOT = {}
+PATTERNS = os.environ.get("PATTERNS", ".;!,")
 
 # Bot Logs setup:
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
