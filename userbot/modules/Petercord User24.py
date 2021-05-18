@@ -5,7 +5,7 @@ from userbot import CMD_HELP, bot
 from userbot.events import register
 from telethon import events
 import asyncio
-
+from userbot.cmdhelp import CmdHelp
 
 @register(outgoing=True, pattern="^.hua$")
 async def koc(e):
@@ -176,16 +176,8 @@ async def _(event):
 # Petercord User
 # Petercord User
 # Petercord User
-CMD_HELP.update({
-    "animasi":
-    "`.nah` ; `.huh` ; `.owner`\
-    \nUsage: cobain.\
-    \n\n`.bunga` ; `.buah`\
-    \nUsage: animasi.\
-    \n\n`.waktu`\
-    \nUsage: animasi.\
-    \n\n`.hua`\
-    \nUsage: nangis.\
-    \n\n`.ceritacinta` ; `.canda`\
-    \nUsage: liat sendiri"
-})
+CmdHelp('atsız').add_command(
+    'atsız', None, 'Bir Atsız sözü.'
+).add_command(
+    'atsız şiir', None, 'Bir Atsız şiiri.'
+).add()
