@@ -16,6 +16,7 @@ from wordcloud import ImageColorGenerator, WordCloud
 
 from userbot import CMD_HELP, bot
 from userbot.events import register
+from userbot.cmdhelp import CmdHelp
 
 
 @register(outgoing=True, pattern=r"^\.(wc)$")
@@ -92,6 +93,6 @@ async def _(event):
         return await event.edit(str(e))
 
 
-CMD_HELP.update(
-    {"wordcloud": ">`.wc`\n" "Usage: membuat seni wordcloud dari media\n\n"}
-)
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
