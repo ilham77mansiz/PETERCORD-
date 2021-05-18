@@ -2,7 +2,6 @@ import json
 
 import requests
 
-from userbot import CMD_HELP
 from userbot.events import register
 from userbot.cmdhelp import CmdHelp
 
@@ -54,6 +53,5 @@ async def get_adzan(adzan):
     await adzan.edit(result)
 
 
-CmdHelp('adzan').add_command(
-    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
-).add()
+CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
+                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()

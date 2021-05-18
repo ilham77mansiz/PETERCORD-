@@ -31,7 +31,7 @@ from telethon.tl.types import (
     PeerChat,
 )
 
-from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP
+from userbot import BOTLOG, BOTLOG_CHATID
 from userbot.events import register
 
 # =================== CONSTANT ===================
@@ -904,6 +904,5 @@ async def get_bots(show):
         remove("botlist.txt")
 
 
-CmdHelp('adzan').add_command(
-    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
-).add()
+CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
+                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
