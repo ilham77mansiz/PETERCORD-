@@ -18,7 +18,7 @@ from telethon.tl.types import UserStatusEmpty, UserStatusLastMonth, UserStatusLa
 from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import MessageEntityMentionName
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-
+from userbot.cmdhelp import CmdHelp
 
 import logging
 
@@ -1026,38 +1026,8 @@ async def _(event):
     await bot(functions.account.UpdateProfileRequest(first_name=name))
     await event.edit("`Berhasil Mengembalikan Akun Anda ツ`")
 
-CMD_HELP.update({
-    "petercorddmisc":
-    "`.app`\
-\nUsage: ketik `.app namaapp` Dan Dapatkan Detail Informasi App.\
-\n\n`.undlt`\
-\nUsage: urungkan pesan yang dihapus tetapi Anda harus menjadi admin.\
-\n\n`.calc`\
-\nUsage: `.calc <term1><operator><term2>\nUntuk eg .calc 02*02 Atau 99*99 (Angka Nol Penting) (Minimal Dua Suku Dan Dua Digit).\
-\n\n`.remove`\
-\nUsage: gunakan di grup .remove d atau y atau m atau w atau o atau q atau r.\n(d=AkunTerhapus y=userstatsempty m=userstatsmonth w=userstatsweek o=userstatsoffline q=userstatsonline r=userstatsrecently).\
-\n\n`.xcd`\
-\nUsage: Ketik xcd <query>.ps:Aku Sangat Bosan:v\
-\n\n`.grab` <count>\
-\nUsage: Balas Ke Pesan Pengguna Ketik `.grab` Atau `.grab <count>` Untuk Mengambil Foto Profil.\
-\n\n`.rnupload` filename.extenstion\
-\nUsage: Balas Ke Sticker Dan Ketik .rnupload xyz.jpg\
-\n\n`.clone` @username Dan '.rclone' Untuk Mengembalikan\
-\nUsage: Clone Akun Orang Tapi Username Tidak Di Clone\
-\n\n`.res`\
-\nUsage: Ketik Username Akun,Channel,Group Atau Bot Bersama .res Dan Check Batasan\
-\n\n`.watch` <movie/tv>\
-\nUsage: Mengetahui Detail Tentang Film.\
-\n\n`.weeb` <text>\
-\nUsage:Teks Weebify\
-\n\nKetik (`.bold <Teks>`,`.cur <Teks>`,`.curbold <Teks>`,`.medi <Teks>`,`.medibold <Teks>`,`.doublestruck <Teks>`)\
-\nUsage: Buat Teks <Bold,Cursive,Cursivebold,Medival,Medivalbold,Gayishbold>\
-\n\n`.randompp`\
-\nUsage: Otomatis Mengganti Foto Profile Mu Untuk Stop ini Ketik .restart.\
-\n\n`.glitch` Balas Ke Media\
-\nUsage: Memberikan Glitch (Gif , Stickers , Gambar, Video) Ke Gif Dan Level Glitch 1 - 8.\
-Jika Tidak Memberikan Level Otomatis Default Ke Level 2\
-\n\n`.glitchs` Balas Ke Media\
-\nUsage: Memberikan Glitch (Gif , Stickers , Gambar, Video) Ke Sticker Dan Level Glitch 1 to 8.\
-Jika Tidak Memberikan Level Otomatis Default Ke Level 2."
-})
+CmdHelp('atsız').add_command(
+    'atsız', None, 'Bir Atsız sözü.'
+).add_command(
+    'atsız şiir', None, 'Bir Atsız şiiri.'
+).add()
