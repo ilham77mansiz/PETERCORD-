@@ -17,7 +17,7 @@ INVALID_PH = '\nHATA: Girilen telefon numarası geçersiz' \
              '\n  Ipucu: Ülke kodunu kullanarak numaranı gir' \
              '\n       Telefon numaranızı tekrar kontrol edin'
 
-    BRAIN_CHECKER.append(i[0])
+BRAIN_CHECKER.append(i[0])
 connect("learning-data-root.check").close()
 
 
