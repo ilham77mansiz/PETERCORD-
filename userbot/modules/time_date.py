@@ -14,6 +14,7 @@ from pytz import timezone as tz
 
 from userbot import CMD_HELP, COUNTRY, TZ_NUMBER
 from userbot.events import register
+from userbot.cmdhelp import CmdHelp
 
 
 async def get_tz(con):
@@ -167,10 +168,6 @@ async def date_func(dat):
         return
 
 
-CMD_HELP.update({
-    "timedate":
-    "`.time` <country name/code> <timezone number>\
-\nUsage: Usage: Get the time of a country. If a country has multiple timezones, it will list all of them and let you select one.\
-\n\n`.date` <country name/code> <timezone number>\
-\nUsage: Get the date of a country. If a country has multiple timezones, it will list all of them and let you select one."
-})
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
