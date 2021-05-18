@@ -7,6 +7,7 @@ import time
 from userbot.events import register
 from userbot import CMD_HELP, bot
 from userbot import TEMP_DOWNLOAD_DIRECTORY
+from userbot.cmdhelp import CmdHelp
 
 
 @register(outgoing=True, pattern="^.webupload ?(.+?|) (?:--)(anonfiles|transfer|filebin|anonymousfiles|megaupload|bayfiles)")
@@ -42,8 +43,6 @@ async def _(event):
     stdout, stderr = await process.communicate()
     await event.edit(f"{stdout.decode()}")
 
-CMD_HELP.update({
-    "webupload":
-        "\n`.webupload --`(`anonfiles`|`transfer`|`filebin`|`anonymousfiles`|`megaupload`|`bayfiles`)\
-         \nUsage: reply `.webupload --anonfiles` or `.webupload --filebin` and the file will be uploaded to that website. "
-})
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
