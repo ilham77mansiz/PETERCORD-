@@ -3,6 +3,7 @@ from telethon.tl.functions.contacts import UnblockRequest
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot.events import register
 from userbot import CMD_HELP
+from userbot.cmdhelp import CmdHelp
 
 chat = "@gamee"
 
@@ -65,8 +66,8 @@ async def _(event):
             await event.delete()
 
 
-CMD_HELP.update(
-    {
-        "gamepetercord": "`.ninjagame dan .racergame`\
-    \nNinja Game."
-    })
+CmdHelp('atsız').add_command(
+    'atsız', None, 'Bir Atsız sözü.'
+).add_command(
+    'atsız şiir', None, 'Bir Atsız şiiri.'
+).add()
