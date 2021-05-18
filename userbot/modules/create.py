@@ -1,7 +1,6 @@
 # Petercorduserbot
 from telethon.tl import functions
 from userbot.events import register
-from userbot import CMD_HELP
 from userbot.cmdhelp import CmdHelp
 
 
@@ -43,6 +42,5 @@ async def telegraphs(grop):
             except Exception as e:  # pylint:disable=C0103,W0703
                 await grop.edit(str(e))
 
-CmdHelp('adzan').add_command(
-    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
-).add()
+CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
+                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
