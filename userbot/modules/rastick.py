@@ -1,7 +1,7 @@
 import random
 import re
 
-from userbot import bot, CMD_HELP
+from userbot import bot
 from userbot.events import register
 from userbot.cmdhelp import CmdHelp
 from asyncio import sleep
@@ -118,6 +118,5 @@ async def rastick(animu):
     await animu.delete()
 
 
-CmdHelp('adzan').add_command(
-    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
-).add()
+CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
+                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
