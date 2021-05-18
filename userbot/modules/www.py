@@ -12,6 +12,7 @@ from speedtest import Speedtest
 from userbot import CMD_HELP, StartTime, ALIVE_NAME
 from userbot.events import register
 import time
+from userbot.cmdhelp import CmdHelp
 
 
 async def get_readable_time(seconds: int) -> str:
@@ -169,11 +170,6 @@ async def pingme(pong):
     duration = (end - start).microseconds / 9000
     await pong.edit("- 🕸P E T E R C O R D 🕸 -\n`%sms`" % (duration))
 
-CMD_HELP.update(
-    {"ping": "`.ping` ; `.lping` ; `.xping` ; `.sping`\
-    \nUsage: Untuk menunjukkan ping bot.\
-    \n\n`.speed`\
-    \nUsage: Untuk menunjukkan kecepatan.\
-    \n\n`.pong`\
-    \nUsage: sama kayak perintah ping."
-     })
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
