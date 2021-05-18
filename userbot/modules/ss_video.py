@@ -13,6 +13,7 @@ from telethon.tl.types import DocumentAttributeFilename
 from userbot import CMD_HELP, bot
 from userbot.events import register
 from userbot.utils import progress
+from userbot.cmdhelp import CmdHelp
 
 
 @register(outgoing=True, pattern=r"^\.ssvideo(?: |$)(.*)")
@@ -69,6 +70,6 @@ async def ssvideo(event):
         return await event.edit(f"{e}")
 
 
-CMD_HELP.update(
-    {"ssvideo": "`>.ssvideo <frame>`" "\nUsage: to ss video frame per frame"}
-)
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
