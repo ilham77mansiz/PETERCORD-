@@ -106,7 +106,7 @@ GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN", None)
 # Custom (forked) repo URL for updater.
 UPSTREAM_REPO_URL = os.environ.get(
     "UPSTREAM_REPO_URL",
-    "https://github.com/ilham77mansiz/-PETERCORD-.git")
+    "https://github.com/ilham77mansiz/PETERCORD-.git")
 UPSTREAM_REPO_BRANCH = os.environ.get(
     "UPSTREAM_REPO_BRANCH", "Petercord-Userbot")
 
@@ -456,7 +456,7 @@ Hesabınızı bot'a çevirebilirsiniz ve bunları kullanabilirsiniz. Unutmayın,
             sayfa = int(event.data_match.group(1).decode("UTF-8"))
             veriler = butonlastir(sayfa, CMD_HELP)
             await event.edit(
-                f"**🔰 Master Userbot!** [MASTER](https://t.me/TEAMSquadUserbotSupport) __PLUGINS...__\n\n**⚔JUMLAH PLUGINS⚔:** `{len(CMD_HELP)}`\n**✨HALAMAN✨:** {sayfa + 1}/{veriler[0]}",
+                f"**🔰 PETERCORD!** [MASTER](https://t.me/TEAMSquadUserbotSupport) __PLUGINS...__\n\n**⚔JUMLAH PLUGINS⚔:** `{len(CMD_HELP)}`\n**✨HALAMAN✨:** {sayfa + 1}/{veriler[0]}",
                 buttons=veriler[1],
                 link_preview=False
             )
