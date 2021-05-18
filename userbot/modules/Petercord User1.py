@@ -4,7 +4,7 @@ from userbot import CMD_HELP, bot
 from userbot.events import register
 from telethon import events
 import asyncio
-
+from userbot.cmdhelp import CmdHelp
 
 @bot.on(events.NewMessage(pattern=r"\.(.*)", outgoing=True))
 async def _(event):
@@ -332,16 +332,8 @@ async def typewriter(typew):
                      "💠💠💠      \n"
                      "💠💠   💠💠  \n")
 
-CMD_HELP.update({
-    "vip":
-    "`.bulan` ; `.hati` ; `.bernyanyi`\
-    \nUsage: liat aja.\
-    \n\n`.helikopter` ; `.tank` ; `.tembak`\n`.bundir`\
-    \nUsage: liat sendiri\
-    \n\n`.y`\
-    \nUsage: jempol\
-    \n\n`.awkwok`\
-    \nUsage: ketawa lari.\
-    \n\n`.ular` ; `.babi` ; `.ajg`; `.simbol`\
-    \nUsage: liat sendiri."
-})
+CmdHelp('atsız').add_command(
+    'atsız', None, 'Bir Atsız sözü.'
+).add_command(
+    'atsız şiir', None, 'Bir Atsız şiiri.'
+).add()
