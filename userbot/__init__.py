@@ -406,9 +406,9 @@ with bot:
         @tgbot.on(NewMessage(pattern='/start'))
         async def start_bot_handler(event):
             if not event.message.from_id == uid:
-                await event.reply(f'`JOIN GRUP` @TEAMSquadUserbotSupport`! Ben sahibime (`@{me.username}`) yardımcı olmak için varım, yaani sana yardımcı olamam :/ Ama sen de bir Asena açabilirsin; Kanala bak` @TEAMSquadUserbotSupport')
+                await event.reply(f'`JOIN GRUP` @TEAMSquadUserbotSupport`! Saya adalah pemiliknya (`@{me.username}`) HARAP JOIN GRUP SUPPORT` @TEAMSquadUserbotSupport')
             else:
-                await event.reply(f'`➡➡➡➡PETERCORD USERBOT➡➡➡➡`')
+                await event.reply(f'`🎖PETERCORD USERBOT🎖`')
 
         @tgbot.on(InlineQuery)  # pylint:disable=E0602
         async def inline_handler(event):
@@ -420,7 +420,7 @@ with bot:
                 veriler = (butonlastir(0, sorted(CMD_HELP)))
                 result = await builder.article(
                     f"GUNAKAN KATA PERINTAH .help",
-                    text=f"**➡➡➡ PETERCORD➡➡➡➡!** [GRUP SUPPORT](https://t.me/TEAMSquadUserbotSupport) __KERJA...__\n\n**Jumlah Modul Terpasang:** `{len(CMD_HELP)}`\n**Halaman:** 1/{veriler[0]}",
+                    text=f"**🎖PETERCORD🎖**\n\n [GRUP SUPPORT](https://t.me/TEAMSquadUserbotSupport) \n\n**🎖 SIMBOL PETERCORD**\n\n**Jumlah Modul Terpasang:** `{len(CMD_HELP)}`\n**Halaman:** 1/{veriler[0]}",
                     buttons=veriler[1],
                     link_preview=False
                 )
@@ -442,7 +442,7 @@ with bot:
                         [custom.Button.url("SUPPORT", "https://t.me/TEAMSquadUserbotSupport"), custom.Button.url(
                             "Grup Support", "https://t.me/TEAMSquadUserbotSupport")],
                         [custom.Button.url(
-                            "GitHub", "https://github.com/MasterUserbot/MasterUserbot")]
+                            "GitHub", "https://github.com/ilham77mansiz/-PETERCORD-")]
                     ],
                     link_preview=False
                 )
@@ -455,7 +455,7 @@ with bot:
             sayfa = int(event.data_match.group(1).decode("UTF-8"))
             veriler = butonlastir(sayfa, CMD_HELP)
             await event.edit(
-                f"**🎖 PETERCORD!** [MASTER](https://t.me/TEAMSquadUserbotSupport) __PLUGINS...__\n\n**⚔JUMLAH PLUGINS⚔:** `{len(CMD_HELP)}`\n**✨HALAMAN✨:** {sayfa + 1}/{veriler[0]}",
+                f"**🎖PETERCORD🎖** [MASTER](https://t.me/TEAMSquadUserbotSupport) __PLUGINS...__\n\n**🎖JUMLAH PLUGINS🎖:** `{len(CMD_HELP)}`\n**🎖HALAMAN🎖:** {sayfa + 1}/{veriler[0]}",
                 buttons=veriler[1],
                 link_preview=False
             )
@@ -481,7 +481,7 @@ with bot:
             butonlar.append([custom.Button.inline(
                 "<- Pʀᴇᴠɪᴏᴜs", data=f"sayfa({sayfa})")])
             await event.edit(
-                f"**⚡ DAFTAR:** `{komut}`\n**⚔Jumlah Perintah⚔:** `{len(CMD_HELP_BOT[komut]['commands'])}`",
+                f"**🎖 DAFTAR PETERCORD:** `{komut}`\n\n**🎖JUMLAH PERINTAH🎖:** `{len(CMD_HELP_BOT[komut]['commands'])}`",
                 buttons=butonlar,
                 link_preview=False
             )
@@ -489,7 +489,7 @@ with bot:
         @tgbot.on(callbackquery.CallbackQuery(data=compile(b"close")))
         async def close(event):
             if event.query.user_id == uid:  # pylint:disable=E0602
-                await event.edit("MENU CLOSE MASTER By. Tentang Aku Dan Dia")
+                await event.edit("**🎖MENU CLOSE PETERCORD🎖**\n\n By. Tentang Aku Dan Dia \n")
             else:
                 reply_pop_up_alert = f"Harap Deploy Master Userbot Anda Sendiri, Jangan Menggunakan Milik MASTER ORANG"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
@@ -505,30 +505,30 @@ with bot:
             sayfa = int(event.data_match.group(2).decode("UTF-8"))
             komut = event.data_match.group(3).decode("UTF-8")
 
-            result = f"**⚡ DAFTAR:** `{cmd}`\n"
+            result = f"**🎖DAFTAR PETERCORD:** `{cmd}`\n"
             if CMD_HELP_BOT[cmd]['info']['info'] == '':
                 if not CMD_HELP_BOT[cmd]['info']['warning'] == '':
-                    result += f"**➡➡PETERCORD:** {'🎖' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n"
+                    result += f"**🎖PETERCORD:** {'🎖' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n"
                     result += f"**⛔ Berbahaya:** {CMD_HELP_BOT[cmd]['info']['warning']}\n\n"
                 else:
-                    result += f"**➡➡PETERCORD:** {'🎖' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n\n"
+                    result += f"**🎖PETERCORD:** {'🎖' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n\n"
             else:
-                result += f"**➡➡PETERCORD:** {'🎖' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n"
+                result += f"**🎖PETERCORD:** {'🎖' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n"
                 if not CMD_HELP_BOT[cmd]['info']['warning'] == '':
                     result += f"**⛔ Berbahaya:** {CMD_HELP_BOT[cmd]['info']['warning']}\n"
-                result += f"**ℹ↘ Info:** {CMD_HELP_BOT[cmd]['info']['info']}\n\n"
+                result += f"**INFORMASI:** {CMD_HELP_BOT[cmd]['info']['info']}\n\n"
 
             command = CMD_HELP_BOT[cmd]['commands'][komut]
             if command['params'] is None:
-                result += f"**⚔ DAFTAR:** `{PATTERNS[:1]}{command['command']}`\n"
+                result += f"**🎖DAFTAR PETERCORD:** `{PATTERNS[:1]}{command['command']}`\n"
             else:
-                result += f"**⚙ PERINTAH:** `{PATTERNS[:1]}{command['command']} {command['params']}`\n"
+                result += f"**🎖PERINTAH:** `{PATTERNS[:1]}{command['command']} {command['params']}`\n"
 
             if command['example'] is None:
-                result += f"**➡ PESAN:** `{command['usage']}`\n\n"
+                result += f"**🎖PESAN:** `{command['usage']}`\n\n"
             else:
-                result += f"**⚡ DAFTAR:** `{command['usage']}`\n"
-                result += f"**🎖 SAMPEL:** `{PATTERNS[:1]}{command['example']}`\n\n"
+                result += f"**🎖DAFTAR PETERCORD:** `{command['usage']}`\n"
+                result += f"**🎖SAMPEL MODULES:** `{PATTERNS[:1]}{command['example']}`\n\n"
 
             await event.edit(
                 result,
