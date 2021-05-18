@@ -5,6 +5,7 @@
 
 from asyncio import sleep
 from os import remove
+from userbot.cmdhelp import CmdHelp
 
 from telethon.errors import (
     BadRequestError,
@@ -903,34 +904,6 @@ async def get_bots(show):
         remove("botlist.txt")
 
 
-CMD_HELP.update(
-    {
-        "admin": ">`.promote <username/balas ke pesan> <nama title (optional)>`"
-        "\nUsage: Mempromosikan member sebagai admin."
-        "\n\n>`.demote <username/balas ke pesan>`"
-        "\nUsage: Menurunkan admin sebagai member."
-        "\n\n>`.ban <username/balas ke pesan> <alasan (optional)>`"
-        "\nUsage: Memblokir Seseorang."
-        "\n\n>`.unban <username/reply>`"
-        "\nUsage: Menghapus Blokir."
-        "\n\n>`.mute <username/balas ke pesan> <alasan (optional)>`"
-        "\nUsage: Membisukan Seseorang Di Grup, Bisa Ke Admin Juga."
-        "\n\n>`.unmute <username/balas ke pesan>`"
-        "\nUsage: Membuka bisu orang yang dibisukan."
-        "\n\n>`.gmute <username/balas ke pesan> <alasan (optional)>`"
-        "\nUsage: Membisukan ke semua grup yang kamu punya sebagai admin."
-        "\n\n>`.ungmute <username/reply>`"
-        "\nUsage: Reply someone's message with .ungmute to remove them from the gmuted list."
-        "\n\n>`.zombies`"
-        "\nUsage: Untuk mencari akun terhapus dalam grup. "
-        "Gunakan `.zombies clean` untuk menghapus Akun Terhapus dari grup."
-        "\n\n>`.all`"
-        "\nUsage: Tag semua member dalam grup."
-        "\n\n>`.admins`"
-        "\nUsage: Melihat daftar admin di grup."
-        "\n\n>`.bots`"
-        "\nUsage: Melihat daftar bot dalam grup."
-        "\n\n>`.users` Atau >`.users <nama member>`"
-        "\nUsage: Mendapatkan daftar pengguna daam grup."
-        "\n\n>`.setgpic <balas ke gambar>`"
-        "\nUsage: Mengganti foto profil grup."})
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
