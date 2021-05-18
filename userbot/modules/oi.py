@@ -1,6 +1,7 @@
 from time import sleep
 from userbot.events import register
-
+from userbot.cmdhelp import CmdHelp
+from userbot import CMD_HELP
 
 @register(outgoing=True, pattern='^.ilham(?: |$)(.*)')
 async def typewriter(typew):
@@ -38,3 +39,7 @@ async def typewriter(typew):
     sleep(1)
     await typew.edit("`Dan Selalu Bersyukur`")
 # Create by myself @localheart
+
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
