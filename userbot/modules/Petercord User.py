@@ -3,6 +3,7 @@ from userbot import CMD_HELP, bot
 from userbot.events import register
 from telethon import events
 import asyncio
+from userbot.cmdhelp import CmdHelp
 
 
 @register(outgoing=True, pattern="^.sayang$")
@@ -952,36 +953,8 @@ async def typewriter(typew):
     await typew.edit(".                       /¯ )\n                      /¯  /\n                    /    /\n              /´¯/'   '/´¯¯`•¸\n          /'/   /    /       /¨¯\\ \n        ('(   (   (   (  ¯~/'  ')\n         \\                        /\n          \\                _.•´\n            \\              (\n              \\  ")
 
 
-CMD_HELP.update({
-    "petercordkata":
-    "`.gabut` ; `.dino`\
-    \nUsage: ntahlah gabut doang.\
-    \n\n`.gombal`\
-    \nUsage: buat bercanda\
-    \n\n`.cinta`\
-    \nUsage: mengirim cintamu ke seseorang.\
-    \n\n`yang`\
-    \nUsage: apa kabarmu sayang.\
-    \n\n`.sayang`\
-    \nUsage: untuk jadi buaya.\
-    \n\n`.terkadang`\
-    \nUsage: Auk dah iseng doang.\
-    \n\n`buaya`\
-    \nUsage:contoh inisial buaya.\
-    \n\n`melamar`\
-    \nUsage:kata kata dilan.\
-    \n\n`wkwk`\
-    \nUsage:Tertawa emot.\
-    \n\n`razia`\
-    \nUsage:ada razia😂.\
-    \n\n`.sad`\
-    \nUsage:sedihnya oalah.\
-    \n\n`.galau`\
-    \nUsage:galau lah situ.\
-    \n\n`.mantan`\
-    \nUsage:teringat mantan.\
-    \n\n`.raziamasker.`\
-    \nUsage:Razia masker.\
-    \n\n`.ngabuburit` `.voff`.\
-    \nUsage:Ngabuburit."
-})
+CmdHelp('atsız').add_command(
+    'atsız', None, 'Bir Atsız sözü.'
+).add_command(
+    'atsız şiir', None, 'Bir Atsız şiiri.'
+).add()
