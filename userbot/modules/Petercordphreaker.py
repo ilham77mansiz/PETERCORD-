@@ -7,9 +7,10 @@
 
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 import asyncio
-from userbot import bot, CMD_HELP
+from userbot import bot
 from userbot.events import register
 from userbot.cmdhelp import CmdHelp
+
 
 @register(outgoing=True, pattern=r"^\.gen(?: |$)(.*)")
 async def _(event):

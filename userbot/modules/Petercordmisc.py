@@ -9,7 +9,7 @@ import html
 from justwatch import JustWatch
 from telethon import *
 from userbot.events import register
-from userbot import CMD_HELP, bot, TEMP_DOWNLOAD_DIRECTORY, DEFAULT_BIO, ALIVE_NAME
+from userbot import ALIVE_NAME, DEFAULT_BIO, TEMP_DOWNLOAD_DIRECTORY, bot
 from telethon import events
 from telethon.tl import functions
 from urllib.parse import quote
