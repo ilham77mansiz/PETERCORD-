@@ -7,6 +7,7 @@ from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot import CMD_HELP, bot
 from userbot.events import register
+from userbot.cmdhelp import CmdHelp
 
 if 1 == 1:
     strings = {
@@ -98,10 +99,6 @@ async def quote_search(event):
         await event.edit("`Tidak Ada Hasil Yang Ditemukan`")
 
 
-CMD_HELP.update({
-    "quotly":
-    "`.q`\
-\nUsage: Membuat pesan mu menjadi sticker.\
-\n\n`.xquote`\
-\nUsage: membuat pesan mu menjadi sticker."
-})
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
