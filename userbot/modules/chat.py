@@ -22,6 +22,7 @@ from telethon.tl.types import ChannelParticipantAdmin, ChannelParticipantsBots
 from userbot.events import register
 from userbot.modules.admin import get_user_from_event
 from telethon.utils import pack_bot_file_id
+from userbot.cmdhelp import CmdHelp
 
 
 @register(outgoing=True, pattern="^.getid(?: |$)(.*)")
@@ -424,27 +425,6 @@ async def _(event):
                     await event.reply(str(e))
             await event.edit("`Berhasil Menambahkan Pengguna Ke Obrolan`")
 
-CMD_HELP.update({
-    "chatperintah":
-    "`.getid`\
-\nUsage: Dapatkan ID dari media Telegram mana pun, atau pengguna mana pun\
-\n\n`.getbot`\
-\nUsage: Dapatkan Bot dalam obrolan apa pun.\
-\n\n`.logit`\
-\nUsage: Meneruskan pesan yang telah Anda balas di grup log bot Anda.\
-\n\n`.kickme`\
-\nUsagw: Keluar dari grup.\
-\n\n`.unmutechat`\
-\nUsage: Membuka obrolan yang dibisukan.\
-\n\n`.mutechat`\
-\nUsage: Memungkinkan Anda membisukan obrolan apa pun.\
-\n\n`.link` <username/userid>: <opsional teks> (atau) balas pesan seseorang dengan .link <teks opsional>\
-\nUsage: Buat tautan permanen ke profil pengguna dengan teks ubahsuaian opsional.\
-\n\n`.regexninja` enable/disabled\
-\nUsage: Mengaktifkan/menonaktifkan modul ninja regex secara global.\
-\nModul Regex Ninja membantu menghapus pesan pemicu bot regex.\
-\n\n`.chatinfo [opsional: <reply/tag/chat id/invite link>]`\
-\nUsage: Mendapatkan info obrolan. Beberapa info mungkin dibatasi karena izin yang hilang..\
-\n\n`.invite` \
-\nUsage: Menambahkan pengguna ke obrolan, bukan ke pesan pribadi. "
-})
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
