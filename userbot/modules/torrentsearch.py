@@ -7,6 +7,7 @@ from bs4 import BeautifulSoup as bs
 
 from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
 from userbot.events import register
+from userbot.cmdhelp import CmdHelp
 
 
 @register(outgoing=True, pattern=r"^\.ts (.*)")
@@ -148,11 +149,6 @@ async def tor_search(event):
     await event.edit(msg, link_preview=False)
 
 
-CMD_HELP.update(
-    {
-        "torrent": ">`.ts` Search query."
-        "\nUsage: Search for torrent query and post to dogbin.\n\n"
-        ">`.tos` Search query."
-        "\nUsage: Search for torrent magnet from query."
-    }
-)
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
