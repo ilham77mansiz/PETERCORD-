@@ -4,7 +4,7 @@ from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot import bot, CMD_HELP
 from userbot.events import register
-
+from userbot.cmdhelp import CmdHelp
 
 @register(outgoing=True, pattern="^.firmware(?: |$)(.*)")
 async def _(event):
@@ -190,22 +190,6 @@ async def _(event):
             await bot.forward_messages(event.chat_id, response.message)
 
 
-CMD_HELP.update({
-    "xiaomi":
-    "For Xiaomeme devices only!\
-\n\n`.firmware` (codename)\
-     \nUsage : Get lastest Firmware\
-\n\n`.pb` (codename)\
-     \nUsage : Get latest PitchBlack Recovery\
-\n\n`.specs` (codename)\
-     \nUsage : Get quick spec information about device\
-\n\n`.fastboot` (codename)\
-     \nUsage : Get latest fastboot MIUI\
-\n\n`.recovery` (codename)\
-     \nUsage : Get latest recovery MIUI\
-\n\n`.eu` (codename)\
-    \nUsage: Get latest xiaomi.eu rom\
-\n\n`.vendor` (codename)\
-    \nUsage: fetches latest vendor\
-\n\n`.of` (codename)\
-     \nUsage : Get latest ORangeFox Recovery"})
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
