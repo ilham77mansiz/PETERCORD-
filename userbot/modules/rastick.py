@@ -3,6 +3,7 @@ import re
 
 from userbot import bot, CMD_HELP
 from userbot.events import register
+from userbot.cmdhelp import CmdHelp
 from asyncio import sleep
 EMOJI_PATTERN = re.compile(
     "["
@@ -117,10 +118,6 @@ async def rastick(animu):
     await animu.delete()
 
 
-CMD_HELP.update(
-    {
-        "rastick": ">`.rst`"
-        "\nUsage: To stickerize your text with random sticker templates."
-        "\n@StickerizerBot"
-    }
-)
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
