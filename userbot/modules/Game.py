@@ -2,7 +2,6 @@
 from telethon.tl.functions.contacts import UnblockRequest
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot.events import register
-from userbot import CMD_HELP
 from userbot.cmdhelp import CmdHelp
 
 chat = "@gamee"
