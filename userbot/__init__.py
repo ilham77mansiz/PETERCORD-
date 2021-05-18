@@ -363,9 +363,9 @@ else:
 
 def butonlastir(sayfa, moduller):
     Satir = 5
-
-    moduller = sorted(
-        [modul for modul in moduller if not modul.startswith("_")])
+    Kolon = 2
+    
+    moduller = sorted([modul for modul in moduller if not modul.startswith("_")])
     pairs = list(map(list, zip(moduller[::2], moduller[1::2])))
     if len(moduller) % 2 == 1:
         pairs.append([moduller[-1]])
@@ -373,22 +373,12 @@ def butonlastir(sayfa, moduller):
     pairs = [pairs[i:i + Satir] for i in range(0, len(pairs), Satir)]
     butonlar = []
     for pairs in pairs[sayfa]:
-        butonlar.append([custom.Button.inline("🎖 " + pair,
-                                              data=f"bilgi[{sayfa}]({pair})") for pair in pairs])
+        butonlar.append([
+            custom.Button.inline("🎖 " + pair, data=f"bilgi[{sayfa}]({pair})") for pair in pairs
+        ])
 
-    butonlar.append(
-        [
-            custom.Button.inline(
-                "<- Pʀᴇᴠɪᴏᴜs",
-                data=f"sayfa({(max_pages - 1) if sayfa == 0 else (sayfa - 1)})"),
-            custom.Button.inline(
-                "CLOSE",
-                b'close'),
-            custom.Button.inline(
-                "Nᴇxᴛ ->",
-                data=f"sayfa({0 if sayfa == (max_pages - 1) else sayfa + 1})")])
+    butonlar.append([custom.Button.inline("<- Pʀᴇᴠɪᴏᴜs", data=f"sayfa({(max_pages - 1) if sayfa == 0 else (sayfa - 1)})"), custom.Button.inline("CLOSE", b'close'), custom.Button.inline("Nᴇxᴛ ->", data=f"sayfa({0 if sayfa == (max_pages - 1) else sayfa + 1})")])
     return [max_pages, butonlar, pairs]
-
 
 with bot:
     if OTOMATIK_KATILMA:
