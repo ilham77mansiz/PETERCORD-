@@ -11,6 +11,9 @@ from collections import deque
 from telethon.errors.rpcerrorlist import MessageIdInvalidError
 import random
 
+from userbot.cmdhelp import CmdHelp
+
+
 # ================= CONSTANT =================
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # ============================================
@@ -2978,69 +2981,6 @@ async def _(event):
         deq.rotate(1)
 
 
-CMD_HELP.update({
-    "petercordmemes":
-    "`.eye`\
-\nUsage: Lihat Sendiri.\
-\n\n`.earth`\
-\nusage: Memutar Bumi 🌎🌎\
-\n\n`.bombs`\
-\nUsage: Bom Telegram🤣🤣\
-\n\n`.think`\
-\nUsage: hmmm berpikir\
-\n\n`.gotm` atau `.gott`\
-\nUsage: dapatkan sucks🤣\
-\n\n`.snake`\
-\nUsage: Lihat Sendiri\
-\n\n`.call`\
-\nUsage: Memanggil Owner Telegram \
-\n\n`.belo` Atau `.hp` Atau `.suits`\
-\nUsage: Macam Macam Perintah Menarik\
-\n\n`.admeme`\
-\nUsage: mememememe\
-\n\n`.qs`\
-\nUsage: Memulai Percakapan\
-\n\n`.wtf`\
-\nUsage: Lihat Sendiri\
-\n\n`.load`,`.up`,`.square`,`.round`,`.heart`,`.monkey`,`.anim`,`.hand`,`.fnl`,`.cnt`,`.kiss`\
-\nUsage: Lihat Sendiri\
-\n\n`.human`\
-\nUsage: Tidak Ada Yang Menarik\
-\n\n`.wupload`\
-\nUsage: meh\
-\n\n`.music`\
-\nUsage: music player\
-\n\n`.fleave`\
-\nUsage: Keluar boong an\
-\n\n`.fadmin`\
-\nUsage: Jadi Admin Fake  🤣🤣\
-\n\n`.gift`\
-\nUsage: Memberi Hadiah Tapi Aku Tidak Mau Member Tau Apa Dalamnya!\
-\n\n`.police`\
-\nUsage: Waktunya Ke Penjara.\
-\n\n`.kill`\
-\nUsage: Untuk Membunuh Musuh Secara Online:v\
-\n\n`.os`\
-\nUsage: Lihat Sendiri.\
-\n\n`.isro`\
-\nUsage: Untuk Memanggil Alien 👽\
-\n\n`.gangstar`\
-\nUsage: Anda Menjadi Gangstar.\
-\n\n`.hack`\
-\nUsage: Untuk Hack Telegram:v\
-\n\n`.dump`\
-\nUsage: xD\
-\n\n`.hypno`\
-\nUsage: Ah Sial Mataku 👀\
-\n\n`.whatsapp`\
-\nUsage: Untuk Hack Whatsapp:v \
-\n\n`.solar`\
-\nUsage: System Solar Kita Yang Cantik 🌞🌞\
-\n\n`.quickheal` atau `.sqh` atau `.vquickheal`\
-\nUsage: Virus Ditemukan, Hapus Itu Menggunakan Ini:v\
-\n\n`.plane`\
-\nUsage: Untuk Berkeliling Di Satu Tempat✈️\
-\n\n`.jio`\
-\nUsage: Jaringan Mu Lambat?? Boost Menggunakan Ini\
-\n\n\n Selamat Bersenang-Senang Kawan:v"
-})
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
