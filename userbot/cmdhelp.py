@@ -3,7 +3,7 @@ from userbot import PATTERNS, CMD_HELP, CMD_HELP_BOT
 
 class CmdHelp:
     """
-    Komut yardımlarını daha iyi üretmek için yazdığım sınıf.
+    #Port by tentang aku dan dia
     """
 
     FILE = ""
