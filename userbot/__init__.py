@@ -363,7 +363,6 @@ else:
 
 def butonlastir(sayfa, moduller):
     Satir = 5
-    Kolon = 3
 
     moduller = sorted(
         [modul for modul in moduller if not modul.startswith("_")])
