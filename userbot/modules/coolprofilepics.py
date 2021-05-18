@@ -12,8 +12,9 @@ from telethon.tl import functions
 
 import asyncio
 
-
+from userbot import CMD_HELP
 from userbot.events import register
+from userbot.cmdhelp import CmdHelp
 
 COLLECTION_STRING = [
 
@@ -124,3 +125,7 @@ async def main(event):
         os.system("rm -rf donottouch.jpg")
 
         await asyncio.sleep(3600)  # Edit this to your required needs
+
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
