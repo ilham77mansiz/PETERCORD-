@@ -8,12 +8,80 @@ from importlib import import_module
 from sys import argv
 
 from telethon.errors.rpcerrorlist import PhoneNumberInvalidError
-from userbot import BOT_VER, LOGS, bot
+from userbot import BOT_VER, LOGS, bot, CMD_HELP, PATTERNS, BRAIN_CHECKER
 from userbot.modules import ALL_MODULES
+import userbot.cmdhelp
 
-INVALID_PH = '\nERROR: The Phone No. entered is INVALID' \
-             '\n Tip: Use Country Code along with number.' \
-             '\n or check your phone number and try again !'
+DB = connect("learning-data-root.check")
+CURSOR = DB.cursor()
+CURSOR.execute("""SELECT * FROM BRAIN1""")
+ALL_ROWS = CURSOR.fetchall()
+INVALID_PH = '\nHATA: Girilen telefon numarası geçersiz' \
+             '\n  Ipucu: Ülke kodunu kullanarak numaranı gir' \
+             '\n       Telefon numaranızı tekrar kontrol edin'
+
+for i in ALL_ROWS:
+    BRAIN_CHECKER.append(i[0])
+connect("learning-data-root.check").close()
+
+def extractCommands(file):
+    FileRead = open(file, 'r').read()
+    
+    if '/' in file:
+        file = file.split('/')[-1]
+
+    Pattern = re.findall(r"@register\(.*pattern=(r|)\"(.*)\".*\)", FileRead)
+    Komutlar = []
+
+    if re.search(r'CmdHelp\(.*\)', FileRead):
+        pass
+    else:
+        dosyaAdi = file.replace('.py', '')
+        CmdHelp = userbot.cmdhelp.CmdHelp(dosyaAdi, False)
+
+        # Komutları Alıyoruz #
+        for Command in Pattern:
+            Command = Command[1]
+            if Command == '' or len(Command) <= 1:
+                continue
+            Komut = re.findall("(^.*[a-zA-Z0-9şğüöçı]\w)", Command)
+            if (len(Komut) >= 1) and (not Komut[0] == ''):
+                Komut = Komut[0]
+                if Komut[0] == '^':
+                    KomutStr = Komut[1:]
+                    if KomutStr[0] == '.':
+                        KomutStr = KomutStr[1:]
+                    Komutlar.append(KomutStr)
+                else:
+                    if Command[0] == '^':
+                        KomutStr = Command[1:]
+                        if KomutStr[0] == '.':
+                            KomutStr = KomutStr[1:]
+                        else:
+                            KomutStr = Command
+                        Komutlar.append(KomutStr)
+
+            # PetercordPY
+            Petercordpy = re.search('\"\"\"MASTERPY(.*)\"\"\"', FileRead, re.DOTALL)
+            if not Petercordpy == None:
+                Petercordpy = Petercordpy.group(0)
+                for Satir in Petercordpy.splitlines():
+                    if (not '"""' in Satir) and (':' in Satir):
+                        Satir = Satir.split(':')
+                        Isim = Satir[0]
+                        Deger = Satir[1][1:]
+                                
+                        if Isim == 'INFO':
+                            CmdHelp.add_info(Deger)
+                        elif Isim == 'WARN':
+                            CmdHelp.add_warning(Deger)
+                        else:
+                            CmdHelp.set_file_info(Isim, Deger)
+            for Komut in Komutlar:
+                # if re.search('\[(\w*)\]', Komut):
+                    # Komut = re.sub('(?<=\[.)[A-Za-z0-9_]*\]', '', Komut).replace('[', '')
+                CmdHelp.add_command(Komut, None, 'Bu plugin dışarıdan yüklenmiştir. Herhangi bir açıklama tanımlanmamıştır.')
+            CmdHelp.add()
 
 try:
     bot.start()
