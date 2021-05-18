@@ -5,7 +5,6 @@
 #
 
 import pyfiglet
-from userbot import CMD_HELP
 from userbot.events import register
 from userbot.cmdhelp import CmdHelp
 
@@ -49,6 +48,5 @@ async def figlet(e):
     await e.respond("‌‌‎`{}`".format(result))
     await e.delete()
 
-CmdHelp('adzan').add_command(
-    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
-).add()
+CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
+                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
