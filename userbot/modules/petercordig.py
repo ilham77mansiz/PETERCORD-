@@ -3,7 +3,7 @@
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot.events import register
-from userbot import bot, CMD_HELP
+from userbot import bot
 
 from userbot.cmdhelp import CmdHelp
 
@@ -52,6 +52,5 @@ async def insta(event):
 
 
 # By Petercord - Userbot
-CmdHelp('adzan').add_command(
-    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
-).add()
+CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
+                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
