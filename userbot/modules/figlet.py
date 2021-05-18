@@ -7,6 +7,7 @@
 import pyfiglet
 from userbot import CMD_HELP
 from userbot.events import register
+from userbot.cmdhelp import CmdHelp
 
 
 @register(outgoing=True, pattern=r"^\.fg(?: |$)(.*)")
@@ -48,10 +49,6 @@ async def figlet(e):
     await e.respond("‌‌‎`{}`".format(result))
     await e.delete()
 
-CMD_HELP.update({
-    "figlet":
-        ">`.fg`"
-    "\nUsage: Enhance ur text to strip line with anvil."
-    "\n\nExample: `.figlet TEXT.STYLE`"
-    "\nSTYLE LIST: `slant`, `3D`, `5line`, `alpha`, `banner`, `doh`, `iso`, `letter`, `allig`, `dotm`, `bubble`, `bulb`, `digi`"
-})
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
