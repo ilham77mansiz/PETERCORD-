@@ -1,24 +1,11 @@
-# Koala Ganteng, Kode Dari Koala Bangsul Press F untuk Koala @Manusiarakitann
-# Keredit Motor Eh Maksudnya Kredit Kampang Bot (c) Koala Bgke @ManusiaRakitann
-# Karna Aku Gabut Aku Pasang Keredit Lagi # Keredit
-# Yak Pasang Credit Banyak Banyak Biar Makin Keren
-# Copyright (C) 2021 Alvin / @LiuAlvinas By Lord Userbot
-# All rights reserved.
-# Keredit
-# Licensed under the Raphielscape Public License, Version 1.d (the "License");
-# you may not use this file except in compliance with the License.
-# Lord Userbot - From Lord To Lord
-# Yang Gbs Basa Enggres bisa Terjemahkan di atas
-# Ngefork Doang Gak Bintang Anjg
-# Kalo Clone Ini Jangan dihapus ya anjg nanti Koala Ngamuk, Ok Mksh Sma Sma
+
 
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot.events import register
 from userbot import bot, CMD_HELP
 
-# Alvin Gans
-# Apin Gansssss Anjjjayy Yahahaha
+from userbot.cmdhelp import CmdHelp
 
 
 @register(outgoing=True, pattern="^.ig ?(.*)")
@@ -67,5 +54,6 @@ async def insta(event):
 # By Petercord - Userbot
 # Alvin Gansssssss Mksh Sma Sma
 # Alvin Gans
-CMD_HELP.update({"link instagram": "**Modules:** __Instagram__\n\n**Perintah:** `.ig`"
-                 "\n**Penjelasan:** Download Media di Postingan Instagram, Balas ke link instagram ketik `.ig`"})
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
