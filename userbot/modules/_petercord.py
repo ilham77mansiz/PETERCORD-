@@ -15,8 +15,9 @@ async def master(event):
             await event.edit(Tolong..)
     else:
         string = ""
-        sayfa = [sorted(list(CMD_HELP))[i:i + 5] for i in range(0, len(sorted(list(CMD_HELP))), 5)]
-        
+        sayfa = [sorted(list(CMD_HELP))[i:i + 5]
+                 for i in range(0, len(sorted(list(CMD_HELP))), 5)]
+
         for i in sayfa:
             string += f'`⚡ `'
             for sira, a in enumerate(i):
