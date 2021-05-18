@@ -24,7 +24,7 @@ from telethon.tl.types import DocumentAttributeVideo
 from userbot import LOGS, CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
 from userbot.utils import progress, humanbytes
 from userbot.events import register
-
+from userbot.cmdhelp import CmdHelp
 
 @register(pattern=r".download(?: |$)(.*)", outgoing=True)
 async def download(target_file):
@@ -347,10 +347,6 @@ async def uploadas(uas_event):
         await uas_event.edit("404: File Not Found")
 
 
-CMD_HELP.update({
-    "download":
-    "`.download` <link|filename> or reply to media\
-\nUsage: Downloads file to the server.\
-\n\n`.upload` <path in server>\
-\nUsage: Uploads a locally stored file to the chat."
-})
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
