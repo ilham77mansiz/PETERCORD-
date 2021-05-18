@@ -3,7 +3,6 @@
 
 from telethon.tl.types import InputMediaDice
 from userbot.events import register
-from userbot import CMD_HELP
 from userbot.cmdhelp import CmdHelp
 
 
@@ -108,6 +107,5 @@ async def _(event):
         except BaseException:
             pass
 
-CmdHelp('adzan').add_command(
-    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
-).add()
+CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
+                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
