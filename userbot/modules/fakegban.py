@@ -6,6 +6,7 @@ from telethon.tl.types import ChannelParticipantsAdmins
 #from userbot.utils import admin_cmd
 from userbot.events import register
 from userbot import ALIVE_NAME, CMD_HELP, bot
+from userbot.cmdhelp import CmdHelp
 
 # ================= CONSTANT =================
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
@@ -59,7 +60,6 @@ async def gbun(event):
         await event.reply(mention)
     await event.delete()
 
-CMD_HELP.update({
-    "fakegban": "`.fgban`\
-    \nUsage: Type .fgban or Reply .fgban reason and see it yourself. "
-})
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
