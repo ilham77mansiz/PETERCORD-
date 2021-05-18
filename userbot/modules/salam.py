@@ -1,5 +1,5 @@
 from platform import uname
-from userbot import ALIVE_NAME, CMD_HELP
+from userbot import ALIVE_NAME
 from userbot.events import register
 from userbot.cmdhelp import CmdHelp
 
@@ -33,6 +33,5 @@ async def typewriter(typew):
     await typew.edit("Wa'alaikumussalam Semoga bermanfaat salamnya")
 
 
-CmdHelp('adzan').add_command(
-    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
-).add()
+CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
+                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
