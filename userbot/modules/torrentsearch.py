@@ -5,7 +5,7 @@ import os
 import requests
 from bs4 import BeautifulSoup as bs
 
-from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
+from userbot import TEMP_DOWNLOAD_DIRECTORY
 from userbot.events import register
 from userbot.cmdhelp import CmdHelp
 
@@ -149,6 +149,5 @@ async def tor_search(event):
     await event.edit(msg, link_preview=False)
 
 
-CmdHelp('adzan').add_command(
-    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
-).add()
+CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
+                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()

@@ -10,7 +10,7 @@ from hachoir.parser import createParser
 from PIL import Image, ImageOps, ImageDraw, ImageFont
 from telethon.tl.types import DocumentAttributeFilename
 
-from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot
+from userbot import TEMP_DOWNLOAD_DIRECTORY, bot
 from userbot.events import register
 from userbot.cmdhelp import CmdHelp
 
@@ -273,6 +273,5 @@ async def rotate(event):
     os.remove(Converted)
 
 
-CmdHelp('adzan').add_command(
-    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
-).add()
+CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
+                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
