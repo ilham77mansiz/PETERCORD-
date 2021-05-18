@@ -4,9 +4,10 @@
 
 
 from telethon.errors.rpcerrorlist import YouBlockedUserError
-from userbot import CMD_HELP, bot
+from userbot import bot
 from userbot.events import register
 from userbot.cmdhelp import CmdHelp
+
 
 @register(outgoing=True, pattern=r"^\.deteksi(?: |$)(.*)")
 async def _(event):
@@ -55,6 +56,5 @@ def user_full_name(user):
 
 
 # Mansiez
-CmdHelp('adzan').add_command(
-    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
-).add()
+CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
+                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
