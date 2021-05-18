@@ -6,6 +6,7 @@
 
 from userbot import CMD_HELP, bot
 from userbot.events import register
+from userbot.cmdhelp import CmdHelp
 
 
 @register(outgoing=True, pattern="^.all$")
@@ -20,8 +21,6 @@ async def all(event):
     await bot.send_message(chat, mentions, reply_to=event.message.reply_to_msg_id)
 
 
-CMD_HELP.update({
-    "tag_all":
-    "`.all`\
-\nUsage: Untuk Mengetag semua anggota yang ada di group."
-})
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
