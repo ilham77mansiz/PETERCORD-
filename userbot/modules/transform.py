@@ -12,6 +12,7 @@ from telethon.tl.types import DocumentAttributeFilename
 
 from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot
 from userbot.events import register
+from userbot.cmdhelp import CmdHelp
 
 bground = "black"
 
@@ -272,25 +273,6 @@ async def rotate(event):
     os.remove(Converted)
 
 
-CMD_HELP.update(
-    {
-        "transform": ">`.ghost`"
-        "\nUsage: Enchance your image to become a ghost!."
-        "\n\n>`.ascii`"
-        "\nUsage:create ascii art from media"
-        "\n\n>`.asciis`"
-        "\nUsage:same but upload result as sticker"
-        "\n\n>`.asciibg <color>`"
-        "\nUsage:Now to use ASCII module change first background color past"
-        "\n\n>`.flip`"
-        "\nUsage: To flip your image"
-        "\n\n>`.mirror`"
-        "\nUsage: To mirror your image"
-        "\n\n>`.bw`"
-        "\nUsage: To Change your colorized image to b/w image!"
-        "\n\n>`.poster`"
-        "\nUsage: To posterize your image!"
-        "\n\n>`.rotate <value>`"
-        "\nUsage: To rotate your image\n* The value is range 1-360 if not it'll give default value which is 90"
-    }
-)
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
