@@ -12,10 +12,7 @@ from userbot import BOT_VER, BRAIN_CHECKER, LOGS, bot
 from userbot.modules import ALL_MODULES
 import userbot.cmdhelp
 
-DB = connect("learning-data-root.check")
-CURSOR = DB.cursor()
-CURSOR.execute("""SELECT * FROM BRAIN1""")
-ALL_ROWS = CURSOR.fetchall()
+
 INVALID_PH = '\nHATA: Girilen telefon numarası geçersiz' \
              '\n  Ipucu: Ülke kodunu kullanarak numaranı gir' \
              '\n       Telefon numaranızı tekrar kontrol edin'
