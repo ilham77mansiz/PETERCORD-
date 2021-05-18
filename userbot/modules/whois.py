@@ -16,6 +16,7 @@ from telethon.utils import get_input_location
 from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
 from userbot.events import register
 
+from userbot.cmdhelp import CmdHelp
 
 @register(pattern=".whois(?: |$)(.*)", outgoing=True)
 async def who(event):
@@ -145,8 +146,6 @@ async def fetch_info(replied_user, event):
     return photo, caption
 
 
-CMD_HELP.update({
-    "whois":
-    ">`.whois <username> Atau Balas Ke Pesan Pengguna Ketik .whois`"
-    "\nUsage: Mendapatkan Informasi Pengguna."
-})
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
