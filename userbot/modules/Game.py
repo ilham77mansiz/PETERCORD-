@@ -65,8 +65,8 @@ async def _(event):
             await event.delete()
 
 
-CmdHelp('atsız').add_command(
-    'atsız', None, 'Bir Atsız sözü.'
+CmdHelp('gamepetercord').add_command(
+    'ninjagame', None, 'Sebuah Game ninja ketik .ninjagane'
 ).add_command(
-    'atsız şiir', None, 'Bir Atsız şiiri.'
+    'racergame', None, 'Sebuah game balap ketik .racergame'
 ).add()
