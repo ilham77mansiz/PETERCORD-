@@ -18,6 +18,7 @@ from PIL import Image
 
 from userbot import CMD_HELP, bot
 from userbot.events import register
+from userbot.cmdhelp import CmdHelp
 
 opener = urllib.request.build_opener()
 useragent = "Mozilla/5.0 (Linux; Android 9; SM-G960F Build/PPR1.180610.011; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/78.0.3904.70 Mobile Safari/537.36"
@@ -147,6 +148,6 @@ async def scam(results, lim):
 
     return imglinks
 
-
-CMD_HELP.update({"reverse": ">`.reverse`"
-                 "\nUsage: Balas gambar/stiker untuk melakukan pencarian terbalik di google"})
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
