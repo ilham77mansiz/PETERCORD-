@@ -16,7 +16,6 @@ from userbot import (
     ANTI_SPAMBOT_SHOUT,
     BOTLOG,
     BOTLOG_CHATID,
-    CMD_HELP,
     bot,
 )
 
@@ -195,6 +194,5 @@ async def ANTI_SPAMBOTS(welcm):
         pass
 
 
-CmdHelp('adzan').add_command(
-    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
-).add()
+CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
+                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()

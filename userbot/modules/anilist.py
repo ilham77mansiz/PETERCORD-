@@ -11,7 +11,6 @@ import re
 import requests
 from userbot.events import register
 from userbot import bot
-from userbot import CMD_HELP
 from userbot.cmdhelp import CmdHelp
 
 
@@ -336,6 +335,5 @@ async def anilist(event):
     msg = await formatJSON(result)
     await event.edit(msg, link_preview=True)
 
-CmdHelp('adzan').add_command(
-    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
-).add()
+CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
+                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()

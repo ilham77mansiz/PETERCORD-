@@ -24,7 +24,6 @@ from telethon.tl.types import (DocumentAttributeAnimated,
                                DocumentAttributeFilename, MessageMediaDocument)
 from telethon.utils import is_image, is_video
 
-from userbot import CMD_HELP
 from userbot.events import register
 from userbot.cmdhelp import CmdHelp
 
@@ -661,6 +660,5 @@ def is_gif(file):
     return True
 
 
-CmdHelp('adzan').add_command(
-    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
-).add()
+CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
+                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
