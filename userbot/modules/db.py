@@ -11,7 +11,6 @@ from platform import uname
 from userbot import ALIVE_NAME, BOT_VER, is_mongo_alive, is_redis_alive
 from userbot.events import register
 from userbot.cmdhelp import CmdHelp
-from userbot import CMD_HELP
 
 # ================= CONSTANT =================
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
@@ -34,6 +33,5 @@ async def amireallydbs(dbs):
                    f"**PETERCORD-USERBOT:** `{BOT_VER}`"
                    "")
 
-CmdHelp('adzan').add_command(
-    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
-).add()
+CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
+                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
