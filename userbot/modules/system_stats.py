@@ -17,6 +17,7 @@ import psutil
 from userbot import ALIVE_LOGO, ALIVE_NAME, BOT_VER, CMD_HELP, StartTime, UPSTREAM_REPO_BRANCH, bot
 from userbot.events import register
 
+from userbot.cmdhelp import CmdHelp
 
 # ================= CONSTANT =================
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
@@ -347,22 +348,6 @@ async def amireallyalivereset(ureset):
     await ureset.edit("`" "Successfully reset user for alive!" "`")
 
 
-CMD_HELP.update({
-    "system":
-    "`.sysd`\
-\nUsage: Shows system information using neofetch.\
-\n\n`.botver`\
-\nUsage: Shows the userbot version.\
-\n\n`.pip` <module(s)>\
-\nUsage: Does a search of pip modules(s).\
-\n\n`.start`\
-\nUsage: Type .start to see whether your bot is working or not.\
-\n\n`.aliveu` <text>\
-\nUsage: Changes the 'user' in alive to the text you want.\
-\n\n`.resetalive`\
-\nUsage: Resets the user to default.\
-\n\n`.db`\
-\nUsage:Shows database related info.\
-\n\n.`.spc`\
-\nUsage:Show system specification."
-})
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
