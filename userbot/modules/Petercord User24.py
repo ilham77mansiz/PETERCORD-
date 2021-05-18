@@ -1,11 +1,12 @@
 # Petercord User
 
 from time import sleep
-from userbot import CMD_HELP, bot
+from userbot import bot
 from userbot.events import register
 from telethon import events
 import asyncio
 from userbot.cmdhelp import CmdHelp
+
 
 @register(outgoing=True, pattern="^.hua$")
 async def koc(e):
