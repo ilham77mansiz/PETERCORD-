@@ -2,6 +2,7 @@
 from telethon.tl import functions
 from userbot.events import register
 from userbot import CMD_HELP
+from userbot.cmdhelp import CmdHelp
 
 
 @register(outgoing=True, pattern="^.buat (gb|g|c)(?: |$)(.*)")
@@ -42,14 +43,6 @@ async def telegraphs(grop):
             except Exception as e:  # pylint:disable=C0103,W0703
                 await grop.edit(str(e))
 
-CMD_HELP.update({
-    "membuat": "\
-Membuat\
-\nUsage: Untuk membuat Channel, Grup dan Grup bersama Bot.\
-\n\n`.buat g` <nama grup>\
-\nUsage: Membuat grup mu.\
-\n\n`.buat gb` <nama grup>\
-\nUsage: Membuat Grup bersama bot.\
-\n\n`.buat c` <nama channel>\
-\nUsage: Membuat sebuah Channel.\
-"})
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
