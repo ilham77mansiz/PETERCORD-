@@ -51,7 +51,7 @@ from userbot import BOTLOG, BOTLOG_CHATID, CHROME_DRIVER, CMD_HELP, GOOGLE_CHROM
 from userbot.events import register
 from telethon.tl.types import DocumentAttributeAudio
 from userbot.utils import chrome, googleimagesdownload, options, progress
-
+from userbot.cmdhelp import CmdHelp
 
 CARBONLANG = "auto"
 TTS_LANG = "id"
@@ -1325,46 +1325,6 @@ async def capture(url):
                                    reply_to=message_id)
         await url.delete()
 
-CMD_HELP.update(
-    {
-        "image_search": ">`.img <search_query>`\
-    \nUsage: Does an image search on Google and shows 15 images.",
-        "currency": "`.currency` <amount> <from> <to>\
-    \nUsage: Converts various currencies for you.",
-        "carbon": "`.carbon` <text or reply>\
-    \nUsage: Beautify your code using carbon.now.sh\nUse .crblang <text> to set language for your code.",
-        "google": "`.google` <query>\
-  \nUsage: Does a search on Google.",
-        "wiki": "`.wiki` <query>\
-\nUsage: Does a search on Wikipedia.",
-        "ud": "`.ud` <query>\
-\nUsage: Usage: Does a search on Urban Dictionary.",
-        "tts": "`.tts` <text> [or reply]\
-\nUsage:Translates text to speech for the language which is set.\nUse .lang tts <language code> to set language for tts. (Default is English.)",
-        "translate": "`.tr` <text> [or reply]\
-\nUsage: Translates text to the language which is set.\nUse .lang tr <language code> to set language for tr. (Default is English)",
-        "youtube": "`.yt` <count> <query>\
-\nUsage: Does a YouTube search.\
-\n\nCan specify the number of results needed (default is 5).",
-        "rip": "`.ripaudio` <url> or ripvideo <url>\
-\nUsage: Download videos and songs from YouTube.",
-        "removebg": "`.rbg` <Link to Image> or reply to any image (Warning: does not work on stickers.)\
-\nUsage: Removes the background of images, using remove.bg API.",
-        "ocr": "`.ocr` <language>\
-\nUsage: Reply to an image or sticker to extract text from it.",
-        "qrcode": "`.makeqr <content>`\
-\nUsage: Make a QR Code from the given content.\nExample: .makeqr www.google.com\nNote: use .decode <reply to barcode/qrcode> to get decoded content.",
-        "barcode": "`.barcode` <content>\
-\nUsage: Make a BarCode from the given content\nExample: `.barcode www.google.com`.",
-        "paste": "`.paste` <text/reply>\
-\nUsage: Create a paste or a shortened url using dogbin",
-        "getpaste": "`.getpaste` <text/reply>\
-\nUsage: Create a paste or a shortened url using dogbin",
-        "nekobin": "`.neko` <text/reply>\
-\nUsage: Create a paste or a shortened url using dogbin",
-        "direct": "`.direct` <url>\
-\nUsage: Reply to a link or paste a URL to generate a direct download link\
-\n\nSupported Urls: `Google Drive` - `Cloud Mail` - `Yandex.Disk` - `AFH` - `ZippyShare` - `MediaFire` - `SourceForge` - `OSDN` - `GitHub`",
-        "screenshot": "`.ss <url>`\
-\nUsage: Takes a screenshot of a website and sends the screenshot.\
-\n\nExample of a valid URL : `https://www.google.com`"})
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
