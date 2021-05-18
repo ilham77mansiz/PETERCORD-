@@ -9,6 +9,7 @@ from userbot import CMD_HELP, bot
 from userbot.events import register
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 import asyncio
+from userbot.cmdhelp import CmdHelp
 
 
 @register(outgoing=True, pattern=r"^\.tm(?: |$)(.*)")
@@ -37,5 +38,6 @@ async def _(event):
 # TENTANG AKU DAN DIA
 # Ported For Petercord Userbot From Ultroid
 
-CMD_HELP.update({"tempmail": "**Modules:** __Temp Mail__\n\n**Perintah:** `.tm`"
-                 "\n**Penjelasan:** Mendapatkan Email Gratis Dari Temp Mail"})
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
