@@ -14,6 +14,7 @@ from requests import get
 
 from userbot import CMD_HELP
 from userbot.events import register
+from userbot.cmdhelp import CmdHelp
 
 
 @register(outgoing=True, pattern="^.imp (.*)")
@@ -91,9 +92,6 @@ async def bruh(message, user):
     await message.edit(name + choice([" ", " Tidak "]) + "Adalah Seorang Penipu! ***")
 
 
-CMD_HELP.update(
-    {
-        "amongus": "`.imp`\
-    \nUsage: Kirimkan gambar seorang impostor Among US dengan kalimat dari Anda."
-    }
-)
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
