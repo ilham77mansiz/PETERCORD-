@@ -14,7 +14,7 @@ import time
 from bs4 import BeautifulSoup
 from requests import get
 
-from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
+from userbot import TEMP_DOWNLOAD_DIRECTORY
 from userbot.events import register
 from userbot.utils.tools import human_to_bytes, humanbytes, md5, time_formatter
 from userbot.cmdhelp import CmdHelp
@@ -302,6 +302,5 @@ async def twrp(request):
     await request.edit(reply)
 
 
-CmdHelp('adzan').add_command(
-    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
-).add()
+CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
+                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
