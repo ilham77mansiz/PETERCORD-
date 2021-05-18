@@ -9,7 +9,7 @@
 from datetime import datetime
 
 from speedtest import Speedtest
-from userbot import CMD_HELP, StartTime, ALIVE_NAME
+from userbot import ALIVE_NAME, StartTime
 from userbot.events import register
 import time
 from userbot.cmdhelp import CmdHelp
@@ -170,6 +170,5 @@ async def pingme(pong):
     duration = (end - start).microseconds / 9000
     await pong.edit("- 🕸P E T E R C O R D 🕸 -\n`%sms`" % (duration))
 
-CmdHelp('adzan').add_command(
-    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
-).add()
+CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
+                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
