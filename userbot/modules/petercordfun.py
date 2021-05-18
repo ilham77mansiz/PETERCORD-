@@ -3,7 +3,7 @@
 # If You Kang It Don't Delete / Warning!! Jangan Hapus Ini!!!
 from userbot import CMD_HELP, bot
 from userbot.events import register
-
+from userbot.cmdhelp import CmdHelp
 
 @register(outgoing=True, pattern=r"^\.xogame(?: |$)(.*)")
 async def _(event):
@@ -62,11 +62,6 @@ async def _(event):
 
 # Ported For Petercord-Userbot By bismillahselaluadaa/ILham
 
-CMD_HELP.update({
-    "petercordfun": "\
-`.xogame`\
-\nUsage: Mainkan game XO bersama temanmu.\
-\n\n`.mod <nama app>`\
-\nUsage: Dapatkan applikasi mod\
-\n\n`.wp <teks> <username/ID>`\
-\nUsage: Berikan pesan rahasia"})
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
