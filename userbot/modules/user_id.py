@@ -2,6 +2,7 @@ from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot.events import register
 from userbot import bot, CMD_HELP
+from userbot.cmdhelp import CmdHelp
 
 
 @register(outgoing=True, pattern=r"^\.getid(?: |$)(.*)")
@@ -38,8 +39,6 @@ async def _(event):
             await event.edit(f"{response.message.message}")
 
 
-CMD_HELP.update({
-    "getid":
-    "`.getid`"
-    "\nUsage: Balas Ke Pesan Pengguna Untuk Mendapatkan ID Nya."
-})
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
