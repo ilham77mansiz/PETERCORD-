@@ -5,7 +5,7 @@
 import asyncio
 import time
 from userbot.events import register
-from userbot import CMD_HELP, bot
+from userbot import bot
 from userbot import TEMP_DOWNLOAD_DIRECTORY
 from userbot.cmdhelp import CmdHelp
 
@@ -43,6 +43,5 @@ async def _(event):
     stdout, stderr = await process.communicate()
     await event.edit(f"{stdout.decode()}")
 
-CmdHelp('adzan').add_command(
-    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
-).add()
+CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
+                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
