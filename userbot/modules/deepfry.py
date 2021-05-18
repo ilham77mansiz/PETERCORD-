@@ -39,7 +39,7 @@ from telethon.tl.types import DocumentAttributeFilename
 
 from userbot.events import register
 from userbot import CMD_HELP
-
+from userbot.cmdhelp import CmdHelp
 
 @register(outgoing=True, pattern="^.deepfry(?: |$)(.*)")
 async def deepfryer(event):
@@ -136,11 +136,6 @@ async def check_media(reply_message):
         return data
 
 
-CMD_HELP.update({
-    "deepfry":
-    "`.deepfry` or `.deepfry` [level(1-8)]"
-    "\nUsage: deepfry image/sticker from the reply."
-    "\n@image_deepfrybot"
-    "\n`.deepfry [level(1-5)]`"
-    "\nUsage: Deepfry image"
-})
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
