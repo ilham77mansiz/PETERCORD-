@@ -2,7 +2,7 @@
 #
 # Licensed under the Raphielscape Public License, Version 1.d (the "License");
 # you may not use this file except in compliance with the License.
-# inline credit @keselekpermen69
+# inline credit @diemmmmmmmmmm
 # Pengguna Petercord-Userbot
 """ Userbot initialization. """
 
@@ -420,7 +420,7 @@ with bot:
                 veriler = (butonlastir(0, sorted(CMD_HELP)))
                 result = await builder.article(
                     f"GUNAKAN KATA PERINTAH .help",
-                    text=f"**➡➡➡ PETERCORD➡➡➡➡!** [GRUP SUPPORT](https://t.me/TEAMSquadUserbotSupport) __Çalışıyor...__\n\n**Yüklenen Modül Sayısı:** `{len(CMD_HELP)}`\n**Sayfa:** 1/{veriler[0]}",
+                    text=f"**➡➡➡ PETERCORD➡➡➡➡!** [GRUP SUPPORT](https://t.me/TEAMSquadUserbotSupport) __KERJA...__\n\n**Jumlah Modul Terpasang:** `{len(CMD_HELP)}`\n**Halaman:** 1/{veriler[0]}",
                     buttons=veriler[1],
                     link_preview=False
                 )
