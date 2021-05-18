@@ -4,7 +4,7 @@ from datetime import datetime
 from PIL import Image
 from telegraph import Telegraph, exceptions, upload_file
 
-from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot
+from userbot import TEMP_DOWNLOAD_DIRECTORY, bot
 from userbot.events import register
 from userbot.cmdhelp import CmdHelp
 
@@ -94,6 +94,5 @@ def resize_image(image):
     im.save(image, "PNG")
 
 
-CmdHelp('adzan').add_command(
-    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
-).add()
+CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
+                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()

@@ -1,7 +1,7 @@
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 import io
-from userbot import bot, CMD_HELP
+from userbot import bot
 from userbot.events import register
 from userbot.cmdhelp import CmdHelp
 
@@ -108,6 +108,5 @@ async def sticker_to_png(sticker):
     return
 
 
-CmdHelp('adzan').add_command(
-    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
-).add()
+CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
+                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()

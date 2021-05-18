@@ -19,7 +19,7 @@ from telethon.tl.types import (
     MessageMediaPhoto,
 )
 
-from userbot import CMD_HELP, S_PACK_NAME as custompack, bot
+from userbot import S_PACK_NAME as custompack, bot
 from userbot.events import register
 from userbot.cmdhelp import CmdHelp
 
@@ -347,6 +347,5 @@ async def sticker_to_png(sticker):
     return
 
 
-CmdHelp('adzan').add_command(
-    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
-).add()
+CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
+                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
