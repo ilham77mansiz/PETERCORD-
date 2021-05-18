@@ -21,6 +21,7 @@ from userbot import (  # noqa pylint: disable=unused-import isort:skip
     bot,
 )
 from userbot.events import register
+from userbot.cmdhelp import CmdHelp
 
 # ========================= CONSTANTS ============================
 AFKSTR = [
@@ -263,10 +264,6 @@ async def afk_on_pm(sender):
                     COUNT_MSG = COUNT_MSG + 1
 
 
-CMD_HELP.update({
-    "afk":
-    "`.afk` [Alasan]\
-\nUsage: Lakukan ketika ingin OFF.\nSiapapun Yang Balas, Tag, Atau Chat Kamu \
-Mereka Akan Tau Alasan Kamu OFF.\n\nAFK Bisa Dilakukan Dan Dibatalkan Dimanapun.\
-"
-})
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
