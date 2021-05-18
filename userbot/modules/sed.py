@@ -11,6 +11,7 @@ import re
 from sre_constants import error as sre_err
 from userbot import CMD_HELP
 from userbot.events import register
+from userbot.cmdhelp import CmdHelp
 
 DELIMITERS = ("/", ":", "|", "_")
 
@@ -99,9 +100,6 @@ async def sed(command):
             await command.edit(f"Did you mean? \n\n{text}")
 
 
-CMD_HELP.update({
-    "sed":
-    ">`.s<delimiter><old word(s)><delimiter><new word(s)>`"
-    "\nUsage: Replaces a word or words using sed."
-    "\nDelimiters: `/, :, |, _`"
-})
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
