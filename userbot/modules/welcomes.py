@@ -4,7 +4,7 @@ from pytz import timezone
 from userbot.events import register
 from userbot import CMD_HELP, bot, LOGS, CLEAN_WELCOME, BOTLOG_CHATID
 from telethon.events import ChatAction
-
+from userbot.cmdhelp import CmdHelp
 
 @bot.on(ChatAction)
 async def welcome_to_chat(event):
@@ -170,16 +170,6 @@ async def del_welcome(event):
         await event.edit("`Anda Tidak Menyimpan Pesan Welcome Apapun Disini 🐲Petercord🐲 ツ`")
 
 
-CMD_HELP.update({
-    "welcome":
-    ">`.setwelcome` <pesan welcome> atau balas ke pesan ketik `.setwelcome`"
-    "\nUsage: Menyimpan pesan welcome digrup."
-    "\n\nFormat Variabel yang bisa digunakan dipesan welcome:"
-    "\n`{mention}, {title}, {count}, {first}, {last}, {fullname}, "
-    "{userid}, {username}, {my_first}, {my_fullname}, {my_last}, "
-    "{my_mention}, {my_username}`"
-    "\n\n>`.checkwelcome`"
-    "\nUsage: Check pesan welcome yang anda simpan."
-    "\n\n>`.rmwelcome`"
-    "\nUsage: Menghapus pesan welcome yang anda simpan."
-})
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
