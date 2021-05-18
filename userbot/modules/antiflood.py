@@ -5,7 +5,6 @@ from userbot.utils.tools import is_admin
 import userbot.modules.sql_helper.antiflood_sql as sql
 from userbot.events import register
 from userbot.cmdhelp import CmdHelp
-from userbot import CMD_HELP
 
 CHAT_FLOOD = sql.__load_flood_settings()
 # warn mode for anti flood
@@ -69,6 +68,5 @@ async def _(event):
     except Exception as e:  # pylint:disable=C0103,W0703
         await event.edit(str(e))
 
-CmdHelp('adzan').add_command(
-    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
-).add()
+CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
+                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()

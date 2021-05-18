@@ -11,7 +11,7 @@ from hachoir.parser import createParser
 from PIL import Image, ImageDraw, ImageFont
 from telethon.tl.types import DocumentAttributeFilename
 
-from userbot import CMD_HELP, bot
+from userbot import bot
 from userbot.events import register
 from userbot.cmdhelp import CmdHelp
 
@@ -138,6 +138,5 @@ async def _(event):
     await event.edit(f"`Berhasil Setel Background Dari Ascii Ke` **{BG}**")
 
 
-CmdHelp('adzan').add_command(
-    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
-).add()
+CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
+                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()

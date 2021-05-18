@@ -11,11 +11,12 @@ from subprocess import PIPE, Popen
 import aria2p
 from requests import get
 
-from userbot import CMD_HELP, LOGS, TEMP_DOWNLOAD_DIRECTORY
+from userbot import LOGS, TEMP_DOWNLOAD_DIRECTORY
 from userbot.events import register
 from userbot.utils import humanbytes
 
 from userbot.cmdhelp import CmdHelp
+
 
 def subprocess_run(cmd):
     subproc = Popen(
@@ -256,6 +257,5 @@ async def check_progress_for_dl(gid, event, previous):
                 )
 
 
-CmdHelp('adzan').add_command(
-    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
-).add()
+CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
+                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
