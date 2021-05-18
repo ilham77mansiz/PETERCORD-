@@ -28,6 +28,7 @@ from telethon.utils import get_input_location
 
 from userbot import bot, CMD_HELP, TEMP_DOWNLOAD_DIRECTORY
 from userbot.events import register
+from userbot.cmdhelp import CmdHelp
 
 # ====================== CONSTANT ===============================
 INVALID_MEDIA = "```Maaf Petercord Media Tidak Valid.```"
@@ -310,22 +311,6 @@ async def fetch_info(replied_user, event):
 
     return photo, caption
 
-CMD_HELP.update({
-    "profil":
-    "`.username` <username baru>\
-\nUsage: Ganti Username Telegram.\
-\n\n`.name` <nama depan> Atau `.name` <Nama Depan> <Nama Belakang>\
-\nUsage: Ganti Nama Telegram Anda\
-\n\n`.setpfp`\
-\nUsage: Balas Ke Gambar Ketik .setpfp Untuk Mengganti Foto Profil Telegram.\
-\n\n`.setbio` <bio baru>\
-\nUsage: Untuk Mengganti Bio Telegram.\
-\n\n`.delpfp` Atau `.delpfp` <berapa profil>/<all>\
-\nUsage: Menghapus Foto Profil Telegram.\
-\n\n`.reserved`\
-\nUsage: Menunjukkan nama pengguna yang dipesan oleh Anda.\
-\n\n`.count`\
-\nUsage: Menghitung Grup, Chat, Bot etc...\
-\n\n`.data` <username> Atau Balas Ke Pesan Ketik `.data`\
-\nUsage: Mendapatkan Informasi Pengguna."
-})
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
