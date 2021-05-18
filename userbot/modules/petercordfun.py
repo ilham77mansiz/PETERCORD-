@@ -1,9 +1,10 @@
 # Based Plugins
 # Ported For Petercord-Userbot By bismillahselaluadaa/Ilham
 # If You Kang It Don't Delete / Warning!! Jangan Hapus Ini!!!
-from userbot import CMD_HELP, bot
+from userbot import bot
 from userbot.events import register
 from userbot.cmdhelp import CmdHelp
+
 
 @register(outgoing=True, pattern=r"^\.xogame(?: |$)(.*)")
 async def _(event):
@@ -62,6 +63,5 @@ async def _(event):
 
 # Ported For Petercord-Userbot By bismillahselaluadaa/ILham
 
-CmdHelp('adzan').add_command(
-    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
-).add()
+CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
+                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()

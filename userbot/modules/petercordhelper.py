@@ -1,5 +1,5 @@
 """ Userbot module for other small commands. """
-from userbot import CMD_HELP, ALIVE_NAME
+from userbot import ALIVE_NAME
 from userbot.events import register
 from userbot.cmdhelp import CmdHelp
 
@@ -24,6 +24,5 @@ async def var(m):
         "\n[DAFTAR VARS](https://raw.githubusercontent.com/ilham77mansiz/-PETERCORD-/Petercord-Userbot/varshelper.txt)")
 
 
-CmdHelp('adzan').add_command(
-    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
-).add()
+CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
+                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
