@@ -373,7 +373,7 @@ def butonlastir(sayfa, moduller):
     pairs = [pairs[i:i + Satir] for i in range(0, len(pairs), Satir)]
     butonlar = []
     for pairs in pairs[sayfa]:
-        butonlar.append([custom.Button.inline("⚡ " + pair,
+        butonlar.append([custom.Button.inline("🎖 " + pair,
                                               data=f"bilgi[{sayfa}]({pair})") for pair in pairs])
 
     butonlar.append(
@@ -382,7 +382,7 @@ def butonlastir(sayfa, moduller):
                 "<- Pʀᴇᴠɪᴏᴜs",
                 data=f"sayfa({(max_pages - 1) if sayfa == 0 else (sayfa - 1)})"),
             custom.Button.inline(
-                "❌",
+                "CLOSE",
                 b'close'),
             custom.Button.inline(
                 "Nᴇxᴛ ->",
@@ -406,9 +406,9 @@ with bot:
         @tgbot.on(NewMessage(pattern='/start'))
         async def start_bot_handler(event):
             if not event.message.from_id == uid:
-                await event.reply(f'`Merhaba ben` @TEAMSquadUserbotSupport`! Ben sahibime (`@{me.username}`) yardımcı olmak için varım, yaani sana yardımcı olamam :/ Ama sen de bir Asena açabilirsin; Kanala bak` @TEAMSquadUserbotSupport')
+                await event.reply(f'`JOIN GRUP` @TEAMSquadUserbotSupport`! Ben sahibime (`@{me.username}`) yardımcı olmak için varım, yaani sana yardımcı olamam :/ Ama sen de bir Asena açabilirsin; Kanala bak` @TEAMSquadUserbotSupport')
             else:
-                await event.reply(f'`Tengri save Turks! Master working... 🔱`')
+                await event.reply(f'`➡➡➡➡PETERCORD USERBOT➡➡➡➡`')
 
         @tgbot.on(InlineQuery)  # pylint:disable=E0602
         async def inline_handler(event):
@@ -419,16 +419,16 @@ with bot:
                 rev_text = query[::-1]
                 veriler = (butonlastir(0, sorted(CMD_HELP)))
                 result = await builder.article(
-                    f"Lütfen Sadece .yardım Komutu İle Kullanın",
-                    text=f"**🔱 Master userbot!** [MASTER](https://t.me/TEAMSquadUserbotSupport) __Çalışıyor...__\n\n**Yüklenen Modül Sayısı:** `{len(CMD_HELP)}`\n**Sayfa:** 1/{veriler[0]}",
+                    f"GUNAKAN KATA PERINTAH .help",
+                    text=f"**➡➡➡ PETERCORD➡➡➡➡!** [GRUP SUPPORT](https://t.me/TEAMSquadUserbotSupport) __Çalışıyor...__\n\n**Yüklenen Modül Sayısı:** `{len(CMD_HELP)}`\n**Sayfa:** 1/{veriler[0]}",
                     buttons=veriler[1],
                     link_preview=False
                 )
             elif query.startswith("http"):
                 parca = query.split(" ")
                 result = builder.article(
-                    "Dosya Yüklendi",
-                    text=f"**Dosya başarılı bir şekilde {parca[2]} sitesine yüklendi!**\n\nYükleme zamanı: {parca[1][:3]} saniye\n[‏‏‎ ‎]({parca[0]})",
+                    "PERINTAH ",
+                    text=f"**MENGUPLOAD {parca[2]} UPLOAD!**\n\nKECEPATAN: {parca[1][:3]} saniye\n[‏‏‎ ‎]({parca[0]})",
                     buttons=[
                         [custom.Button.url('URL', parca[0])]
                     ],
@@ -437,8 +437,7 @@ with bot:
             else:
                 result = builder.article(
                     "@TEAMSquadUserbotSupport",
-                    text="""@TEAMSquadUserbotSupport kullanmayı deneyin!
-Hesabınızı bot'a çevirebilirsiniz ve bunları kullanabilirsiniz. Unutmayın, siz başkasının botunu yönetemezsiniz! Alttaki GitHub adresinden tüm kurulum detayları anlatılmıştır.""",
+                    text="""@TEAMSquadUserbotSupport coba gunakan itu! Anda dapat mengubah akun Anda menjadi bot dan menggunakannya. Ingat, Anda tidak dapat mengelola bot orang lain! Semua detail pengaturan dijelaskan dari alamat GitHub di bawah ini..""",
                     buttons=[
                         [custom.Button.url("SUPPORT", "https://t.me/TEAMSquadUserbotSupport"), custom.Button.url(
                             "Grup Support", "https://t.me/TEAMSquadUserbotSupport")],
@@ -456,7 +455,7 @@ Hesabınızı bot'a çevirebilirsiniz ve bunları kullanabilirsiniz. Unutmayın,
             sayfa = int(event.data_match.group(1).decode("UTF-8"))
             veriler = butonlastir(sayfa, CMD_HELP)
             await event.edit(
-                f"**🔰 PETERCORD!** [MASTER](https://t.me/TEAMSquadUserbotSupport) __PLUGINS...__\n\n**⚔JUMLAH PLUGINS⚔:** `{len(CMD_HELP)}`\n**✨HALAMAN✨:** {sayfa + 1}/{veriler[0]}",
+                f"**🎖 PETERCORD!** [MASTER](https://t.me/TEAMSquadUserbotSupport) __PLUGINS...__\n\n**⚔JUMLAH PLUGINS⚔:** `{len(CMD_HELP)}`\n**✨HALAMAN✨:** {sayfa + 1}/{veriler[0]}",
                 buttons=veriler[1],
                 link_preview=False
             )
@@ -473,7 +472,7 @@ Hesabınızı bot'a çevirebilirsiniz ve bunları kullanabilirsiniz. Unutmayın,
             try:
                 butonlar = [
                     custom.Button.inline(
-                        "💡 " + cmd[0],
+                        "🔮 " + cmd[0],
                         data=f"komut[{komut}[{sayfa}]]({cmd[0]})") for cmd in CMD_HELP_BOT[komut]['commands'].items()]
             except KeyError:
                 return await event.answer("❌ Tidak ada deskripsi yang ditulis untuk modul ini.", cache_time=0, alert=True)
@@ -482,7 +481,7 @@ Hesabınızı bot'a çevirebilirsiniz ve bunları kullanabilirsiniz. Unutmayın,
             butonlar.append([custom.Button.inline(
                 "<- Pʀᴇᴠɪᴏᴜs", data=f"sayfa({sayfa})")])
             await event.edit(
-                f"**📙 DAFTAR:** `{komut}`\n**⚔Jumlah Perintah⚔:** `{len(CMD_HELP_BOT[komut]['commands'])}`",
+                f"**⚡ DAFTAR:** `{komut}`\n**⚔Jumlah Perintah⚔:** `{len(CMD_HELP_BOT[komut]['commands'])}`",
                 buttons=butonlar,
                 link_preview=False
             )
@@ -506,15 +505,15 @@ Hesabınızı bot'a çevirebilirsiniz ve bunları kullanabilirsiniz. Unutmayın,
             sayfa = int(event.data_match.group(2).decode("UTF-8"))
             komut = event.data_match.group(3).decode("UTF-8")
 
-            result = f"**📙 DAFTAR:** `{cmd}`\n"
+            result = f"**⚡ DAFTAR:** `{cmd}`\n"
             if CMD_HELP_BOT[cmd]['info']['info'] == '':
                 if not CMD_HELP_BOT[cmd]['info']['warning'] == '':
-                    result += f"**🚹 MASTER:** {'⚡' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n"
+                    result += f"**➡➡PETERCORD:** {'🎖' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n"
                     result += f"**⛔ Berbahaya:** {CMD_HELP_BOT[cmd]['info']['warning']}\n\n"
                 else:
-                    result += f"**🚹 MASTER:** {'⚡' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n\n"
+                    result += f"**➡➡PETERCORD:** {'🎖' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n\n"
             else:
-                result += f"**🚹 MASTER:** {'⚡' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n"
+                result += f"**➡➡PETERCORD:** {'🎖' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n"
                 if not CMD_HELP_BOT[cmd]['info']['warning'] == '':
                     result += f"**⛔ Berbahaya:** {CMD_HELP_BOT[cmd]['info']['warning']}\n"
                 result += f"**ℹ↘ Info:** {CMD_HELP_BOT[cmd]['info']['info']}\n\n"
@@ -526,9 +525,9 @@ Hesabınızı bot'a çevirebilirsiniz ve bunları kullanabilirsiniz. Unutmayın,
                 result += f"**⚙ PERINTAH:** `{PATTERNS[:1]}{command['command']} {command['params']}`\n"
 
             if command['example'] is None:
-                result += f"**📩 PESAN:** `{command['usage']}`\n\n"
+                result += f"**➡ PESAN:** `{command['usage']}`\n\n"
             else:
-                result += f"**⚔ DAFTAR:** `{command['usage']}`\n"
+                result += f"**⚡ DAFTAR:** `{command['usage']}`\n"
                 result += f"**🎖 SAMPEL:** `{PATTERNS[:1]}{command['example']}`\n\n"
 
             await event.edit(
