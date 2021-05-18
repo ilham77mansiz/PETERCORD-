@@ -5,7 +5,7 @@ from userbot import ALIVE_NAME, CMD_HELP, bot
 from telethon.tl.functions.contacts import BlockRequest, UnblockRequest
 from userbot.events import register
 from telethon.tl.types import MessageEntityMentionName
-
+from userbot.cmdhelp import CmdHelp
 
 async def get_full_user(event):
     args = event.pattern_match.group(1).split(':', 1)
@@ -208,9 +208,6 @@ async def gunben(userbot):
     )
 
 
-CMD_HELP.update({
-    "penghapusankk": "\
-**Modules:** __Global Banned__\n\n**Perintah:** `.gmuted`\
-\n**Penjelasan:** Melakukan Banned Secara Global Ke Semua Grup Dimana Lord Sebagai Admin.\
-\n\n**Perintah:** `.ungmuted`\
-\n**Penjelasan:** Membatalkan Global Banned"})
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
