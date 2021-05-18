@@ -4,6 +4,7 @@
 from telethon.tl.types import InputMediaDice
 from userbot.events import register
 from userbot import CMD_HELP
+from userbot.cmdhelp import CmdHelp
 
 
 @register(outgoing=True, pattern="^.dice(?: |$)(.*)")
@@ -107,8 +108,6 @@ async def _(event):
         except BaseException:
             pass
 
-CMD_HELP.update({
-    "emojigames":
-    "`.dice` 1-6 or `.dart`1-6 or `.ball`1-5 or `.scb`1-5 or `.judi 1` or `.lempar 1-6`\
-\nUsage: hahaha just a magic.\nWarning:`Don't use any other values or bot will crash`"
-})
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
