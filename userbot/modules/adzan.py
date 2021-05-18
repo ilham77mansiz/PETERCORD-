@@ -4,6 +4,7 @@ import requests
 
 from userbot import CMD_HELP
 from userbot.events import register
+from userbot.cmdhelp import CmdHelp
 
 PLACE = ""
 
