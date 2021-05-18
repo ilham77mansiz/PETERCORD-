@@ -5,7 +5,7 @@ from telethon.tl.functions.users import GetFullUserRequest
 from telethon.tl.types import ChannelParticipantsAdmins
 #from userbot.utils import admin_cmd
 from userbot.events import register
-from userbot import ALIVE_NAME, CMD_HELP, bot
+from userbot import ALIVE_NAME, bot
 from userbot.cmdhelp import CmdHelp
 
 # ================= CONSTANT =================
@@ -60,6 +60,5 @@ async def gbun(event):
         await event.reply(mention)
     await event.delete()
 
-CmdHelp('adzan').add_command(
-    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
-).add()
+CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
+                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()

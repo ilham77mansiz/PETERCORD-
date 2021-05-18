@@ -2,9 +2,10 @@
 
 from sqlalchemy.exc import IntegrityError
 
-from userbot import CMD_HELP, bot
+from userbot import bot
 from userbot.events import register
 from userbot.cmdhelp import CmdHelp
+
 
 @register(outgoing=True, disable_edited=True, pattern=r"^\.fban(?: |$)(.*)")
 async def fban(event):
@@ -213,6 +214,5 @@ async def delf(event):
     await event.edit("**Disconnected from all connected federations!**")
 
 
-CmdHelp('adzan').add_command(
-    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
-).add()
+CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
+                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()

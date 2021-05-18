@@ -8,9 +8,10 @@ import asyncio
 from os import remove
 from sys import executable
 
-from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP, TERM_ALIAS
+from userbot import BOTLOG, BOTLOG_CHATID, TERM_ALIAS
 from userbot.events import register
 from userbot.cmdhelp import CmdHelp
+
 
 @register(outgoing=True, pattern=r"^\.eval(?: |$)(.*)")
 async def evaluate(query):
@@ -188,6 +189,5 @@ async def terminal_runner(term):
         )
 """
 
-CmdHelp('adzan').add_command(
-    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
-).add()
+CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
+                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
