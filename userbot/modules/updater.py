@@ -18,6 +18,7 @@ from userbot import (
     UPSTREAM_REPO_URL,
     UPSTREAM_REPO_BRANCH)
 from userbot.events import register
+from userbot.cmdhelp import CmdHelp
 
 requirements_path = path.join(
     path.dirname(path.dirname(path.dirname(__file__))), 'requirements.txt')
@@ -231,12 +232,6 @@ async def upstream(event):
     return
 
 
-CMD_HELP.update({
-    'update':
-    ".update"
-    "\nUsage: Untuk Melihat Pembaruan Terbaru 🛡Petercord-Userbot🛡."
-    "\n\n.update now"
-    "\nUsage: Memperbarui 🛡Petercord-Userbot🛡."
-    "\n\n.update deploy"
-    "\nUsage: Memperbarui 🛡Petercord-Userbot🛡 Dengan Cara Deploy Ulang."
-})
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
