@@ -6,6 +6,7 @@ from urllib.parse import quote_plus
 from asyncio import sleep
 from userbot import CHROME_DRIVER, CMD_HELP, GOOGLE_CHROME_BIN
 from userbot.events import register
+from userbot.cmdhelp import CmdHelp
 
 
 CARBONLANG = "auto"
@@ -351,8 +352,6 @@ async def carbon_api(e):
     await e.delete()  # Deleting msg
 
 
-CMD_HELP.update({
-    "carbon":
-    "`.carbon`value <values=1,2,3,4,5>\
-        \nUsage:reply or type .carbon1 or 2,3,4,5 value and beautify your text."
-})
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
