@@ -8,7 +8,7 @@ from importlib import import_module
 from sys import argv
 
 from telethon.errors.rpcerrorlist import PhoneNumberInvalidError
-from userbot import BOT_VER, LOGS, bot, CMD_HELP, PATTERNS, BRAIN_CHECKER
+from userbot import BOT_VER, BRAIN_CHECKER, LOGS, bot
 from userbot.modules import ALL_MODULES
 import userbot.cmdhelp
 
@@ -24,9 +24,10 @@ for i in ALL_ROWS:
     BRAIN_CHECKER.append(i[0])
 connect("learning-data-root.check").close()
 
+
 def extractCommands(file):
     FileRead = open(file, 'r').read()
-    
+
     if '/' in file:
         file = file.split('/')[-1]
 
@@ -44,7 +45,7 @@ def extractCommands(file):
             Command = Command[1]
             if Command == '' or len(Command) <= 1:
                 continue
-            Komut = re.findall("(^.*[a-zA-Z0-9şğüöçı]\w)", Command)
+            Komut = re.findall("(^.*[a-zA-Z0-9şğüöçı]\\w)", Command)
             if (len(Komut) >= 1) and (not Komut[0] == ''):
                 Komut = Komut[0]
                 if Komut[0] == '^':
@@ -62,15 +63,16 @@ def extractCommands(file):
                         Komutlar.append(KomutStr)
 
             # PetercordPY
-            Petercordpy = re.search('\"\"\"PETERCORDPY(.*)\"\"\"', FileRead, re.DOTALL)
-            if not Petercordpy == None:
+            Petercordpy = re.search(
+                '\"\"\"PETERCORDPY(.*)\"\"\"', FileRead, re.DOTALL)
+            if Petercordpy is not None:
                 Petercordpy = Petercordpy.group(0)
                 for Satir in Petercordpy.splitlines():
-                    if (not '"""' in Satir) and (':' in Satir):
+                    if ('"""' not in Satir) and (':' in Satir):
                         Satir = Satir.split(':')
                         Isim = Satir[0]
                         Deger = Satir[1][1:]
-                                
+
                         if Isim == 'INFO':
                             CmdHelp.add_info(Deger)
                         elif Isim == 'WARN':
@@ -79,9 +81,13 @@ def extractCommands(file):
                             CmdHelp.set_file_info(Isim, Deger)
             for Komut in Komutlar:
                 # if re.search('\[(\w*)\]', Komut):
-                    # Komut = re.sub('(?<=\[.)[A-Za-z0-9_]*\]', '', Komut).replace('[', '')
-                CmdHelp.add_command(Komut, None, 'Bu plugin dışarıdan yüklenmiştir. Herhangi bir açıklama tanımlanmamıştır.')
+                # Komut = re.sub('(?<=\[.)[A-Za-z0-9_]*\]', '', Komut).replace('[', '')
+                CmdHelp.add_command(
+                    Komut,
+                    None,
+                    'Bu plugin dışarıdan yüklenmiştir. Herhangi bir açıklama tanımlanmamıştır.')
             CmdHelp.add()
+
 
 try:
     bot.start()
