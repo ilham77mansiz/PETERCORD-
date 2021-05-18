@@ -21,6 +21,7 @@ from telethon.tl.types import (
 
 from userbot import CMD_HELP, S_PACK_NAME as custompack, bot
 from userbot.events import register
+from userbot.cmdhelp import CmdHelp
 
 
 KANGING_STR = [
@@ -346,15 +347,6 @@ async def sticker_to_png(sticker):
     return
 
 
-CMD_HELP.update(
-    {
-        "stickers": ">`.kang | .tikel [emoji('s)]?`"
-        "\nUsage: Balas .tikel Ke Sticker Atau Gambar Untuk Menambahkan Ke Pack Mu "
-        "\nBisa Memilih Emoji Sesuai Pilihanmu."
-        "\n\n>`.kang | .tikel  (emoji['s]]?` [nomer]?"
-        "\nUsage: Ambil Sticker/Gambar Ke Pack Baru Mu "
-        "Dan Bisa Pilih Emoji Sticker Mu."
-        "\n\n>`.stkrinfo`"
-        "\nUsage: Dapatkan Informasi Pack Sticker."
-        "\n\n>`.getsticker`"
-        "\nUsage: Balas Ke Stcker Untuk Mendapatkan File 'PNG' Sticker."})
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
