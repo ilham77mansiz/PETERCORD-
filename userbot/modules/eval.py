@@ -10,7 +10,7 @@ from sys import executable
 
 from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP, TERM_ALIAS
 from userbot.events import register
-
+from userbot.cmdhelp import CmdHelp
 
 @register(outgoing=True, pattern=r"^\.eval(?: |$)(.*)")
 async def evaluate(query):
@@ -188,10 +188,6 @@ async def terminal_runner(term):
         )
 """
 
-CMD_HELP.update({"eval": ">`.eval 2 + 3`"
-                 "\nUsage: Evalute mini-expressions.",
-                 "exec": ">`.exec print('hello')`"
-                 "\nUsage: Execute small python scripts.",
-                 "term": ">`.term <cmd>`"
-                 "\nUsage: Run bash commands and scripts on your server.",
-                 })
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
