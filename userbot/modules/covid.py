@@ -6,6 +6,7 @@
 from covid import Covid
 from userbot import CMD_HELP
 from userbot.events import register
+from userbot.cmdhelp import CmdHelp
 
 
 @register(outgoing=True, pattern="^.covid (.*)")
@@ -52,7 +53,6 @@ async def corona(event):
     await event.edit(f"`Corona Virus Info in {country}:`\n\n{output_text}")
 
 
-CMD_HELP.update({"covid": "`.covid `**<country>**"
-                 "\n`Usage: Get an information about covid-19 data in your country.`\n\n"
-                 "`.covid`"
-                 "\n`Usage: Get an information about covid-19 data in Worldwide.`\n"})
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
