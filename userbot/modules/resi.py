@@ -3,7 +3,7 @@ from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot import bot, CMD_HELP
 from userbot.events import register
-
+from userbot.cmdhelp import CmdHelp
 
 @register(outgoing=True, pattern=r"^\.resi(?: |$)(.*)")
 async def _(event):
@@ -29,10 +29,6 @@ async def _(event):
             await event.client.delete_messages(response.message.message)
 
 
-CMD_HELP.update({
-    "resi":
-    "`.resi`\
-\nUsage: Cek resi \
-\n\n`.lacak`\
-\nUsage:lacak paket"
-})
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
