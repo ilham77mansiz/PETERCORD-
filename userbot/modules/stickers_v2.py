@@ -3,6 +3,7 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 import io
 from userbot import bot, CMD_HELP
 from userbot.events import register
+from userbot.cmdhelp import CmdHelp
 
 
 @register(outgoing=True, pattern="^.itos$")
@@ -107,11 +108,6 @@ async def sticker_to_png(sticker):
     return
 
 
-CMD_HELP.update(
-    {
-        "stickers2": ">`.itos`"
-        "\nUsage: Balas ke sticker atau gambar .itos untuk mengambil sticker bukan ke pack "
-        "\n\n>`.get`"
-        "\nUsage: Balas ke sticker untuk mendapatkan file 'PNG' sticker."
-        "\n\n>`.stoi`"
-        "\nUsage: Balas Ke sticker untuk mendapatkan file 'PNG' sticker."})
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
