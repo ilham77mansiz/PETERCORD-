@@ -68,30 +68,30 @@ class CmdHelp:
 
         result = f"**⚔ Daftar:** `{self.FILE}`\n"
         if self.WARNING == '' and self.INFO == '':
-            result += f"**🔰 Official:** {'⚡' if self.IS_OFFICIAL else '❌'}\n\n"
+            result += f"**➡➡ PETERCORD:** {'🎖' if self.IS_OFFICIAL else '❌'}\n\n"
         else:
-            result += f"**🔰 Official:** {'⚡' if self.IS_OFFICIAL else '❌'}\n"
+            result += f"**➡➡ PETERCORD:** {'🎖' if self.IS_OFFICIAL else '❌'}\n"
 
             if self.INFO == '':
                 if not self.WARNING == '':
-                    result += f"**⚠️ Berbahaya:** {self.WARNING}\n\n"
+                    result += f"**❌ Berbahaya:** {self.WARNING}\n\n"
             else:
                 if not self.WARNING == '':
-                    result += f"**⚠️ Berbahaya:** {self.WARNING}\n"
-                result += f"**ℹ️ Info:** {self.INFO}\n\n"
+                    result += f"**❌ Berbahaya:** {self.WARNING}\n"
+                result += f"** INFORMASI:** {self.INFO}\n\n"
 
         for command in self.COMMANDS:
             command = self.COMMANDS[command]
             if command['params'] is None:
-                result += f"**⚔ Daftar:** `{PATTERNS[:1]}{command['command']}`\n"
+                result += f"**➡➡ PETERCORD:** `{PATTERNS[:1]}{command['command']}`\n"
             else:
-                result += f"**⚔ Daftar:** `{PATTERNS[:1]}{command['command']} {command['params']}`\n"
+                result += f"**➡➡ PETERCORD:** `{PATTERNS[:1]}{command['command']} {command['params']}`\n"
 
             if command['example'] is None:
-                result += f"**💡 Pesan:** `{command['usage']}`\n\n"
+                result += f"**⚡ Pesan:** `{command['usage']}`\n\n"
             else:
-                result += f"**💡 Pesan:** `{command['usage']}`\n"
-                result += f"**↔ contohnya:** `{PATTERNS[:1]}{command['example']}`\n\n"
+                result += f"**⚡ Pesan:** `{command['usage']}`\n"
+                result += f"**⚡ contohnya:** `{PATTERNS[:1]}{command['example']}`\n\n"
         return result
 
     def add(self):
@@ -105,8 +105,8 @@ class CmdHelp:
 
     def getText(self, text: str):
         if text == 'REPLY_OR_USERNAME':
-            return '<kullanıcı adı> <kullanıcı adı/yanıtlama>'
+            return '<nama pengguna> <username / reply>'
         elif text == 'OR':
             return 'veya'
         elif text == 'USERNAMES':
-            return '<kullanıcı ad(lar)ı>'
+            return '<pengguna ad(lar)ı>'
