@@ -9,7 +9,7 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot import bot, CMD_HELP
 from userbot.events import register
 from asyncio.exceptions import TimeoutError
-
+from userbot.cmdhelp import CmdHelp
 
 @register(outgoing=True, pattern=r"^\.sa(?: |$)(.*)")
 async def lastname(steal):
@@ -62,8 +62,6 @@ async def lastname(steal):
         return await steal.edit("`Saya Sedang Sakit Petercord Maaf`")
 
 
-CMD_HELP.update({
-    "sangmata":
-        "`.sa`\
-          \nUsage: Mendapatkan Riwayat Nama Pengguna."
-})
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
