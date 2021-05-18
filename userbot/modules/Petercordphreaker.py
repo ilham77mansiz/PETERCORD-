@@ -9,7 +9,7 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 import asyncio
 from userbot import bot, CMD_HELP
 from userbot.events import register
-
+from userbot.cmdhelp import CmdHelp
 
 @register(outgoing=True, pattern=r"^\.gen(?: |$)(.*)")
 async def _(event):
@@ -163,23 +163,8 @@ async def _(event):
             await event.client.delete_messages(conv.chat_id, [jemboed.id, asu.id])
 
 
-CMD_HELP.update({
-    "phreaker":
-    "**HELP FOR XPHREAKER**\
-\n╭━━━━━━━━━━━━━━━━━━━╮\
-\n  `.gen <bin>`\
-\n   Usage: to generate cc with bin.\
-\n\n  `.chk <cc>`\
-\n   Usage: to check respond cc.\
-\n\n  `.bin <bin number>`\
-\n   Usage: to cek bin information.\
-\n\n  `.skey <SK-KEY>`\
-\n   Usage: to check skkey respond.\
-\n\n  `.nmap <domain hosts>`\
-\n   Usage: to get info bug/host.\
-\n\n  `.subd <domain hosts>`\
-\n   Usage: to get subdomain bug/host.\
-\n\n  `.cekhttp <domain hosts>`\
-\n   Usage: to cek respons bug/host.\
-\n╰━━━━━━━━━━━━━━━━━━━╯"
-})
+CmdHelp('atsız').add_command(
+    'atsız', None, 'Bir Atsız sözü.'
+).add_command(
+    'atsız şiir', None, 'Bir Atsız şiiri.'
+).add()
