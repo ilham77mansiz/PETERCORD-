@@ -346,6 +346,7 @@ CMD_HELP = {}
 ISAFK = False
 AFKREASON = None
 ZALG_LIST = {}
+BRAIN_CHECKER = []
 
 
 def paginate_help(page_number, loaded_modules, prefix):
