@@ -13,6 +13,7 @@ import time
 import os
 from userbot import TEMP_DOWNLOAD_DIRECTORY, ZIP_DOWNLOAD_DIRECTORY, bot, CMD_HELP
 from userbot.utils import progress
+from userbot.cmdhelp import CmdHelp
 
 # ====================
 today = date.today()
@@ -146,14 +147,6 @@ def zipdir(path, ziph):
             os.remove(os.path.join(root, file))
 
 
-CMD_HELP.update({
-    "zipfile":
-        "`.compress` **[optional: <reply to file>]**\
-            \nUsage: make files to zip.\
-            \n`.addzip` **<reply to file>**\
-            \nUsage: add files to zip list.\
-            \n`.upzip` **[optional: <zip title>]**\
-            \nUsage: upload zip list.\
-            \n`.rmzip` **[optional: <zip title>]**\
-            \nUsage: clear zip list."
-})
+CmdHelp('adzan').add_command(
+    'adzan', '<kota> <daerah>', 'Untuk menampilkan waktu sholat di kota yang telah di tentukan.'
+).add()
