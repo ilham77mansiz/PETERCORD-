@@ -177,8 +177,8 @@ async def _(event):
 # Petercord User
 # Petercord User
 # Petercord User
-CmdHelp('atsız').add_command(
-    'atsız', None, 'Bir Atsız sözü.'
+CmdHelp('petercorduser24').add_command(
+    'nah', None, 'Liat aja sendiri.'
 ).add_command(
-    'atsız şiir', None, 'Bir Atsız şiiri.'
+    'ceritacinta', None, 'Kisah cintaku yang seperti dulu😂.'
 ).add()
