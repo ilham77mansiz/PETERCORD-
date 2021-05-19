@@ -37,7 +37,7 @@ from googleapiclient.http import MediaFileUpload, MediaIoBaseDownload
 from userbot.cmdhelp import CmdHelp
 from userbot import (
     G_DRIVE_DATA, G_DRIVE_CLIENT_ID, G_DRIVE_CLIENT_SECRET,
-    G_DRIVE_FOLDER_ID, BOTLOG_CHATID, TEMP_DOWNLOAD_DIRECTORY, CMD_HELP, LOGS,
+    G_DRIVE_FOLDER_ID, BOTLOG_CHATID, TEMP_DOWNLOAD_DIRECTORY, LOGS,
 )
 from userbot.events import register
 from userbot.utils import progress, humanbytes, time_formatter, human_to_bytes
@@ -1310,13 +1310,19 @@ async def check_progress_for_dl(gdrive, gid, previous):
 
 
 CmdHelp('gdrive').add_command(
-    'filters', None, 'Bir sohbetteki tüm userbot filtrelerini listeler.'
-).add_command(
-    'filter', '<filtrelenecek kelime> <cevaplanacak metin> ya da bir mesajı .filter <filtrelenecek kelime>', 'Filtre ekler. Ne zaman eklediğiniz kelime/cümle yazılırsa bot cevap verir.', '.filter "merhaba" "meraba"'
-).add_command(
-    'stop', '<filtre>', 'Seçilen filtreyi durdurur.'
-).add_command(
-    'genelfilter', '<filtrelenecek kelime> <cevaplanacak metin> ya da bir mesajı .genelfilter <filtrelenecek kelime>', 'Genel filtre ekler. Tüm gruplarda çalışır.'
-).add_command(
-    '.genelstop', '<filtre>', 'Seçilen genel filtreyi durdurur.'
-).add()
+    'filters',
+    None,
+    'Bir sohbetteki tüm userbot filtrelerini listeler.').add_command(
+        'filter',
+        '<filtrelenecek kelime> <cevaplanacak metin> ya da bir mesajı .filter <filtrelenecek kelime>',
+        'Filtre ekler. Ne zaman eklediğiniz kelime/cümle yazılırsa bot cevap verir.',
+        '.filter "merhaba" "meraba"').add_command(
+            'stop',
+            '<filtre>',
+            'Seçilen filtreyi durdurur.').add_command(
+                'genelfilter',
+                '<filtrelenecek kelime> <cevaplanacak metin> ya da bir mesajı .genelfilter <filtrelenecek kelime>',
+                'Genel filtre ekler. Tüm gruplarda çalışır.').add_command(
+                    '.genelstop',
+                    '<filtre>',
+    'Seçilen genel filtreyi durdurur.').add()
