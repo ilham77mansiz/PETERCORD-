@@ -25,4 +25,4 @@ async def var(m):
 
 
 CmdHelp('petercordhelper').add_command('mintabantuan', None,
-                             'Meminta bantuan kepada owner.').add()
+                                       'Meminta bantuan kepada owner.').add()
