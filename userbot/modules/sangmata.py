@@ -3,7 +3,7 @@
 # Licensed under the Raphielscape Public License, Version 1.d (the "License");
 # you may not use this file except in compliance with the License.
 #
-# Port to userbot by @MoveAngel
+# Port to userbot by Ilham mansiz
 
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot import bot
@@ -63,5 +63,5 @@ async def lastname(steal):
         return await steal.edit("`Saya Sedang Sakit Petercord Maaf`")
 
 
-CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
-                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
+CmdHelp('sangmata').add_command('sa', '<replay>',
+                             'Mencari riwayat nama user pengguna.').add()
