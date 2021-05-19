@@ -953,8 +953,8 @@ async def typewriter(typew):
     await typew.edit(".                       /¯ )\n                      /¯  /\n                    /    /\n              /´¯/'   '/´¯¯`•¸\n          /'/   /    /       /¨¯\\ \n        ('(   (   (   (  ¯~/'  ')\n         \\                        /\n          \\                _.•´\n            \\              (\n              \\  ")
 
 
-CmdHelp('atsız').add_command(
-    'atsız', None, 'Bir Atsız sözü.'
+CmdHelp('petercorduser').add_command(
+    'voff', None, 'Gambar fuck u.'
 ).add_command(
-    'atsız şiir', None, 'Bir Atsız şiiri.'
+    'gabut', None, 'Gabut ya gini.'
 ).add()
