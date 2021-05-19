@@ -317,4 +317,4 @@ async def typewriter(typew):
 
 
 CmdHelp('santet').add_command('santet', None,
-                             'Santet online boongan😂.').add()
+                              'Santet online boongan😂.').add()
