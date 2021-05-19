@@ -1,5 +1,5 @@
 import threading
-from sqlalchemy import func, distinct, Column, String, Integer, UnicodeText
+from sqlalchemy import Column, Integer, UnicodeText
 try:
     from userbot.modules.sql_helper import SESSION, BASE
 except ImportError:
@@ -8,8 +8,12 @@ except ImportError:
 
 class Galeri(BASE):
     __tablename__ = "galeri"
-    
-    g_id = Column(Integer, autoincrement=True, primary_key=True, nullable=False)
+
+    g_id = Column(
+        Integer,
+        autoincrement=True,
+        primary_key=True,
+        nullable=False)
     foto = Column(UnicodeText, nullable=False)
 
     def __init__(self, foto):
@@ -20,8 +24,8 @@ class Galeri(BASE):
 
     def __eq__(self, other):
         return bool(isinstance(other, Galeri)
-            and self.foto == other.foto
-            and self.g_id == other.g_id)
+                    and self.foto == other.foto
+                    and self.g_id == other.g_id)
 
 
 Galeri.__table__.create(checkfirst=True)
@@ -29,11 +33,12 @@ Galeri.__table__.create(checkfirst=True)
 KOMUT_INSERTION_LOCK = threading.RLock()
 TUM_GALERI = SESSION.query(Galeri).all()
 
+
 def ekle_foto(foto):
     with KOMUT_INSERTION_LOCK:
         try:
             SESSION.query(Galeri).filter(Galeri.foto == foto).delete()
-        except:
+        except BaseException:
             pass
 
         ekleme = Galeri(foto)
@@ -44,6 +49,7 @@ def ekle_foto(foto):
 def getir_foto():
     global TUM_GALERI
     TUM_GALERI = SESSION.query(Galeri).all()
+
 
 def sil_foto(gid):
     try:
