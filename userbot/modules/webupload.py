@@ -43,5 +43,6 @@ async def _(event):
     stdout, stderr = await process.communicate()
     await event.edit(f"{stdout.decode()}")
 
-CmdHelp('webupload').add_command('webupload', '(`anonfiles`|`transfer`|`filebin`|`anonymousfiles`|`megaupload`|`bayfiles`'
-                             '.webupload --anonfiles` or `.webupload --filebin` and the file will be uploaded to that website.').add()
+CmdHelp('webupload').add_command(
+    'webupload', '(`anonfiles`|`transfer`|`filebin`|`anonymousfiles`|`megaupload`|`bayfiles`'
+    '.webupload --anonfiles` or `.webupload --filebin` and the file will be uploaded to that website.').add()
