@@ -152,7 +152,7 @@ CmdHelp('ziplife').add_command(
 ).add_command(
     'addzip', '<reply to file>', 'add files to zip list.'
 ).add_command(
-    'upzip','<zip title>', 'upload zip list.'
+    'upzip', '<zip title>', 'upload zip list.'
 ).add_command(
-    'rmzip','<zip title>', 'clear zip list.'
+    'rmzip', '<zip title>', 'clear zip list.'
 ).add()
