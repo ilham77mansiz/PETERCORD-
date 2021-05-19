@@ -64,4 +64,4 @@ async def lastname(steal):
 
 
 CmdHelp('sangmata').add_command('sa', '<replay>',
-                             'Mencari riwayat nama user pengguna.').add()
+                                'Mencari riwayat nama user pengguna.').add()
