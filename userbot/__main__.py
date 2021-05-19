@@ -149,7 +149,7 @@ for module_name in ALL_MODULES:
 LOGS.info(
     "Pesanmu sedang berjalan! Uji dengan mengetik .alive di obrolan apa pun."
     " Jika Anda membutuhkan bantuan, datanglah ke grup Dukungan kami https://t.me/TEAMSquadUserbotSupport")
-LOGS.info(f"Bot Version: 🎖️PETERCORD USERBOT {BOT_VERSION}")
+LOGS.info(f"Bot Version: 🎖️PETERCORD USERBOT {BOT_VER}")
 
 """
 if len(argv) not in (1, 3, 4):
