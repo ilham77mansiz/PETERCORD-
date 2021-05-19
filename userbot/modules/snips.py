@@ -116,11 +116,15 @@ async def on_snip_delete(event):
 
 
 CmdHelp('snips').add_command(
-    '$<snip_name>', None, 'Gets the specified snip, anywhere.'
-).add_command(
-    'snip', '<name> <data>', 'Saves the message as a snip (global note) with the name. (Works with pics, docs, and stickers too !)'
-).add_command(
-    'snips', None, 'Gets all saved snips.'
-).add_command(
-    'remsnip', '<snip name>', 'Deletes the specified snip.'
-).add()
+    '$<snip_name>',
+    None,
+    'Gets the specified snip, anywhere.').add_command(
+        'snip',
+        '<name> <data>',
+        'Saves the message as a snip (global note) with the name. (Works with pics, docs, and stickers too !)').add_command(
+            'snips',
+            None,
+            'Gets all saved snips.').add_command(
+                'remsnip',
+                '<snip name>',
+    'Deletes the specified snip.').add()
