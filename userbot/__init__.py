@@ -462,11 +462,12 @@ with bot:
                 return await event.answer("Warning! Hey! kamu harus buat sendiri deploy! silakan anda join @TEAMSquadUserbotSupport grup.", cache_time=0, alert=True)
 
             sayfa = int(event.data_match.group(1).decode("UTF-8"))
-            komut = event.data_match.group(2).decode("UTF-8")
+            event.data_match.group(2).decode("UTF-8")
             try:
                 butonlar = [
                     custom.Button.inline(
-                        "🔮 " + cmd[0],
+                        "🔮 " +
+                        cmd[0],
                         data=f"modul_name[{modul_name}[{sayfa}]]({cmd[0]})") for cmd in CMD_HELP[modul_name]['commands'].items()]
             except KeyError:
                 return await event.answer("❌ Tidak ada deskripsi yang ditulis untuk modul ini.", cache_time=0, alert=True)
