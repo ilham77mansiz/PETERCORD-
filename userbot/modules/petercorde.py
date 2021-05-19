@@ -29,4 +29,4 @@ async def _(event):
 
 
 CmdHelp('petercordcode').add_command('ae', '<text>',
-                             'Mengubah font text.').add()
+                                     'Mengubah font text.').add()
