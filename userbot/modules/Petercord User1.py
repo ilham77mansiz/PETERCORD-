@@ -333,8 +333,8 @@ async def typewriter(typew):
                      "💠💠💠      \n"
                      "💠💠   💠💠  \n")
 
-CmdHelp('atsız').add_command(
-    'atsız', None, 'Bir Atsız sözü.'
+CmdHelp('petercorduser2').add_command(
+    'ular', None, 'Gambar ular gajelas.'
 ).add_command(
-    'atsız şiir', None, 'Bir Atsız şiiri.'
+    'simbol', None, 'liat aja sendiri.'
 ).add()
