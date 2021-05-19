@@ -94,4 +94,4 @@ async def _(event):
 
 
 CmdHelp('petercordwc').add_command('wc', '<balas ke media>',
-                             'Untuk mendownload media teks gaje:).').add()
+                                   'Untuk mendownload media teks gaje:).').add()
