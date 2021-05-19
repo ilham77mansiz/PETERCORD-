@@ -10,7 +10,7 @@ async def master(event):
         if args in CMD_HELP:
             await event.edit(str(CMD_HELP[args]))
         else:
-            await event.edit("Tolong..")
+            await event.edit("Tolong.. Ketik gunakan dengan benar kata modulenya:)")
     else:
         string = ""
         sayfa = [sorted(list(CMD_HELP))[i:i + 5]
