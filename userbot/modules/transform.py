@@ -290,5 +290,5 @@ CmdHelp('transform').add_command(
 ).add_command(
     'poster', None, '`To poster  image.`'
 ).add_command(
-    'rotate', '<value>`, '`To rotate your image\n * The value is range 1 - 360 if not it'll give default value which is 90`'
+    'rotate', '<value>`, '`To rotate your image  The value is range 1 - 360 if not it ll give default value which is 90`'
 ).add()
