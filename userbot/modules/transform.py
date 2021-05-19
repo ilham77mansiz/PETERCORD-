@@ -290,5 +290,5 @@ CmdHelp('transform').add_command(
 ).add_command(
     'poster', None, 'To poster  image.'
 ).add_command(
-    'rotate', '<value>`, 'TEST AJALAH HIKS :)'
+    'rotate', '<value>`, 'TEST AJALAH HIKS: )'
 ).add()
