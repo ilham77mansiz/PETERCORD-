@@ -99,5 +99,8 @@ async def quote_search(event):
         await event.edit("`Tidak Ada Hasil Yang Ditemukan`")
 
 
-CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
-                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
+CmdHelp('quotly').add_command(
+    'q', '<text>', 'Mengubah text menjadi sticker.'
+).add_command(
+    'xquote', '<text>', 'Test ajalah hiks:).'
+).add()
