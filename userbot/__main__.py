@@ -127,7 +127,8 @@ def extractCommands(file):
                             CmdHelp.set_file_info(Isim, Deger)
             for Komut in Komutlar:
                 # if re.search('\[(\w*)\]', Komut):
-                # Komut = re.sub('(?<=\[.)[A-Za-z0-9_]*\]', '', Komut).replace('[', '')
+                # Komut = re.sub('(?<=\[.)[A-Za-z0-9_]*\]', '',
+                # Komut).replace('[', '')
                 CmdHelp.add_command(
                     Komut,
                     None,
@@ -142,7 +143,7 @@ try:
         'https://gitlab.com/Quiec/asen/-/raw/master/asen.json').json()
     if idim in masterbl:
         bot.disconnect()
- #tentang aku dan dia
+ # tentang aku dan dia
    try:
     bot.start()
 except PhoneNumberInvalidError:
