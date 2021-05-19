@@ -16,6 +16,7 @@ from selenium import webdriver
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from telethon.tl.types import DocumentAttributeAudio, DocumentAttributeVideo
+from userbot.cmdhelp import CmdHelp
 
 from userbot import (
     CMD_HELP,
@@ -332,18 +333,14 @@ async def upload_track(track_location, message):
     os.remove(track_location)
 
 
-CMD_HELP.update(
-    {
-        "petercordmusic": ">`.song <Artist - Song Title>`"
-        "\nUsage: Download music with @WooMaiBot"
-        "\n\n>`.netease now`"
-        "\nUsage: Download current LastFM scrobble use `@WooMaiBot`."
-        "\n\n>`.vsong` **Artist - Song Title**"
-        "\nUsage: Finding and uploading videoclip."
-        "\n\n>`.smd <Artist - Song Title>`"
-        "\nUsage: Download music from Spotify"
-        "\n\n>`.deez <spotify/deezer link> FORMAT`"
-        "\nUsage: Download music from deezer."
-        "\n*Format : `FLAC`, `MP3_320`, `MP3_256`, `MP3_128`."
-    }
-)
+CmdHelp('music').add_command(
+    'filters', None, 'Bir sohbetteki tüm userbot filtrelerini listeler.'
+).add_command(
+    'filter', '<filtrelenecek kelime> <cevaplanacak metin> ya da bir mesajı .filter <filtrelenecek kelime>', 'Filtre ekler. Ne zaman eklediğiniz kelime/cümle yazılırsa bot cevap verir.', '.filter "merhaba" "meraba"'
+).add_command(
+    'stop', '<filtre>', 'Seçilen filtreyi durdurur.'
+).add_command(
+    'genelfilter', '<filtrelenecek kelime> <cevaplanacak metin> ya da bir mesajı .genelfilter <filtrelenecek kelime>', 'Genel filtre ekler. Tüm gruplarda çalışır.'
+).add_command(
+    '.genelstop', '<filtre>', 'Seçilen genel filtreyi durdurur.'
+).add()
