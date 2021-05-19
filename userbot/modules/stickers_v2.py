@@ -115,7 +115,7 @@ async def sticker_to_png(sticker):
 CmdHelp('stickers2').add_command(
     'itos', None, 'Balas ke sticker atau gambar .itos untuk mengambil sticker bukan ke pack.'
 ).add_command(
-    'get', None, 'Balas ke sticker untuk mendapatkan file 'PNG' sticker.'
+    'get', None, 'Balas ke sticker untuk mendapatkan file PNG sticker.'
 ).add_command(
-    'stoi', None, 'Balas ke sticker untuk mendapatkan file 'PNG' sticker.'
+    'stoi', None, 'Balas ke sticker untuk mendapatkan file PNG sticker.'
 ).add()
