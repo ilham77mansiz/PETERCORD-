@@ -6,7 +6,7 @@ import os
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 from userbot.cmdhelp import CmdHelp
 from userbot.events import register
-from userbot import TEMP_DOWNLOAD_DIRECTORY, bot
+from userbot import TEMP_DOWNLOAD_DIRECTORY, bot, CMD_HELP
 
 
 @register(outgoing=True, pattern=r'^\.spotnow(:? |$)(.*)?')
