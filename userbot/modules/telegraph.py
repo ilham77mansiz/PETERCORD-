@@ -94,5 +94,8 @@ def resize_image(image):
     im.save(image, "PNG")
 
 
-CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
-                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
+CmdHelp('telegram').add_command(
+    'telegraph gambar', '.tg m replay ke gambar', 'Untuk membuat gambar menjadi ada linknya .'
+).add_command(
+    'telegraph text', '.tg t replay ke text', 'Untuk membuat tulisan menjadi ada linknya .'
+).add()
