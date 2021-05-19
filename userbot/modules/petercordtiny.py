@@ -91,4 +91,4 @@ async def ultiny(event):
 # Petercord - Userbot
 
 CmdHelp('petercordtiny').add_command('tiny', '<balas ke sticker>',
-                             'Memperkecil Sticker.').add()
+                                     'Memperkecil Sticker.').add()
