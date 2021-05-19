@@ -6,8 +6,9 @@
 from telethon.errors import ChatSendInlineForbiddenError, ChatSendStickersForbiddenError
 
 from userbot.events import register
-from userbot import CMD_HELP, bot
+from userbot import bot
 from userbot.cmdhelp import CmdHelp
+
 
 @register(outgoing=True, pattern=r"^\.frog (.*)")
 async def honkasays(event):
