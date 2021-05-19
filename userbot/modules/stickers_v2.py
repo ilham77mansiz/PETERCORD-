@@ -108,5 +108,10 @@ async def sticker_to_png(sticker):
     return
 
 
-CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
-                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
+CmdHelp('stickers2').add_command(
+    'itos', None, 'Balas ke sticker atau gambar .itos untuk mengambil sticker bukan ke pack.'
+).add_command(
+    'get', None, 'Balas ke sticker untuk mendapatkan file 'PNG' sticker.'
+).add_command(
+    'stoi', None, 'Balas ke sticker untuk mendapatkan file 'PNG' sticker.'
+).add()
