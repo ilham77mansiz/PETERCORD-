@@ -349,7 +349,9 @@ async def uploadas(uas_event):
 
 
 CmdHelp('download').add_command(
-    'download', '<link|filename> or reply to media', 'Downloads file to the server.'
-).add_command(
-    'upload', '<path in server>', 'Uploads a locally stored file to the chat.'
-).add()
+    'download',
+    '<link|filename> or reply to media',
+    'Downloads file to the server.').add_command(
+        'upload',
+        '<path in server>',
+    'Uploads a locally stored file to the chat.').add()
