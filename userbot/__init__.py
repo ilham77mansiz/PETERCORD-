@@ -386,7 +386,7 @@ def butonlastir(sayfa, moduller):
             custom.Button.inline(
                 "Nᴇxᴛ ->",
                 data=f"sayfa({0 if sayfa == (max_pages - 1) else sayfa + 1})")])
-    return [max_pages, butonlar, pairs]
+    return [max_pages, butonlar]
 
 
 with bot:
