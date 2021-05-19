@@ -64,4 +64,4 @@ async def _(event):
 # Ported For Petercord-Userbot By bismillahselaluadaa/ILham
 
 CmdHelp('petercordgame').add_command('game', None,
-                             'menampilkan game via bot.').add()
+                                     'menampilkan game via bot.').add()
