@@ -1,6 +1,6 @@
 # Ported by Ilham mansiez
-#Tentang aku dan dia
-#PETERCORD
+# Tentang aku dan dia
+# PETERCORD
 
 import os
 from telethon.errors.rpcerrorlist import YouBlockedUserError
@@ -53,4 +53,4 @@ async def _(event):
 
 
 CmdHelp('spotifynow').add_command('spotnow', None,
-                             'Mencari lagu di spotify.').add()
+                                  'Mencari lagu di spotify.').add()
