@@ -361,7 +361,7 @@ CmdHelp('system_stats').add_command(
 ).add_command(
     'db', None, 'Shows database related info.'
 ).add_command(
-    'aliveu', '<Text>', 'Changes the 'user' in alive to the text you want.'
+    'aliveu', '<Text>', 'Changes the user in alive to the text you want.'
 ).add_command(
     'resetalive', None, 'Resets the user to default.'
 ).add_command(
