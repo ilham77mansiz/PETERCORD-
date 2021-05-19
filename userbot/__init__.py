@@ -494,7 +494,7 @@ with bot:
 
             cmd = event.data_match.group(1).decode("UTF-8")
             sayfa = int(event.data_match.group(2).decode("UTF-8"))
-            komut = event.data_match.group(3).decode("UTF-8")
+            event.data_match.group(3).decode("UTF-8")
 
             result = f"**🎖DAFTAR PETERCORD:** `{cmd}`\n"
             if CMD_HELP_BOT[cmd]['info']['info'] == '':
