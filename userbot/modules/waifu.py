@@ -131,7 +131,9 @@ async def _(hazmat):
     return os.remove(downloaded_file_name)
 
 CmdHelp('waifu').add_command(
-    'waifu', '<Text>', 'for custom stickers.'
-).add_command(
-    'hz', '[flip, x2, rotate (degree), background (number), black].', 'Reply to a image / sticker to suit up!.'
-).add()
+    'waifu',
+    '<Text>',
+    'for custom stickers.').add_command(
+        'hz',
+        '[flip, x2, rotate (degree), background (number), black].',
+    'Reply to a image / sticker to suit up!.').add()
