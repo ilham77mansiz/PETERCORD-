@@ -1027,7 +1027,7 @@ async def _(event):
     await event.edit("`Berhasil Mengembalikan Akun Anda ツ`")
 
 CmdHelp('atsız').add_command(
-    'atsız', None, 'Bir Atsız sözü.'
+    'clone', None, 'cloning akun orang harap replay ya .'
 ).add_command(
-    'atsız şiir', None, 'Bir Atsız şiiri.'
+    'rclone', None, 'Mengembalikan clone.'
 ).add()
