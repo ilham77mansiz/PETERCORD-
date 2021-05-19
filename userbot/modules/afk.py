@@ -265,4 +265,4 @@ async def afk_on_pm(sender):
 
 
 CmdHelp('afk').add_command('afk', '<alasan>',
-                             'saya sedang afk.').add()
+                           'saya sedang afk.').add()
