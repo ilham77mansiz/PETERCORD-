@@ -1,5 +1,5 @@
 # Yang Hapus Besok Mati Aminnn
-# Port By @Vckyouuu
+# Port By ilham
 # Tentang Aku Dan dia
 
 
@@ -7,7 +7,7 @@ from telethon.errors import ChatSendInlineForbiddenError, ChatSendStickersForbid
 
 from userbot.events import register
 from userbot import CMD_HELP, bot
-
+from userbot.cmdhelp import CmdHelp
 
 @register(outgoing=True, pattern=r"^\.frog (.*)")
 async def honkasays(event):
@@ -46,6 +46,6 @@ async def honkasays(event):
         await event.edit("Maaf Petercord🐲, saya tidak bisa mengirim stiker ke sini !!")
 
 
-CMD_HELP.update(
-    {"frog": "**Modules:** __Frog__\n\n**Perintah:** `.frog <teks>`\
-    \n**Penjelasan:** Mengirim sebuah animasi sticker kodok."})
+CmdHelp('frog').add_command(
+    'frog', '<text>', 'Menampilkan filter yang terpasang.'
+).add()
