@@ -147,5 +147,12 @@ def zipdir(path, ziph):
             os.remove(os.path.join(root, file))
 
 
-CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
-                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
+CmdHelp('ziplife').add_command(
+    'compress', '<reply to file>', 'make files to zip.'
+).add_command(
+    'addzip', '<reply to file>', 'add files to zip list.'
+).add_command(
+    'upzip','<zip title>', 'upload zip list.'
+).add_command(
+    'rmzip','<zip title>', 'clear zip list.'
+).add()
