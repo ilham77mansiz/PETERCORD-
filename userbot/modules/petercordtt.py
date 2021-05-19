@@ -42,4 +42,4 @@ async def _(event):
 
 
 CmdHelp('petercordtiktok').add_command('tiktok', '<link>',
-                             'tiktok media download.').add()
+                                       'tiktok media download.').add()
