@@ -348,5 +348,8 @@ async def uploadas(uas_event):
         await uas_event.edit("404: File Not Found")
 
 
-CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
-                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
+CmdHelp('download').add_command(
+    'download', '<link|filename> or reply to media', 'Downloads file to the server.'
+).add_command(
+    'upload', '<path in server>', 'Uploads a locally stored file to the chat.'
+).add()
