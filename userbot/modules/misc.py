@@ -22,7 +22,7 @@ import requests
 from bs4 import BeautifulSoup
 import re
 from PIL import Image
-
+from userbot.cmdhelp import CmdHelp
 
 # ================= CONSTANT =================
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
@@ -266,29 +266,14 @@ async def scam(results, lim):
     return imglinks
 
 
-CMD_HELP.update({
-    "random":
-    ">`.random <item1> <item2> ... <itemN>`\
-    \nUsage: Get a random item from the list of items.",
-    "sleep":
-    ">`.sleep <seconds>`\
-    \nUsage: Let yours snooze for a few seconds.",
-    "shutdown":
-    ">`.shutdown`\
-    \nUsage: Shutdown bot",
-    "repo":
-    ">`.repo`\
-    \nUsage: Github Repo of this bot",
-    "readme":
-    ">`.readme`\
-    \nUsage: Provide links to setup the userbot and it's modules.",
-    "repeat":
-    ">`.repeat <no> <text>`\
-    \nUsage: Repeats the text for a number of times. Don't confuse this with spam tho.",
-    "restart":
-    ">`.restart`\
-    \nUsage: Restarts the bot !!",
-    "raw":
-    ">`.raw`\
-    \nUsage: Get detailed JSON-like formatted data about replied message."
-})
+CmdHelp('misc').add_command(
+    'filters', None, 'Bir sohbetteki tüm userbot filtrelerini listeler.'
+).add_command(
+    'filter', '<filtrelenecek kelime> <cevaplanacak metin> ya da bir mesajı .filter <filtrelenecek kelime>', 'Filtre ekler. Ne zaman eklediğiniz kelime/cümle yazılırsa bot cevap verir.', '.filter "merhaba" "meraba"'
+).add_command(
+    'stop', '<filtre>', 'Seçilen filtreyi durdurur.'
+).add_command(
+    'genelfilter', '<filtrelenecek kelime> <cevaplanacak metin> ya da bir mesajı .genelfilter <filtrelenecek kelime>', 'Genel filtre ekler. Tüm gruplarda çalışır.'
+).add_command(
+    '.genelstop', '<filtre>', 'Seçilen genel filtreyi durdurur.'
+).add()
