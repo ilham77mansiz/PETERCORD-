@@ -10,6 +10,7 @@ import lyricsgenius
 from userbot.events import register
 from userbot import CMD_HELP, GENIUS, lastfm, LASTFM_USERNAME
 from pylast import User
+from userbot.cmdhelp import CmdHelp
 
 if GENIUS is not None:
     genius = lyricsgenius.Genius(GENIUS)
@@ -58,10 +59,14 @@ async def lyrics(lyric):
         return True
 
 
-CMD_HELP.update({
-    "lyrics":
-    "`.lyrics` **<artist name> - <song name>**"
-    "\nUsage: Get lyrics matched artist and song."
-    "\n\n`.lyrics now`"
-    "\nUsage: Get lyrics artist and song from current lastfm scrobbling."
-})
+CmdHelp('lyric').add_command(
+    'filters', None, 'Bir sohbetteki tüm userbot filtrelerini listeler.'
+).add_command(
+    'filter', '<filtrelenecek kelime> <cevaplanacak metin> ya da bir mesajı .filter <filtrelenecek kelime>', 'Filtre ekler. Ne zaman eklediğiniz kelime/cümle yazılırsa bot cevap verir.', '.filter "merhaba" "meraba"'
+).add_command(
+    'stop', '<filtre>', 'Seçilen filtreyi durdurur.'
+).add_command(
+    'genelfilter', '<filtrelenecek kelime> <cevaplanacak metin> ya da bir mesajı .genelfilter <filtrelenecek kelime>', 'Genel filtre ekler. Tüm gruplarda çalışır.'
+).add_command(
+    '.genelstop', '<filtre>', 'Seçilen genel filtreyi durdurur.'
+).add()
