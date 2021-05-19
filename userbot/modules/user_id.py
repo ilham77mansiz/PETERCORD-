@@ -39,5 +39,6 @@ async def _(event):
             await event.edit(f"{response.message.message}")
 
 
-CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
-                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
+CmdHelp('getid').add_command(
+    'getid', None, 'Replay ke pengguna untuk mendapatkan id user.'
+).add()
