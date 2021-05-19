@@ -3,6 +3,7 @@ Group Administrations bots where you are SUDO
 Available Commands:
 .gban REASON
 .ungban REASON"""
+from userbot.cmdhelp import CmdHelp
 import asyncio
 from userbot.events import register
 from userbot import ALIVE_NAME, G_BAN_LOGGER_GROUP, bot
@@ -11,7 +12,7 @@ from userbot import ALIVE_NAME, G_BAN_LOGGER_GROUP, bot
 # ================= CONSTANT =================
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # ============================================
-from userbot.cmdhelp import CmdHelp
+
 
 @register(outgoing=True, pattern="^.gbanb(?: |$)(.*)")
 async def _(event):
