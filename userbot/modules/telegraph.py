@@ -94,10 +94,10 @@ def resize_image(image):
     im.save(image, "PNG")
 
 
-CmdHelp('telegram').add_command(
-    'telegraph gambar',
+CmdHelp('telegraph').add_command(
+    'tg m',
     '.tg m replay ke gambar',
     'Untuk membuat gambar menjadi ada linknya .').add_command(
-        'telegraph text',
+        'tg t',
         '.tg t replay ke text',
     'Untuk membuat tulisan menjadi ada linknya .').add()
