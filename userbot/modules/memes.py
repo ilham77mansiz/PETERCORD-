@@ -16,6 +16,7 @@ from random import choice, getrandbits, randint
 from userbot import bot, CMD_HELP
 from userbot.events import register
 from userbot.modules.admin import get_user_from_event
+from userbot.cmdhelp import CmdHelp
 
 # ================= CONSTANT =================
 METOOSTR = [
@@ -1810,67 +1811,14 @@ async def emoji_tengkorak(e):
     await e.edit(tengkorak)
 
 
-CMD_HELP.update({
-    "memes":
-    ">`.cowsay`"
-    "\nUsage: sapi yang mengatakan sesuatu."
-    "\n\n> .cp"
-    "\nUsage: Copy paste meme terkenal"
-    "\n\n>`.vapor`"
-    "\nUsage: Menguapkan semuanya!"
-    "\n\n>`.str`"
-    "\nUsage: Regangkan."
-    "\n\n>`.10iq`"
-    "\nUsage: Kamu mundur !!"
-    "\n\n>`.zal`"
-    "\nUsage: Munculkan perasaan kacau."
-    "\n\n>`.Oem`"
-    "\nPenggunaan: Oeeeem"
-    "\n\n>`.fp`"
-    "\nUsage: Telapak Tangan:P"
-    "\n\n>`.moon`"
-    "\nUsage: animasi bulan."
-    "\n\n>`.clock`"
-    "\nUsage: animasi jam."
-    "\n\n>`.hi`"
-    "\nUsage: Sapa semuanya!"
-    "\n\n>`.coinflip` <Kepala/Ekor>"
-    "\nUsage: Melempar koin !!"
-    "\n\n>`.owo`"
-    "\nUsage: UwU"
-    "\n\n>`.react`"
-    "\nUsage: Buat Userbot Anda bereaksi terhadap semuanya."
-    "\n\n>`.slap`"
-    "\nUsage: balas tampar mereka dengan benda acak !!"
-    "\n\n>`.cry`"
-    "\nUsage: jika kamu melakukan ini, aku akan menangis."
-    "\n\n>`.shg`"
-    "\nUsage: Angkat bahu!"
-    "\n\n>`.run`"
-    "\nUsage: Biarkan Aku Lari, Lari, LARI!"
-    "\n\n>`.chase`"
-    "\nUsage: Sebaiknya Anda mulai berlari"
-    "\n\n>`.metoo`"
-    "\nUsage: Haha ya"
-    "\n\n>`.mock`"
-    "\nUsage: Lakukan dan temukan kesenangan yang sesungguhnya."
-    "\n\n>`.clap`"
-    "\nUsage: Puji orang!"
-    "\n\n>`.f` <emoji/karakter>"
-    "\nUsage: F."
-    "\n\n>`.bt`"
-    "\nUsage: Percayalah, Anda akan menemukan ini berguna."
-    "\n\n>`.weeb`"
-    "\nUsage: Untuk Mengubah Teks Menjadi Weeb-ify."
-    "\n\n>`.type` <teks>"
-    "\nUsage: Hanya perintah kecil untuk membuat keyboard Anda menjadi mesin tik!"
-    "\n\n>`.lfy` <query>"
-    "\nUsage: Biar saya Google itu untuk Anda dengan cepat!"
-    "\n\n>`.decide` [Alternatif: (.yes, .no, .maybe)]"
-    "\nUsage: Buat keputusan cepat."
-    "\n\n> `.nou` `.bot` `.rock` `.gey` `.tf` `.paw` `.tai` `.nih`"
-    "\n> `.fag` `.gtfo`; `.stfu` `.lol` `.lool` `.fail` `.leave`"
-    "\n> `.iwi` `.sayhi` `.koc` `.gas` `.earth` `.love` `.rain`"
-    "\n> `.penis` `.emo` `.fuck` `.skull`  `.monyet`\nUsage: Cobain aja"
-    "\n\n\n**Semoga Harimu Menyenangkan**\n➥ `Alvin`"
-})
+CmdHelp('memes').add_command(
+    'filters', None, 'Bir sohbetteki tüm userbot filtrelerini listeler.'
+).add_command(
+    'filter', '<filtrelenecek kelime> <cevaplanacak metin> ya da bir mesajı .filter <filtrelenecek kelime>', 'Filtre ekler. Ne zaman eklediğiniz kelime/cümle yazılırsa bot cevap verir.', '.filter "merhaba" "meraba"'
+).add_command(
+    'stop', '<filtre>', 'Seçilen filtreyi durdurur.'
+).add_command(
+    'genelfilter', '<filtrelenecek kelime> <cevaplanacak metin> ya da bir mesajı .genelfilter <filtrelenecek kelime>', 'Genel filtre ekler. Tüm gruplarda çalışır.'
+).add_command(
+    '.genelstop', '<filtre>', 'Seçilen genel filtreyi durdurur.'
+).add()
