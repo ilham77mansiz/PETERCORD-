@@ -231,5 +231,10 @@ async def upstream(event):
     return
 
 
-CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
-                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
+CmdHelp('update').add_command(
+    'update', 'None, 'Untuk Melihat Pembaruan Terbaru 🛡Petercord-Userbot🛡.'
+).add_command(
+    'update now', 'None, 'Memperbarui 🛡Petercord-Userbot🛡.'
+).add_command(
+    'update deploy', 'None, 'Memperbarui 🛡Petercord-Userbot🛡.'
+).add()
