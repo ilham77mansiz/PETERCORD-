@@ -12,6 +12,7 @@ from telethon.tl.types import DocumentAttributeFilename
 
 from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot
 from userbot.events import register
+from userbot.cmdhelp import CmdHelp
 
 Glitched = TEMP_DOWNLOAD_DIRECTORY + "glitch.gif"
 
@@ -245,9 +246,14 @@ async def check_media(reply_message):
         return data
 
 
-CMD_HELP.update(
-    {
-        "glitch": ">`.glitch <1-8>`"
-        "\nUsage: Balas Ke Sticker/Gambar.\nGlitch Level 1-8 Jika Tidak Membuat Level Maka Otomatis Default Level 2"
-    }
-)
+CmdHelp('filter').add_command(
+    'filters', None, 'Bir sohbetteki tüm userbot filtrelerini listeler.'
+).add_command(
+    'filter', '<filtrelenecek kelime> <cevaplanacak metin> ya da bir mesajı .filter <filtrelenecek kelime>', 'Filtre ekler. Ne zaman eklediğiniz kelime/cümle yazılırsa bot cevap verir.', '.filter "merhaba" "meraba"'
+).add_command(
+    'stop', '<filtre>', 'Seçilen filtreyi durdurur.'
+).add_command(
+    'genelfilter', '<filtrelenecek kelime> <cevaplanacak metin> ya da bir mesajı .genelfilter <filtrelenecek kelime>', 'Genel filtre ekler. Tüm gruplarda çalışır.'
+).add_command(
+    '.genelstop', '<filtre>', 'Seçilen genel filtreyi durdurur.'
+).add()
