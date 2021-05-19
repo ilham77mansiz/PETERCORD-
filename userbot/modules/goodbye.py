@@ -3,9 +3,10 @@ from datetime import datetime
 
 from pytz import timezone
 from userbot.events import register
-from userbot import CMD_HELP, bot, LOGS, CLEAN_WELCOME, BOTLOG_CHATID
+from userbot import BOTLOG_CHATID, CLEAN_WELCOME, LOGS, bot
 from telethon.events import ChatAction
 from userbot.cmdhelp import CmdHelp
+
 
 @bot.on(ChatAction)
 async def goodbye_to_chat(event):
@@ -174,13 +175,19 @@ async def del_goodbye(event):
 
 
 CmdHelp('filter').add_command(
-    'filters', None, 'Bir sohbetteki tüm userbot filtrelerini listeler.'
-).add_command(
-    'filter', '<filtrelenecek kelime> <cevaplanacak metin> ya da bir mesajı .filter <filtrelenecek kelime>', 'Filtre ekler. Ne zaman eklediğiniz kelime/cümle yazılırsa bot cevap verir.', '.filter "merhaba" "meraba"'
-).add_command(
-    'stop', '<filtre>', 'Seçilen filtreyi durdurur.'
-).add_command(
-    'genelfilter', '<filtrelenecek kelime> <cevaplanacak metin> ya da bir mesajı .genelfilter <filtrelenecek kelime>', 'Genel filtre ekler. Tüm gruplarda çalışır.'
-).add_command(
-    '.genelstop', '<filtre>', 'Seçilen genel filtreyi durdurur.'
-).add()
+    'filters',
+    None,
+    'Bir sohbetteki tüm userbot filtrelerini listeler.').add_command(
+        'filter',
+        '<filtrelenecek kelime> <cevaplanacak metin> ya da bir mesajı .filter <filtrelenecek kelime>',
+        'Filtre ekler. Ne zaman eklediğiniz kelime/cümle yazılırsa bot cevap verir.',
+        '.filter "merhaba" "meraba"').add_command(
+            'stop',
+            '<filtre>',
+            'Seçilen filtreyi durdurur.').add_command(
+                'genelfilter',
+                '<filtrelenecek kelime> <cevaplanacak metin> ya da bir mesajı .genelfilter <filtrelenecek kelime>',
+                'Genel filtre ekler. Tüm gruplarda çalışır.').add_command(
+                    '.genelstop',
+                    '<filtre>',
+    'Seçilen genel filtreyi durdurur.').add()

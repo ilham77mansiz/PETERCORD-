@@ -293,14 +293,21 @@ def file_ops(file_path):
     file_name = file_path.split("/")[-1]
     return file_name, mime_type, file_size
 
+
 CmdHelp('filter').add_command(
-    'filters', None, 'Bir sohbetteki tüm userbot filtrelerini listeler.'
-).add_command(
-    'filter', '<filtrelenecek kelime> <cevaplanacak metin> ya da bir mesajı .filter <filtrelenecek kelime>', 'Filtre ekler. Ne zaman eklediğiniz kelime/cümle yazılırsa bot cevap verir.', '.filter "merhaba" "meraba"'
-).add_command(
-    'stop', '<filtre>', 'Seçilen filtreyi durdurur.'
-).add_command(
-    'genelfilter', '<filtrelenecek kelime> <cevaplanacak metin> ya da bir mesajı .genelfilter <filtrelenecek kelime>', 'Genel filtre ekler. Tüm gruplarda çalışır.'
-).add_command(
-    '.genelstop', '<filtre>', 'Seçilen genel filtreyi durdurur.'
-).add()
+    'filters',
+    None,
+    'Bir sohbetteki tüm userbot filtrelerini listeler.').add_command(
+        'filter',
+        '<filtrelenecek kelime> <cevaplanacak metin> ya da bir mesajı .filter <filtrelenecek kelime>',
+        'Filtre ekler. Ne zaman eklediğiniz kelime/cümle yazılırsa bot cevap verir.',
+        '.filter "merhaba" "meraba"').add_command(
+            'stop',
+            '<filtre>',
+            'Seçilen filtreyi durdurur.').add_command(
+                'genelfilter',
+                '<filtrelenecek kelime> <cevaplanacak metin> ya da bir mesajı .genelfilter <filtrelenecek kelime>',
+                'Genel filtre ekler. Tüm gruplarda çalışır.').add_command(
+                    '.genelstop',
+                    '<filtre>',
+    'Seçilen genel filtreyi durdurur.').add()
