@@ -467,7 +467,7 @@ with bot:
                 butonlar = [
                     custom.Button.inline(
                         "🔮 " + cmd[0],
-                        data=f"komut[{komut}[{sayfa}]]({cmd[0]})") for cmd in CMD_HELP[komut]['commands'].items()]
+                        data=f"modul_name[{modul_name}[{sayfa}]]({cmd[0]})") for cmd in CMD_HELP[modul_name]['commands'].items()]
             except KeyError:
                 return await event.answer("❌ Tidak ada deskripsi yang ditulis untuk modul ini.", cache_time=0, alert=True)
 
@@ -475,7 +475,7 @@ with bot:
             butonlar.append([custom.Button.inline(
                 "<- Pʀᴇᴠɪᴏᴜs", data=f"sayfa({sayfa})")])
             await event.edit(
-                f"**🎖 DAFTAR PETERCORD:** `{komut}`\n\n**🎖JUMLAH PERINTAH🎖:** `{len(CMD_HELP[komut]['commands'])}`",
+                f"**🎖 DAFTAR PETERCORD:** `{modul_name}`\n\n**🎖JUMLAH PERINTAH🎖:** `{len(CMD_HELP[modul_name]['commands'])}`",
                 buttons=butonlar,
                 link_preview=False
             )
@@ -500,19 +500,19 @@ with bot:
             komut = event.data_match.group(3).decode("UTF-8")
 
             result = f"**🎖DAFTAR PETERCORD:** `{cmd}`\n"
-            if CMD_HELP[cmd]['info']['info'] == '':
-                if not CMD_HELP[cmd]['info']['warning'] == '':
-                    result += f"**🎖PETERCORD:** {'🎖' if CMD_HELP[cmd]['info']['official'] else '❌'}\n"
-                    result += f"**⛔ Berbahaya:** {CMD_HELP[cmd]['info']['warning']}\n\n"
+            if CMD_HELP_BOT[cmd]['info']['info'] == '':
+                if not CMD_HELP_BOT[cmd]['info']['warning'] == '':
+                    result += f"**🎖PETERCORD:** {'🎖' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n"
+                    result += f"**⛔ Berbahaya:** {CMD_HELP_BOT[cmd]['info']['warning']}\n\n"
                 else:
-                    result += f"**🎖PETERCORD:** {'🎖' if CMD_HELP[cmd]['info']['official'] else '❌'}\n\n"
+                    result += f"**🎖PETERCORD:** {'🎖' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n\n"
             else:
-                result += f"**🎖PETERCORD:** {'🎖' if CMD_HELP[cmd]['info']['official'] else '❌'}\n"
-                if not CMD_HELP[cmd]['info']['warning'] == '':
-                    result += f"**⛔ Berbahaya:** {CMD_HELP[cmd]['info']['warning']}\n"
-                result += f"**INFORMASI:** {CMD_HELP[cmd]['info']['info']}\n\n"
+                result += f"**🎖PETERCORD:** {'🎖' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n"
+                if not CMD_HELP_BOT[cmd]['info']['warning'] == '':
+                    result += f"**⛔ Berbahaya:** {CMD_HELP_BOT[cmd]['info']['warning']}\n"
+                result += f"**INFORMASI:** {CMD_HELP_BOT[cmd]['info']['info']}\n\n"
 
-            command = CMD_HELP[cmd]['commands'][komut]
+            command = CMD_HELP_BOT[cmd]['commands'][komut]
             if command['params'] is None:
                 result += f"**🎖DAFTAR PETERCORD:** `{PATTERNS[:1]}{command['command']}`\n"
             else:
