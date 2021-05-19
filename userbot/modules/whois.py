@@ -147,5 +147,6 @@ async def fetch_info(replied_user, event):
     return photo, caption
 
 
-CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
-                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
+CmdHelp('whois').add_command(
+    'whois', ' <nama pengguna / jawaban / id>', 'Mengambil informasi pengguna.'
+).add()
