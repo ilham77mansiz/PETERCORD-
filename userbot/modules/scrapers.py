@@ -1325,5 +1325,42 @@ async def capture(url):
                                    reply_to=message_id)
         await url.delete()
 
-CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
-                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
+CmdHelp('scrapers').add_command(
+    'img', '<search_query>', 'Does an image search on Google and shows 15 images'
+).add_command(
+    'currency', '<amount> <from> <to>', 'Converts various currencies for you.'
+).add_command(
+    'carbon', '<text or replay>', 'carbon.now.sh sitesini kullanarak yazdıklarının aşşşşşşırı şekil görünmesini sağlar.'
+).add_command(
+    'google', '<query>', 'Mencari di google.'
+).add_command(
+    'wiki', '<text>', 'Mencari di wikipedia.'
+).add_command(
+    'ud', '<query>', 'Mencari di urban dinactiory.'
+).add_command(
+    'tts', '<text/replay pesan>', 'Mengubah text menjadi suara.'
+).add_command(
+    'tr', '<code negara>', 'translate contoh .tr id untuk mentranslate ke bahasa indonesia'
+).add_command(
+    'yt', '<judul>', 'Mencari di youtube.'
+).add_command(
+    'ripaudio', '<url>', 'download vidio dan song diyoutube.'
+).add_command(
+    'rbg', '<link to image>', 'Removes the background of images'
+).add_command(
+    'ocr', '<language>', 'Mengambil text pada gambar.'
+).add_command(
+    'makeqr', '<text>', 'membuat barcode.'
+).add_command(
+    'barcode', '<text>', 'Mengubah barcode.'
+).add_command(
+    'paste', '<text/reply>', 'Create a paste or a shortened url using dogbin.'
+).add_command(
+    'getpaste', '<text/replay>', 'Create a paste or a shortened url using dogbin.'
+).add_command(
+    'ss', '<url>', 'screenshot,.........,...'
+).add_command(
+    'direct', '<url>', 'Reply to a link or paste a URL to generate a direct download link.'
+).add_info(
+    'PETERCORD USERBOT By. TENTANG AKU DAN DIA'
+).add()
