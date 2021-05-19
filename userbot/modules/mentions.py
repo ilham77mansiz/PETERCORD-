@@ -4,6 +4,7 @@ from telethon.tl import types
 
 from userbot import CMD_HELP, bot
 from userbot.events import register
+from userbot.cmdhelp import CmdHelp
 
 usernexp = re.compile(r"@(\w{3,32})\[(.+?)\]")
 nameexp = re.compile(r"\[([\w\S]+)\]\(tg://user\?id=(\d+)\)\[(.+?)\]")
@@ -41,10 +42,14 @@ async def mention(event):
         await event.edit(newstr, parse_mode="html")
 
 
-CMD_HELP.update(
-    {
-        "mentions": "Mentions users with a custom name."
-        "\nUsage: `Hi @ender1324[bluid boi]`"
-        "\nResult: Hi [bluid boi](tg://resolve?domain=ender1324)"
-    }
-)
+CmdHelp('mention').add_command(
+    'filters', None, 'Bir sohbetteki tüm userbot filtrelerini listeler.'
+).add_command(
+    'filter', '<filtrelenecek kelime> <cevaplanacak metin> ya da bir mesajı .filter <filtrelenecek kelime>', 'Filtre ekler. Ne zaman eklediğiniz kelime/cümle yazılırsa bot cevap verir.', '.filter "merhaba" "meraba"'
+).add_command(
+    'stop', '<filtre>', 'Seçilen filtreyi durdurur.'
+).add_command(
+    'genelfilter', '<filtrelenecek kelime> <cevaplanacak metin> ya da bir mesajı .genelfilter <filtrelenecek kelime>', 'Genel filtre ekler. Tüm gruplarda çalışır.'
+).add_command(
+    '.genelstop', '<filtre>', 'Seçilen genel filtreyi durdurur.'
+).add()
