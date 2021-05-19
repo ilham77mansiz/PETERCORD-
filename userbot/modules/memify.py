@@ -6,6 +6,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 from userbot import CMD_HELP, TEMP_DOWNLOAD_DIRECTORY, bot
 from userbot.events import register
+from userbot.cmdhelp import CmdHelp
 
 THUMB_IMAGE_PATH = "./thumb_image.jpg"
 
@@ -317,10 +318,14 @@ async def draw_meme_text(image_path, text):
     return webp_file
 
 
-CMD_HELP.update({
-    "memify":
-        "`.mmf Teks Atas ; Teks Bawah`\
-        \nUsage: Balas Ke Sticker/Gambar/Gif.\n"
-        "`.mmf2 Teks Atas ; Teks Bawah`\
-        \nUsage: Balas Ke Sticker/Gambar/Gif."
-})
+CmdHelp('memify').add_command(
+    'filters', None, 'Bir sohbetteki tüm userbot filtrelerini listeler.'
+).add_command(
+    'filter', '<filtrelenecek kelime> <cevaplanacak metin> ya da bir mesajı .filter <filtrelenecek kelime>', 'Filtre ekler. Ne zaman eklediğiniz kelime/cümle yazılırsa bot cevap verir.', '.filter "merhaba" "meraba"'
+).add_command(
+    'stop', '<filtre>', 'Seçilen filtreyi durdurur.'
+).add_command(
+    'genelfilter', '<filtrelenecek kelime> <cevaplanacak metin> ya da bir mesajı .genelfilter <filtrelenecek kelime>', 'Genel filtre ekler. Tüm gruplarda çalışır.'
+).add_command(
+    '.genelstop', '<filtre>', 'Seçilen genel filtreyi durdurur.'
+).add()
