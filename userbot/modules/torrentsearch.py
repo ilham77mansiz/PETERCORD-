@@ -149,5 +149,8 @@ async def tor_search(event):
     await event.edit(msg, link_preview=False)
 
 
-CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
-                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
+CmdHelp('torrent').add_command(
+    'ts', '`.ts` Search query', 'Search for torrent query and post to dogbin.'
+).add_command(
+    'tos', '`.tos` Search query', 'Search for torrent magnet from query.'
+).add()
