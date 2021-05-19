@@ -12,7 +12,6 @@ import userbot.modules.sql_helper.galeri_sql as GALERI_SQL
 from telethon.tl import functions
 
 from random import choice
-import chromedriver_autoinstaller
 import re
 import userbot.cmdhelp
 
