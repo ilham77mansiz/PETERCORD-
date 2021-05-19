@@ -142,19 +142,21 @@ try:
         'https://gitlab.com/Quiec/asen/-/raw/master/asen.json').json()
     if idim in masterbl:
         bot.disconnect()
-
+ #tentang aku dan dia
+   try:
+    bot.start()
+except PhoneNumberInvalidError:
+    print(INVALID_PH)
+    exit(1)
 
 for module_name in ALL_MODULES:
     imported_module = import_module("userbot.modules." + module_name)
 
 LOGS.info(
-    "Pesanmu sedang berjalan! Uji dengan mengetik .alive di obrolan apa pun."
-    " Jika Anda membutuhkan bantuan, datanglah ke grup Dukungan kami https://t.me/TEAMSquadUserbotSupport")
-LOGS.info(f"Bot Version: PETERCORD USERBOT {BOT_VER}")
+    f"PETERCORD-USERBOT 🎖️ V{BOT_VER} [TELAH DIAKTIFKAN!]")
 
-"""
+
 if len(argv) not in (1, 3, 4):
     bot.disconnect()
 else:
-"""
-bot.run_until_disconnected()
+    bot.run_until_disconnected()
