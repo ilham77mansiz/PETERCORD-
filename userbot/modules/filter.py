@@ -9,7 +9,7 @@ from asyncio import sleep
 from re import search, IGNORECASE, escape
 from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP
 from userbot.events import register
-
+from userbot.cmdhelp import CmdHelp
 
 @register(incoming=True, disable_edited=True, disable_errors=True)
 async def filter_incoming_handler(handler):
@@ -141,16 +141,12 @@ async def filters_active(event):
     await event.edit(transact)
 
 
-CMD_HELP.update({
-    "filter":
-    "`.filters`\
-    \nUsage: Melihat filter lord userbot yang aktif di obrolan.\
-    \n\n`.filter` <keyword> <balasan> atau balas ke pesan ketik .filter <keyword>\
-    \nUsage: Membuat filter di obrolan.\
-    \nBot Akan Membalas Jika Ada Yang Menyebut 'keyword' yang dibuat.\
-    \nBisa dipake ke media/sticker/vn/file.\
-    \n\n`.stop` <keyword>\
-    \nUsage: Untuk Nonaktifkan Filter.\
-    \n\n`.bersihkanbotfilter` <marie/rose>\
-    \nUsage: Menghapus semua filter yang ada di bot grup (Saat ini bot yang didukung: Marie, Rose.) dalam obrolan."
-})
+CmdHelp('filter').add_command(
+    'filters', None, 'Menampilkan filter yang terpasang.'
+).add_command(
+    'filter', '<text> <text> contohnya .filter <guruku galak>', 'Membuat filter teks / gambar.', '.filter "merhaba" "meraba"'
+).add_command(
+    'stop', '<filternya>', 'menghapus filter.'
+).add_command(
+    'bersihkanbotfilter', '<marie/rose>', 'MEMBERSIHKAN FILTER BOT.'
+).add()
