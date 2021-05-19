@@ -391,12 +391,6 @@ def butonlastir(sayfa, moduller):
 
 
 with bot:
-    if OTOMATIK_KATILMA:
-        try:
-            bot(JoinChannelRequest("@TEAMSquadUserbotSupport"))
-            bot(JoinChannelRequest("@TEAMSquadUserbotSupport"))
-        except BaseException:
-            pass
 
     moduller = CMD_HELP
     me = bot.get_me()
