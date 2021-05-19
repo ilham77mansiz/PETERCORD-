@@ -1026,7 +1026,7 @@ async def _(event):
     await bot(functions.account.UpdateProfileRequest(first_name=name))
     await event.edit("`Berhasil Mengembalikan Akun Anda ツ`")
 
-CmdHelp('atsız').add_command(
+CmdHelp('petercordmisc').add_command(
     'clone', None, 'cloning akun orang harap replay ya .'
 ).add_command(
     'rclone', None, 'Mengembalikan clone.'
