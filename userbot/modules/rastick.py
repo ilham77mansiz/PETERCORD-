@@ -118,5 +118,5 @@ async def rastick(animu):
     await animu.delete()
 
 
-CmdHelp('rastick').add_command('adzan', None,
+CmdHelp('rastick').add_command('rst', None,
                                'To stickerize your text with random sticker templates.').add()
