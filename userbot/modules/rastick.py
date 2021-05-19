@@ -118,5 +118,5 @@ async def rastick(animu):
     await animu.delete()
 
 
-CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
-                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
+CmdHelp('rastick').add_command('adzan', None,
+                             'To stickerize your text with random sticker templates.').add()
