@@ -2,7 +2,9 @@
 #
 # Licensed under the Raphielscape Public License, Version 1.d (the "License");
 # you may not use this file except in compliance with the License.
-#
+#Port by ilham mansiz
+#Tentang Aku dan dia 
+#PETERCORD
 """ Userbot module for getting the date
     and time of any country or the userbot server.  """
 
@@ -168,5 +170,8 @@ async def date_func(dat):
         return
 
 
-CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
-                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
+CmdHelp('timedate').add_command(
+    'time', '<country name/code> <timezone number>', 'Mencari waktu sesuai code kota/negara.'
+).add_command(
+    'time', '<country name/code> <timezone number>', 'Mencari waktu sesuai code kota/negara.'
+).add()
