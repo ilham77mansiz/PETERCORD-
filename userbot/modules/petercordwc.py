@@ -93,5 +93,5 @@ async def _(event):
         return await event.edit(str(e))
 
 
-CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
-                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
+CmdHelp('petercordwc').add_command('wc', '<balas ke media>',
+                             'Untuk mendownload media teks gaje:).').add()
