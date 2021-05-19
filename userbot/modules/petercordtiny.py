@@ -90,5 +90,5 @@ async def ultiny(event):
 # Port By Ilham/Dara
 # Petercord - Userbot
 
-CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
-                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
+CmdHelp('petercordtiny').add_command('tiny', '<balas ke sticker>',
+                             'Memperkecil Sticker.').add()
