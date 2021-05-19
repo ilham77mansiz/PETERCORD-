@@ -1,4 +1,6 @@
-# Ported by Aidil Aryanto
+# Ported by Ilham mansiez
+#Tentang aku dan dia
+#PETERCORD
 
 import os
 from telethon.errors.rpcerrorlist import YouBlockedUserError
