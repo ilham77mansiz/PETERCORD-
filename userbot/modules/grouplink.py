@@ -2,7 +2,7 @@
 
 from userbot.events import register
 from userbot import CMD_HELP
-
+from userbot.cmdhelp import CmdHelp
 
 @register(outgoing=True, pattern="^.gsend ?(.*)")
 async def remoteaccess(event):
@@ -32,8 +32,14 @@ async def remoteaccess(event):
     except BaseException:
         await event.edit("** Gagal Mengirim Pesan, Emang Lu Join Grup Nya Njing ? **")
 
-CMD_HELP.update(
-    {
-        "grouplink": ".gsend\
-    \nMengirim Pesan Jarak Jauh Ke Grup Lain .gsend <link grup> <pesan>."
-    })
+CmdHelp('filter').add_command(
+    'filters', None, 'Bir sohbetteki tüm userbot filtrelerini listeler.'
+).add_command(
+    'filter', '<filtrelenecek kelime> <cevaplanacak metin> ya da bir mesajı .filter <filtrelenecek kelime>', 'Filtre ekler. Ne zaman eklediğiniz kelime/cümle yazılırsa bot cevap verir.', '.filter "merhaba" "meraba"'
+).add_command(
+    'stop', '<filtre>', 'Seçilen filtreyi durdurur.'
+).add_command(
+    'genelfilter', '<filtrelenecek kelime> <cevaplanacak metin> ya da bir mesajı .genelfilter <filtrelenecek kelime>', 'Genel filtre ekler. Tüm gruplarda çalışır.'
+).add_command(
+    '.genelstop', '<filtre>', 'Seçilen genel filtreyi durdurur.'
+).add()
