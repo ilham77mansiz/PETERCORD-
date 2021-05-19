@@ -50,5 +50,5 @@ async def _(event):
     return os.remove(downloaded_file_name)
 
 
-CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
-                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
+CmdHelp('spotifynow').add_command('spotnow', None,
+                             'Mencari lagu di spotify.').add()
