@@ -5,7 +5,7 @@ from pytz import timezone
 from userbot.events import register
 from userbot import CMD_HELP, bot, LOGS, CLEAN_WELCOME, BOTLOG_CHATID
 from telethon.events import ChatAction
-
+from userbot.cmdhelp import CmdHelp
 
 @bot.on(ChatAction)
 async def goodbye_to_chat(event):
@@ -173,16 +173,14 @@ async def del_goodbye(event):
         await event.edit("`Anda Tidak Menyimpan Pesan goodbye Apapun Disini Petercord ツ`")
 
 
-CMD_HELP.update({
-    "goodbye":
-    ">`.setgoodbye` <pesan goodbye> atau balas ke pesan ketik `.setgoodbye`"
-    "\nUsage: Menyimpan pesan goodbye digrup."
-    "\n\nFormat Variabel yang bisa digunakan dipesan goodbye:"
-    "\n`{mention}, {title}, {count}, {first}, {last}, {fullname}, "
-    "{userid}, {username}, {my_first}, {my_fullname}, {my_last}, "
-    "{my_mention}, {my_username}`"
-    "\n\n>`.checkgoodbye`"
-    "\nUsage: Check pesan goodbye yang anda simpan."
-    "\n\n>`.rmgoodbye`"
-    "\nUsage: Menghapus pesan goodbye yang anda simpan."
-})
+CmdHelp('filter').add_command(
+    'filters', None, 'Bir sohbetteki tüm userbot filtrelerini listeler.'
+).add_command(
+    'filter', '<filtrelenecek kelime> <cevaplanacak metin> ya da bir mesajı .filter <filtrelenecek kelime>', 'Filtre ekler. Ne zaman eklediğiniz kelime/cümle yazılırsa bot cevap verir.', '.filter "merhaba" "meraba"'
+).add_command(
+    'stop', '<filtre>', 'Seçilen filtreyi durdurur.'
+).add_command(
+    'genelfilter', '<filtrelenecek kelime> <cevaplanacak metin> ya da bir mesajı .genelfilter <filtrelenecek kelime>', 'Genel filtre ekler. Tüm gruplarda çalışır.'
+).add_command(
+    '.genelstop', '<filtre>', 'Seçilen genel filtreyi durdurur.'
+).add()
