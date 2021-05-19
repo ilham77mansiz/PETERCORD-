@@ -210,4 +210,4 @@ async def gunben(userbot):
 
 
 CmdHelp('petercordkk').add_command('gmuted', '<alasan>',
-                             'Global mute pengguna meresahkan.').add()
+                                   'Global mute pengguna meresahkan.').add()
