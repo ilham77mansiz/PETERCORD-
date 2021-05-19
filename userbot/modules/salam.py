@@ -33,5 +33,8 @@ async def typewriter(typew):
     await typew.edit("Wa'alaikumussalam Semoga bermanfaat salamnya")
 
 
-CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
-                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
+CmdHelp('salam').add_command(
+    'P', None, 'Mengucaokan kata assalamualikum .'
+).add_command(
+    'L', None, 'Menjawab salam .'
+).add()
