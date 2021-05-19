@@ -3030,7 +3030,7 @@ CmdHelp('petercordmemes').add_command(
 ).add_command(
     'cry', None, 'Gajelas'
 ).add_command(
-    'shg', None, '¯\_(ツ)_/¯'
+    'shg', None, '¯\\_(ツ)_/¯'
 ).add_command(
     'run', None, 'lari'
 ).add_command(
