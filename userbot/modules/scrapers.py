@@ -1330,7 +1330,7 @@ CmdHelp('scrapers').add_command(
 ).add_command(
     'currency', '<amount> <from> <to>', 'Converts various currencies for you.'
 ).add_command(
-    'carbon', '<text or replay>', 'carbon.now.sh sitesini kullanarak yazdıklarının aşşşşşşırı şekil görünmesini sağlar.'
+    'carbon', '<text or replay>', 'membuat tulisan menjadi carbon.'
 ).add_command(
     'google', '<query>', 'Mencari di google.'
 ).add_command(
