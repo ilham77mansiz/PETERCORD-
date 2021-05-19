@@ -63,5 +63,5 @@ async def _(event):
 
 # Ported For Petercord-Userbot By bismillahselaluadaa/ILham
 
-CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
-                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
+CmdHelp('petercordgame').add_command('game', None,
+                             'menampilkan game via bot.').add()
