@@ -17,6 +17,7 @@ from userbot import (
     BOTLOG_CHATID,
     CMD_HELP)
 from userbot.events import register
+from userbot.cmdhelp import CmdHelp
 
 heroku_api = "https://api.heroku.com"
 if HEROKU_APP_NAME is not None and HEROKU_API_KEY is not None:
@@ -215,14 +216,14 @@ async def _(dyno):
     return os.remove("logs.txt")
 
 
-CMD_HELP.update({"heroku": ">.`usage`"
-                 "\nUsage: Check Dyno Heroku"
-                 "\n\n>`.set var <NEW VAR> <VALUE>`"
-                 "\nUsage: Tambahkan Variabel Baru Atau Memperbarui Variabel"
-                 "\nSetelah Menyetel Variabel Petercord-Userbot Akan Di Restart."
-                 "\n\n>`.get var or .get var <VAR>`"
-                 "\nUsage: Dapatkan Variabel Yang Ada, Gunakan Hanya Di Grup Privasi Anda!"
-                 "\nIni Mengembalikan Semua Informasi Pribadi Anda, Harap berhati-hati."
-                 "\n\n>`.del var <VAR>`"
-                 "\nUsage: Menghapus Variabel Yang Ada"
-                 "\nSetelah Menghapus Variabel Bot Akan Di Restart."})
+CmdHelp('heroku').add_command(
+    'filters', None, 'Bir sohbetteki tüm userbot filtrelerini listeler.'
+).add_command(
+    'filter', '<filtrelenecek kelime> <cevaplanacak metin> ya da bir mesajı .filter <filtrelenecek kelime>', 'Filtre ekler. Ne zaman eklediğiniz kelime/cümle yazılırsa bot cevap verir.', '.filter "merhaba" "meraba"'
+).add_command(
+    'stop', '<filtre>', 'Seçilen filtreyi durdurur.'
+).add_command(
+    'genelfilter', '<filtrelenecek kelime> <cevaplanacak metin> ya da bir mesajı .genelfilter <filtrelenecek kelime>', 'Genel filtre ekler. Tüm gruplarda çalışır.'
+).add_command(
+    '.genelstop', '<filtre>', 'Seçilen genel filtreyi durdurur.'
+).add()
