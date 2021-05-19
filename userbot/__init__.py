@@ -44,12 +44,12 @@ GALERI_SURE = int(os.environ.get("GALERI_SURE", 60))
 
 LANGUAGE = os.environ.get("LANGUAGE", "DEFAULT").upper()
 
-if not LANGUAGE in ["DEFAULT"]:
+if LANGUAGE not in ["DEFAULT"]:
     LOGS.info("BAhasanya Default")
     LANGUAGE = "DEFAULT"
 
 PLUGINID = os.environ.get("PLUGIN_CHANNEL_ID", None)
-# Plugin 
+# Plugin
 if not PLUGINID:
     PLUGIN_CHANNEL_ID = "me"
 else:
@@ -59,7 +59,8 @@ DB_URI = os.environ.get("DATABASE_URL", "sqlite:///asena.db")
 
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
 
-WHITELIST = get('https://gitlab.com/Quiec/asen/-/raw/master/whitelist.json').json()
+WHITELIST = get(
+    'https://gitlab.com/Quiec/asen/-/raw/master/whitelist.json').json()
 BRAIN_CHECKER = []
 
 # Bot Logs setup:
@@ -370,7 +371,6 @@ CMD_HELP = {}
 ISAFK = False
 AFKREASON = None
 ZALG_LIST = {}
-
 
 
 def paginate_help(page_number, loaded_modules, prefix):
