@@ -38,5 +38,5 @@ async def _(event):
 # TENTANG AKU DAN DIA
 # Ported For Petercord Userbot From Ultroid
 
-CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
-                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
+CmdHelp('petercordtm').add_command('tm', '<alamat email>',
+                             'Untuk mendapatkan Tempail email.').add()
