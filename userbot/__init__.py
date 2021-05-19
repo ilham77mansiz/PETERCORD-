@@ -7,23 +7,19 @@
 """ Userbot initialization. """
 
 import os
-import time
-import re
-
+from re import compile
 from sys import version_info
 from logging import basicConfig, getLogger, INFO, DEBUG
 from distutils.util import strtobool as sb
-from math import ceil
-
 from pylast import LastFMNetwork, md5
 from pySmartDL import SmartDL
-from pymongo import MongoClient
-from redis import StrictRedis
 from dotenv import load_dotenv
 from requests import get
-from telethon.sync import TelegramClient, custom, events
-from telethon.events import callbackquery, InlineQuery, NewMessage
+from telethon.tl.functions.channels import JoinChannelRequest
+from telethon.sync import TelegramClient, custom
 from telethon.sessions import StringSession
+from telethon.events import callbackquery, InlineQuery, NewMessage
+from math import ceil
 
 load_dotenv("config.env")
 
