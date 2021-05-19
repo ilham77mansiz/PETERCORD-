@@ -56,5 +56,5 @@ def user_full_name(user):
 
 
 # Mansiez
-CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
-                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
+CmdHelp('petercorddeteksi').add_command('deteksi', '<replay kepengguna>',
+                             'Untuk melihat grup yang sedang dimasukki atau yang sudah kelauar pengguna.').add()
