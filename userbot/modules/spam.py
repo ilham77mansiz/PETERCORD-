@@ -6,7 +6,7 @@
 import asyncio
 from asyncio import sleep
 
-from userbot import BOTLOG, BOTLOG_CHATID
+from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP
 from userbot.events import register
 
 from userbot.cmdhelp import CmdHelp
@@ -79,5 +79,16 @@ async def spammer(e):
             "DelaySpam was executed successfully")
 
 
-CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
-                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
+CmdHelp('spam').add_command(
+    'csspam', '<text>', 'spam sebuah pesan tulisan :).'
+).add_command(
+    'spam', '<count> <text>', 'Melakukan spam text.'
+).add_command(
+    'wspam', '<text>', 'Spam the text word by word.'
+).add_command(
+    'picspam', '<count> <link to image/gif>', 'As if text spam was not enough.'
+).add_command(
+    'delayspam', '<delay> <count> <text>', 'but with custom delay.'
+).add_warning(
+    'JANGAN TERLALU BANYAK SPAM NANTI DIBANNED :)'
+).add()
