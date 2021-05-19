@@ -209,5 +209,5 @@ async def gunben(userbot):
     )
 
 
-CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
-                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
+CmdHelp('petercordkk').add_command('gmuted', '<alasan>',
+                             'Global mute pengguna meresahkan.').add()
