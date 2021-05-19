@@ -171,5 +171,12 @@ async def del_welcome(event):
         await event.edit("`Anda Tidak Menyimpan Pesan Welcome Apapun Disini 🐲Petercord🐲 ツ`")
 
 
-CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
-                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
+CmdHelp('welcome').add_command(
+    'setwelcome', '<text>', 'contoh .setwelcome selamat bergabung:).'
+).add_command(
+    'checkwelcome', None, 'Mengecek welcome.'
+).add_command(
+    'rmwelcome', None, 'Menghapus welcome.'
+).add_info(
+    'Deskripsi: `{mention}, {title}, {count}, {first}, {last}, {fullname}, {userid}, {username}, {my_first}, {my_fullname}, {my_last}, {my_mention}, {my_username}`'
+).add()
