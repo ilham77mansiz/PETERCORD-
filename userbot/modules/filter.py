@@ -7,9 +7,10 @@
 
 from asyncio import sleep
 from re import search, IGNORECASE, escape
-from userbot import BOTLOG, BOTLOG_CHATID, CMD_HELP
+from userbot import BOTLOG, BOTLOG_CHATID
 from userbot.events import register
 from userbot.cmdhelp import CmdHelp
+
 
 @register(incoming=True, disable_edited=True, disable_errors=True)
 async def filter_incoming_handler(handler):
@@ -142,11 +143,16 @@ async def filters_active(event):
 
 
 CmdHelp('filter').add_command(
-    'filters', None, 'Menampilkan filter yang terpasang.'
-).add_command(
-    'filter', '<text> <text> contohnya .filter <guruku galak>', 'Membuat filter teks / gambar.', '.filter "merhaba" "meraba"'
-).add_command(
-    'stop', '<filternya>', 'menghapus filter.'
-).add_command(
-    'bersihkanbotfilter', '<marie/rose>', 'MEMBERSIHKAN FILTER BOT.'
-).add()
+    'filters',
+    None,
+    'Menampilkan filter yang terpasang.').add_command(
+        'filter',
+        '<text> <text> contohnya .filter <guruku galak>',
+        'Membuat filter teks / gambar.',
+        '.filter "merhaba" "meraba"').add_command(
+            'stop',
+            '<filternya>',
+            'menghapus filter.').add_command(
+                'bersihkanbotfilter',
+                '<marie/rose>',
+    'MEMBERSIHKAN FILTER BOT.').add()
