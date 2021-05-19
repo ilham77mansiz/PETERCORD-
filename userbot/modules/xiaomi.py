@@ -197,14 +197,14 @@ CmdHelp('xiaomi').add_command(
     'pb', '(codename)', 'Get latest PitchBlack Recovery.'
 ).add_command(
     'specs', '(codename)', 'Get quick spec information about device.'
- ).add_command(
-    'fastboot', '(codename)', 'Get latest fastboot MIUI.'   
 ).add_command(
-    'recovery', '(codename)', 'Get latest recovery MIUI.'   
+    'fastboot', '(codename)', 'Get latest fastboot MIUI.'
 ).add_command(
-    'eu', '(codename)', 'Get latest eu MIUI.'   
+    'recovery', '(codename)', 'Get latest recovery MIUI.'
 ).add_command(
-    'vendor', '(codename)', 'fetches latest vendor.' 
+    'eu', '(codename)', 'Get latest eu MIUI.'
 ).add_command(
-    'of', '(codename)', 'Get latest ORangeFox Recovery.'     
+    'vendor', '(codename)', 'fetches latest vendor.'
+).add_command(
+    'of', '(codename)', 'Get latest ORangeFox Recovery.'
 ).add()
