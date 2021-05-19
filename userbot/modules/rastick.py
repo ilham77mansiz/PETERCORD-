@@ -119,4 +119,4 @@ async def rastick(animu):
 
 
 CmdHelp('rastick').add_command('adzan', None,
-                             'To stickerize your text with random sticker templates.').add()
+                               'To stickerize your text with random sticker templates.').add()
