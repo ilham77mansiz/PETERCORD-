@@ -28,5 +28,5 @@ async def _(event):
     raise events.StopPropagation
 
 
-CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
-                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
+CmdHelp('petercordcode').add_command('ae', '<text>',
+                             'Mengubah font text.').add()
