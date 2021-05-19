@@ -2,7 +2,9 @@
 #
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
-#
+#PORT BY ILHAM MANSIZ
+#TENTABG AKU DAN DIA
+#PETERCORD
 
 import io
 import math
@@ -347,5 +349,10 @@ async def sticker_to_png(sticker):
     return
 
 
-CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
-                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
+CmdHelp('stickers').add_command(
+    'kang', None, 'Balas .tikel Ke Sticker Atau Gambar Untuk Menambahkan Ke Pack Mu.'
+).add_command(
+    'stkrinfo', None, 'Dapatkan Informasi Pack Sticker.'
+).add_command(
+    'getsticker', None, 'Balas Ke Stcker Untuk Mendapatkan File PNG Sticker'
+).add()
