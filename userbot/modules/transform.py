@@ -1,5 +1,5 @@
 # Authored by @Khrisna_Singhal
-# Ported from Userge by Alfiananda P.A
+# Ported from petercord
 
 import os
 import random
@@ -273,5 +273,22 @@ async def rotate(event):
     os.remove(Converted)
 
 
-CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
-                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
+CmdHelp('transform').add_command(
+    'ghost', None, 'Enchance your image to become a ghost.'
+).add_command(
+    'ascii', None, 'create ascii art from media.'
+).add_command(
+    'asciis', None, 'same but upload result as sticker.'
+).add_command(
+    'asciibg', '<color>', 'Now to use ASCII module change first background color past.'
+).add_command(
+    'flip', None, 'To flip your image.'
+).add_command(
+    'mirror', None, 'To mirror your image.'
+).add_command(
+    'bw', None, '`To Change your colorized image to b/w image.`'
+).add_command(
+    'poster', None, '`To poster  image.`'
+).add_command(
+    'rotate', '<value>`, '`To rotate your image\n* The value is range 1-360 if not it'll give default value which is 90`'
+).add()
