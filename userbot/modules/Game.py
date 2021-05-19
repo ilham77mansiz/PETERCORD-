@@ -66,7 +66,7 @@ async def _(event):
 
 
 CmdHelp('gamepetercord').add_command(
-    'ninjagame', None, 'Sebuah Game ninja ketik .ninjagane'
+    'ninjagame', None, 'Sebuah Game ninja ketik .ninjagame'
 ).add_command(
     'racergame', None, 'Sebuah game balap ketik .racergame'
 ).add()
