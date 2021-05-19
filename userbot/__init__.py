@@ -515,8 +515,8 @@ with bot:
             else:
                 result += f"**🎖PETERCORD:** {'🎖' if CMD_HELP[cmd]['info']['official'] else '❌'}\n"
                 if not CMD_HELP[cmd]['info']['warning'] == '':
-                    result += f"**⛔ Berbahaya:** {CMD_HELP_BOT[cmd]['info']['warning']}\n"
-                result += f"**INFORMASI:** {CMD_HELP_BOT[cmd]['info']['info']}\n\n"
+                    result += f"**⛔ Berbahaya:** {CMD_HELP[cmd]['info']['warning']}\n"
+                result += f"**INFORMASI:** {CMD_HELP[cmd]['info']['info']}\n\n"
 
             command = CMD_HELP[cmd]['commands'][komut]
             if command['params'] is None:
