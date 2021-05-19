@@ -11,7 +11,7 @@ from userbot import ALIVE_NAME, G_BAN_LOGGER_GROUP, bot
 # ================= CONSTANT =================
 DEFAULTUSER = str(ALIVE_NAME) if ALIVE_NAME else uname().node
 # ============================================
-
+from userbot.cmdhelp import CmdHelp
 
 @register(outgoing=True, pattern="^.gbanb(?: |$)(.*)")
 async def _(event):
@@ -60,3 +60,9 @@ async def _(event):
     await event.edit(f"**User ungbanned by {DEFAULTUSER}**")
     asyncio.sleep(5)
     await event.delete()
+
+CmdHelp('gban').add_command(
+    'gbanb', '<alasan>', 'Global ban via bot rose/marie.'
+).add_command(
+    'ungbanb', '<alasan>', 'Menghentikan Global ban via bot rose/marie.'
+).add()
