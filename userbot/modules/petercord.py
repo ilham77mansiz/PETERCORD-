@@ -44,4 +44,4 @@ async def typewriter(typew):
 # Create by myself @localheart
 
 CmdHelp('petercord').add_command('pantau', None,
-                             'Memantau wkwk.').add()
+                                 'Memantau wkwk.').add()
