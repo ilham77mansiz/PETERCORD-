@@ -31,4 +31,4 @@ async def _(event):
 
 
 CmdHelp('resi').add_command('resi', None,
-                             'Lacak paket.').add()
+                            'Lacak paket.').add()
