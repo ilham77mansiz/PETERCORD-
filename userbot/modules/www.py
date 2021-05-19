@@ -170,5 +170,16 @@ async def pingme(pong):
     duration = (end - start).microseconds / 9000
     await pong.edit("- 🕸P E T E R C O R D 🕸 -\n`%sms`" % (duration))
 
-CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
-                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
+CmdHelp('www').add_command(
+    'speed', None, 'Melakukan speedtest dan menampilkan hasilnya.'
+).add_command(
+    'dc', None, 'Menampilkan pusat data yang paling dekat dengan server Anda.'
+).add_command(
+    'ping', None, 'Menunjukkan nilai ping bot.'
+).add_command(
+    'pong', None, 'Menunjukkan nilai pong bot.'
+).add_command(
+    'xping', None, 'Menunjukkan nilai ping bot.'
+).add_command(
+    'lping', None, 'Menunjukkan nilai ping bot.'
+).add()
