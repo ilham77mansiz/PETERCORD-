@@ -99,5 +99,7 @@ async def sed(command):
             await command.edit(f"Did you mean? \n\n{text}")
 
 
-CmdHelp('sed').add_command('s', '<delimiter><old word(s)><delimiter><new word(s)>',
-                             'Replaces a word or words using sed.').add()
+CmdHelp('sed').add_command(
+    's',
+    '<delimiter><old word(s)><delimiter><new word(s)>',
+    'Replaces a word or words using sed.').add()
