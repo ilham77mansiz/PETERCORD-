@@ -24,5 +24,5 @@ async def var(m):
         "\n[DAFTAR VARS](https://raw.githubusercontent.com/ilham77mansiz/-PETERCORD-/Petercord-Userbot/varshelper.txt)")
 
 
-CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
-                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
+CmdHelp('petercordhelper').add_command('mintabantuan', None,
+                             'Meminta bantuan kepada owner.').add()
