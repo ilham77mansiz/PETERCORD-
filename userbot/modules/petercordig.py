@@ -52,5 +52,5 @@ async def insta(event):
 
 
 # By Petercord - Userbot
-CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
-                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
+CmdHelp('petercordig').add_command('ig', '<link>',
+                             'Mendapatkan video di instagram.').add()
