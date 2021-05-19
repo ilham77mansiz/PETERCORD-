@@ -149,8 +149,7 @@ try:
     except BaseException:
         pass
 
-    # Galeri için değerler
-    GALERI = {}
+
 
 
 for module_name in ALL_MODULES:
