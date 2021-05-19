@@ -148,5 +148,5 @@ async def scam(results, lim):
 
     return imglinks
 
-CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
-                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
+CmdHelp('reverse').add_command('reverse', None,
+                             'Balas gambar/stiker untuk melakukan pencarian terbalik di google.').add()
