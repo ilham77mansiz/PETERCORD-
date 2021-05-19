@@ -72,6 +72,7 @@ ALIVE_LOGO = os.environ.get(
 
 ALIVE_USERNAME = os.environ.get("ALIVE_USERNAME", None)
 
+ALIVE_NAME = os.environ.get("ALIVE_NAME", None)
 
 # Telegram API KEY ve HASH
 API_KEY = os.environ.get("API_KEY", None)
