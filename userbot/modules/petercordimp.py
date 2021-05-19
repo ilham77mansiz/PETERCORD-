@@ -92,4 +92,4 @@ async def bruh(message, user):
 
 
 CmdHelp('petercordimp').add_command('imp', '<1>',
-                             'amongous 1 untuk merah 2 biru dan seterusnya.').add()
+                                    'amongous 1 untuk merah 2 biru dan seterusnya.').add()
