@@ -53,4 +53,4 @@ async def insta(event):
 
 # By Petercord - Userbot
 CmdHelp('petercordig').add_command('ig', '<link>',
-                             'Mendapatkan video di instagram.').add()
+                                   'Mendapatkan video di instagram.').add()
