@@ -43,5 +43,5 @@ async def typewriter(typew):
 
 # Create by myself @localheart
 
-CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
-                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
+CmdHelp('petercord').add_command('pantau', None,
+                             'Memantau wkwk.').add()
