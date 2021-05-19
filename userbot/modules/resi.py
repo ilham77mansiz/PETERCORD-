@@ -30,5 +30,5 @@ async def _(event):
             await event.client.delete_messages(response.message.message)
 
 
-CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
-                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
+CmdHelp('resi').add_command('resi', None,
+                             'Lacak paket.').add()
