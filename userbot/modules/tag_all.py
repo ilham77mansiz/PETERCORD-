@@ -2,9 +2,9 @@
 # License, v. 2.0. If a copy of the MPL was not distributed with this
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 """A Plugin to tagall in the chat for @UniBorg and cmd is `.all`"""
-#PORT BY ILHAM MANSIZ
-#TENTANG AKU DAN DIA
-#PETERCORD
+# PORT BY ILHAM MANSIZ
+# TENTANG AKU DAN DIA
+# PETERCORD
 
 from userbot import bot
 from userbot.events import register
@@ -24,4 +24,4 @@ async def all(event):
 
 
 CmdHelp('tag_all').add_command('all', '<text>',
-                             'Mengetag semua member digrup jika admin:).').add()
+                               'Mengetag semua member digrup jika admin:).').add()
