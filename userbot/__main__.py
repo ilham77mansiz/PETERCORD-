@@ -2,7 +2,7 @@ from importlib import import_module
 from sqlite3 import connect
 import requests
 from telethon.errors.rpcerrorlist import PhoneNumberInvalidError
-from . import BRAIN_CHECKER, LOGS, bot
+from . import BRAIN_CHECKER, LOGS, bot, BOT_VER
 from .modules import ALL_MODULES
 
 import re
