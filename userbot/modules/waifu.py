@@ -130,5 +130,8 @@ async def _(hazmat):
     await hazmat.delete()
     return os.remove(downloaded_file_name)
 
-CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
-                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
+CmdHelp('waifu').add_command(
+    'waifu', '<Text>', 'for custom stickers.'
+).add_command(
+    'hz', '[flip, x2, rotate (degree), background (number), black].', 'Reply to a image / sticker to suit up!.'
+).add()
