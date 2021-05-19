@@ -302,5 +302,5 @@ async def twrp(request):
     await request.edit(reply)
 
 
-CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
-                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
+CmdHelp('android').add_command('twrp', '<code>',
+                             'Mencari sesuatu.').add()
