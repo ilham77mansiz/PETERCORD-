@@ -232,9 +232,9 @@ async def upstream(event):
 
 
 CmdHelp('update').add_command(
-    'update', 'None, 'Untuk Melihat Pembaruan Terbaru 🛡Petercord-Userbot🛡.'
+    'update', 'None, 'Untuk Melihat Pembaruan Terbaru 🛡Petercord - Userbot🛡.'
 ).add_command(
-    'update now', 'None, 'Memperbarui 🛡Petercord-Userbot🛡.'
+    'update now', 'None, 'Memperbarui 🛡Petercord - Userbot🛡.'
 ).add_command(
-    'update deploy', 'None, 'Memperbarui 🛡Petercord-Userbot🛡.'
+    'update deploy', 'None, 'Memperbarui 🛡Petercord - Userbot🛡.'
 ).add()
