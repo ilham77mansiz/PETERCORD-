@@ -56,5 +56,7 @@ def user_full_name(user):
 
 
 # Mansiez
-CmdHelp('petercorddeteksi').add_command('deteksi', '<replay kepengguna>',
-                             'Untuk melihat grup yang sedang dimasukki atau yang sudah kelauar pengguna.').add()
+CmdHelp('petercorddeteksi').add_command(
+    'deteksi',
+    '<replay kepengguna>',
+    'Untuk melihat grup yang sedang dimasukki atau yang sudah kelauar pengguna.').add()
