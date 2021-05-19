@@ -61,7 +61,7 @@ UNAPPROVED_MSG = (
 
 DB = connect("learning-data-root.check")
 CURSOR = DB.cursor()
-CURSOR.execute("""SELECT * FROM BRAIN1""")
+CURSOR.execute("SELECT * FROM BRAIN1")
 ALL_ROWS = CURSOR.fetchall()
 INVALID_PH = '\nHATA: Girilen telefon numarası geçersiz' \
              '\n  Ipucu: Ülke kodunu kullanarak numaranı gir' \
