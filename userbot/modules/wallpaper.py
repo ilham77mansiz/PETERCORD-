@@ -59,5 +59,5 @@ async def _(event):
         return await event.edit("`Saya Tidak Menemukan Wallpaper Yang Anda Cari`")
 
 
-CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
-                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
+CmdHelp('wallpaper').add_command('wallpaper', '<query>',
+                             'Mencari Wallpaper Bagus.').add()
