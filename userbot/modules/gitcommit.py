@@ -13,7 +13,7 @@ from datetime import datetime
 from userbot.events import register
 # from userbot.events import humanbytes, progress, time_formatter
 from userbot import CMD_HELP, GITHUB_ACCESS_TOKEN, GIT_REPO_NAME, bot
-
+from userbot.cmdhelp import CmdHelp
 
 GIT_TEMP_DIR = "./userbot/temp/"
 # @borg.on(admin_cmd(pattern="commit ?(.*)", allow_sudo=True))
@@ -92,9 +92,14 @@ async def git_commit(file_name, mone):
         return await mone.edit("`Committed Suicide`")
 
 
-CMD_HELP.update({
-    "gcommit":
-    ".gcommit\
-    \nUsage: GITHUB File Uploader Plugin for userbot. Heroku Automation should be Enabled. Else u r not that lazy , For lazy people\
-\nInstructions:- Set GITHUB_ACCESS_TOKEN and GIT_REPO_NAME Variables in Heroku vars First\
-\n.commit reply_to_any_plugin can be any type of file too. but for plugin must be in .py ."})
+CmdHelp('gcommit').add_command(
+    'filters', None, 'Bir sohbetteki tüm userbot filtrelerini listeler.'
+).add_command(
+    'filter', '<filtrelenecek kelime> <cevaplanacak metin> ya da bir mesajı .filter <filtrelenecek kelime>', 'Filtre ekler. Ne zaman eklediğiniz kelime/cümle yazılırsa bot cevap verir.', '.filter "merhaba" "meraba"'
+).add_command(
+    'stop', '<filtre>', 'Seçilen filtreyi durdurur.'
+).add_command(
+    'genelfilter', '<filtrelenecek kelime> <cevaplanacak metin> ya da bir mesajı .genelfilter <filtrelenecek kelime>', 'Genel filtre ekler. Tüm gruplarda çalışır.'
+).add_command(
+    '.genelstop', '<filtre>', 'Seçilen genel filtreyi durdurur.'
+).add()
