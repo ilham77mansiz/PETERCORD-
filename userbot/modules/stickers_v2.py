@@ -1,3 +1,7 @@
+#Port BY ILHAM MANSIEZ
+#TENTANG AKU DAN DIA
+#PETERCORD
+
 from telethon import events
 from telethon.errors.rpcerrorlist import YouBlockedUserError
 import io
