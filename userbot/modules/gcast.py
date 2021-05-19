@@ -1,10 +1,10 @@
 # frm Ultroid
-# port by Koala @manusiarakitann
+# port by Iham mansiz
 # @petercord
 
 from userbot.events import register
 from userbot import CMD_HELP, bot
-
+from userbot.cmdhelp import CmdHelp
 
 @register(outgoing=True, pattern="^.gcast (.*)")
 async def gcast(event):
@@ -27,8 +27,6 @@ async def gcast(event):
     await kk.edit(f"**╭✠╼━━━━━━❖━━━━━━━✠╮** Broadcast Terkirim Ke =** `{done}` **Grup, Broadcast Gagal Terkirim =** `{er}`**Grup**╰✠╼━━━━━━❖━━━━━━━✠╯**")
 
 
-CMD_HELP.update(
-    {
-        "gcast": ".gcast\
-    \nBroadcast ke Seluruh Grup."
-    })
+CmdHelp('gcast').add_command(
+    'gcast', '<text>', 'Mengirimi promosi keseluaruh grup yang dimasukki.'
+).add()
