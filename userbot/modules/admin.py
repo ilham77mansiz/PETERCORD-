@@ -904,5 +904,5 @@ async def get_bots(show):
         remove("botlist.txt")
 
 
-CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
-                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
+CmdHelp('admin').add_command('ban', '<replay/username>',
+                             'Membanned pengguna digrup.').add()
