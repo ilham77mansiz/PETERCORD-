@@ -348,5 +348,22 @@ async def amireallyalivereset(ureset):
     await ureset.edit("`" "Successfully reset user for alive!" "`")
 
 
-CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
-                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
+CmdHelp('system_stats').add_command(
+    'syd', None, 'Shows system information using neofetch.'
+).add_command(
+    'botver', None, 'Shows the userbot version.'
+).add_command(
+    'pip', '<module(s)>', 'Does a search of pip modules(s).'
+).add_command(
+    'alive', None, 'MENAMPILKAN ALIVE PETERCORD.'
+).add_command(
+    'start', None, 'start to see whether your bot is working or not.'
+).add_command(
+    'db', None, 'Shows database related info.'
+).add_command(
+    'aliveu', '<Text>', 'Changes the 'user' in alive to the text you want.'
+).add_command(
+    'resetalive', None, 'Resets the user to default.'
+).add_command(
+    'spc', None, 'Show system specification.'
+).add()
