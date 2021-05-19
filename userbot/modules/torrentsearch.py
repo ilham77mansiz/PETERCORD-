@@ -1,3 +1,6 @@
+#PORT BY ILHAM MANSIEZ
+#TENTANG AKU DAN DIA
+PETERCORD
 import codecs
 import json
 import os
