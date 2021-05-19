@@ -2981,5 +2981,74 @@ async def _(event):
         deq.rotate(1)
 
 
-CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
-                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
+CmdHelp('petercordmemes').add_command(
+    'eye', None, 'Liat aja sendiri.'
+).add_command(
+    'earth', None, 'Memutar bumi'
+).add_command(
+    'bombs', None, 'Bom telegram😁😁🤭.'
+).add_command(
+    'think', None, 'Berpikir.'
+).add_command(
+    'gotm', None, 'Dapatkan suck😂🤭'
+).add_command(
+    'snake', None, 'Liat aja sendiri.'
+).add_command(
+    'call', None, 'memanggil owner telegram.'
+).add_command(
+    'hp', None, 'Macam macam perintah menarik'
+).add_command(
+    'admeme', None, 'Memememe.'
+).add_command(
+    'qs', None, 'memulai percakapan.'
+).add_command(
+    'wtf', None, 'Liat aja sendiri.'
+).add_command(
+    'police', None, 'Waktunya kepenjara.'
+).add_command(
+    'isro', None, 'untuk memanggil alien'
+).add_command(
+    'mongkey', None, 'liat aja sendiri'
+).add_command(
+    'hack', None, 'untuk hack telegram'
+).add_command(
+    'plane', None, 'Berkeling satu tempat.'
+).add_command(
+    'fp', None, 'Stress.'
+).add_command(
+    'moon', None, 'bulan.'
+).add_command(
+    'clock', None, 'jam berjalan'
+).add_command(
+    'hi', None, 'perkenalan.'
+).add_command(
+    'owo', None, 'uwuuww'
+).add_command(
+    'react', None, 'Panda gaje.'
+).add_command(
+    'slap', '<username>', 'Test ajalah wwkwk.'
+).add_command(
+    'cry', None, 'Gajelas'
+).add_command(
+    'shg', None, '¯\_(ツ)_/¯'
+).add_command(
+    'run', None, 'lari'
+).add_command(
+    'mock', '<pesan>', 'Tulisan gajelas.'
+).add_command(
+    'clap', None, 'memuji seseorang!'
+).add_command(
+    'f', '<text>', 'F'
+).add_command(
+    'type', '<text>', 'Tes ajalah.'
+).add_command(
+    'lfy', '<text>', 'Tes ajalah.'
+).add_command(
+    'whatsapp', None, 'Liat aja sendiri'
+).add_command(
+    'jio', None, 'Conneting jio.'
+).add_command(
+    'hypno', None, 'Ah sial mataku'
+).add_command(
+    'quickheal', None, 'Virus ditemukan matikan orang itu'
+).add()
