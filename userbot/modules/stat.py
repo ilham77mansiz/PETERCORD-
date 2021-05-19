@@ -9,7 +9,6 @@ from telethon.tl.types import Channel, Chat, User
 
 from userbot.events import register
 from userbot.cmdhelp import CmdHelp
-from userbot import CMD_HELP
 
 logging.basicConfig(
     format='[%(levelname) 5s/%(asctime)s] %(name)s: %(message)s',
