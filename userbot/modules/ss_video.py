@@ -2,9 +2,9 @@
 #
 # Licensed under the Raphielscape Public License, Version 1.d (the "License");
 # you may not use this file except in compliance with the License.
-#PORT BY ILHAM MANSIZ
-#TENTANG AKU DAN DIA
-#PETERCORD
+# PORT BY ILHAM MANSIZ
+# TENTANG AKU DAN DIA
+# PETERCORD
 
 import asyncio
 import os
@@ -73,4 +73,4 @@ async def ssvideo(event):
 
 
 CmdHelp('ss_video').add_command('ssvideo', '<frame>',
-                             'Mencari ssvideo frame per frame.').add()
+                                'Mencari ssvideo frame per frame.').add()
