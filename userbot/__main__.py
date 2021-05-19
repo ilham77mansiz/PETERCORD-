@@ -143,12 +143,7 @@ try:
     if idim in masterbl:
         bot.disconnect()
 
-    # ChromeDriver'ı Ayarlayalım #
-    try:
-        chromedriver_autoinstaller.install()
-    except BaseException:
-        pass
-
+    
 
 for module_name in ALL_MODULES:
     imported_module = import_module("userbot.modules." + module_name)
