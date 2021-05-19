@@ -303,4 +303,4 @@ async def twrp(request):
 
 
 CmdHelp('android').add_command('twrp', '<code>',
-                             'Mencari sesuatu.').add()
+                               'Mencari sesuatu.').add()
