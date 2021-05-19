@@ -191,5 +191,20 @@ async def _(event):
             await bot.forward_messages(event.chat_id, response.message)
 
 
-CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
-                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
+CmdHelp('xiaomi').add_command(
+    'firmware', '(codename)', 'Get lastest Firmware'
+).add_command(
+    'pb', '(codename)', 'Get latest PitchBlack Recovery.'
+).add_command(
+    'specs', '(codename)', 'Get quick spec information about device.'
+ ).add_command(
+    'fastboot', '(codename)', 'Get latest fastboot MIUI.'   
+).add_command(
+    'recovery', '(codename)', 'Get latest recovery MIUI.'   
+).add_command(
+    'eu', '(codename)', 'Get latest eu MIUI.'   
+).add_command(
+    'vendor', '(codename)', 'fetches latest vendor.' 
+).add_command(
+    'of', '(codename)', 'Get latest ORangeFox Recovery.'     
+).add()
