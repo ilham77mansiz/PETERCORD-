@@ -144,7 +144,7 @@ try:
     if idim in masterbl:
         bot.disconnect()
  # tentang aku dan dia
-   try:
+
     bot.start()
 except PhoneNumberInvalidError:
     print(INVALID_PH)
