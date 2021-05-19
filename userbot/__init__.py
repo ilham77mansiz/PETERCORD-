@@ -60,7 +60,7 @@ DB_URI = os.environ.get("DATABASE_URL", "sqlite:///asena.db")
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
 
 WHITELIST = get('https://gitlab.com/Quiec/asen/-/raw/master/whitelist.json').json()
-
+BRAIN_CHECKER = []
 
 # Bot Logs setup:
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
@@ -370,7 +370,7 @@ CMD_HELP = {}
 ISAFK = False
 AFKREASON = None
 ZALG_LIST = {}
-BRAIN_CHECKER = []
+
 
 
 def paginate_help(page_number, loaded_modules, prefix):
