@@ -148,5 +148,7 @@ async def scam(results, lim):
 
     return imglinks
 
-CmdHelp('reverse').add_command('reverse', None,
-                             'Balas gambar/stiker untuk melakukan pencarian terbalik di google.').add()
+CmdHelp('reverse').add_command(
+    'reverse',
+    None,
+    'Balas gambar/stiker untuk melakukan pencarian terbalik di google.').add()
