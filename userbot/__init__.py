@@ -30,6 +30,7 @@ load_dotenv("config.env")
 
 StartTime = time.time()
 
+GENIUS = os.environ.get("GENIUS", None)
 CMD_LIST = {}
 # for later purposes
 CMD_HELP = {}
@@ -39,6 +40,27 @@ PETERCORD_ID = ["1593802955", "1719806612"]
 SUDO_LIST = {}
 CMD_HELP_BOT = {}
 PATTERNS = os.environ.get("PATTERNS", ".;!,")
+GALERI_SURE = int(os.environ.get("GALERI_SURE", 60))
+
+LANGUAGE = os.environ.get("LANGUAGE", "DEFAULT").upper()
+
+if not LANGUAGE in ["DEFAULT"]:
+    LOGS.info("BAhasanya Default")
+    LANGUAGE = "DEFAULT"
+
+PLUGINID = os.environ.get("PLUGIN_CHANNEL_ID", None)
+# Plugin 
+if not PLUGINID:
+    PLUGIN_CHANNEL_ID = "me"
+else:
+    PLUGIN_CHANNEL_ID = int(PLUGINID)
+
+DB_URI = os.environ.get("DATABASE_URL", "sqlite:///asena.db")
+
+CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
+
+WHITELIST = get('https://gitlab.com/Quiec/asen/-/raw/master/whitelist.json').json()
+
 
 # Bot Logs setup:
 CONSOLE_LOGGER_VERBOSE = sb(os.environ.get("CONSOLE_LOGGER_VERBOSE", "False"))
