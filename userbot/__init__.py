@@ -363,6 +363,8 @@ else:
 
 def butonlastir(sayfa, moduller):
     Satir = 5
+    Kolon = 2
+
     moduller = sorted(
         [modul for modul in moduller if not modul.startswith("_")])
     pairs = list(map(list, zip(moduller[::2], moduller[1::2])))
