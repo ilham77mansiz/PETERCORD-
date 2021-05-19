@@ -71,4 +71,4 @@ async def _(hazmat):
 
 
 CmdHelp('petercordhz').add_command('hz', '<balas ke gambar/sticker>',
-                             'Mengubah sticker atau gambar menjadi astronot .').add()
+                                   'Mengubah sticker atau gambar menjadi astronot .').add()
