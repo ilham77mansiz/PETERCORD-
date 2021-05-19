@@ -2,7 +2,7 @@ from importlib import import_module
 from sqlite3 import connect
 import requests
 from telethon.errors.rpcerrorlist import PhoneNumberInvalidError
-from . import BOT_VER, BRAIN_CHECKER, LOGS, bot
+from . import BRAIN_CHECKER, LOGS, bot
 from .modules import ALL_MODULES
 
 import re
@@ -146,8 +146,9 @@ except PhoneNumberInvalidError:
 for module_name in ALL_MODULES:
     imported_module = import_module("userbot.modules." + module_name)
 
-LOGS.info("Pesanmu sedang berjalan! Uji dengan mengetik .alive di obrolan apa pun."
-          " Jika Anda membutuhkan bantuan, datanglah ke grup Dukungan kami https://t.me/TEAMSquadUserbotSupport")
+LOGS.info(
+    "Pesanmu sedang berjalan! Uji dengan mengetik .alive di obrolan apa pun."
+    " Jika Anda membutuhkan bantuan, datanglah ke grup Dukungan kami https://t.me/TEAMSquadUserbotSupport")
 LOGS.info(f"Bot Version: 🎖️PETERCORD USERBOT {BOT_VERSION}")
 
 """
