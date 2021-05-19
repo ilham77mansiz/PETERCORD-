@@ -1,6 +1,6 @@
 # credits: SNAPDRAGON (@s_n_a_p_s)
 # originally from xtra-telegram
-# ported by @heyworld
+# ported by Tentang aku dan dia
 
 import asyncio
 import time
@@ -43,5 +43,5 @@ async def _(event):
     stdout, stderr = await process.communicate()
     await event.edit(f"{stdout.decode()}")
 
-CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
-                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
+CmdHelp('webupload').add_command('webupload', '(`anonfiles`|`transfer`|`filebin`|`anonymousfiles`|`megaupload`|`bayfiles`'
+                             '.webupload --anonfiles` or `.webupload --filebin` and the file will be uploaded to that website.').add()
