@@ -382,5 +382,22 @@ async def add_pmsg(cust_msg):
             )
 
 
-CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
-                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
+CmdHelp('pm').add_command(
+    'setuju', None, 'Menerima pesan seseorang dengan cara balas pesannya atau tag dan juga untuk dilakukan di pm'
+).add_command(
+    'tolak', None, 'Menolak pesan seseorang dengan cara balas pesannya atau tag dan juga untuk dilakukan di pm.'
+).add_command(
+    'block', None, 'Melakukan blockir di PM.'
+).add_command(
+    'unblock', None, 'Membuka blokir.'
+).add_command(
+    'notifoff', None, 'Mematikan pesan notifikasi yang belum diterima.'
+).add_command(
+    'notifon', None, 'Mengaktifkan pesan notifikasi yang belum diterima.'
+).add_command(
+    'set pm_msg', '<balas ke pesan>', 'Menyetel Pesan Pribadimu untuk orang yang pesannya belum diterima.'
+).add_command(
+    'get pm_msg', None, 'Mendapatkan Custom pesan PM'
+).add_command(
+    'reset pm_msg', None, 'Menghapus pesan PM ke default.'
+).add()
