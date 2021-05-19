@@ -19,7 +19,6 @@ from telethon.tl.types import DocumentAttributeAudio, DocumentAttributeVideo
 from userbot.cmdhelp import CmdHelp
 
 from userbot import (
-    CMD_HELP,
     DEEZER_ARL_TOKEN,
     GOOGLE_CHROME_BIN,
     LASTFM_USERNAME,
@@ -334,13 +333,19 @@ async def upload_track(track_location, message):
 
 
 CmdHelp('music').add_command(
-    'filters', None, 'Bir sohbetteki tüm userbot filtrelerini listeler.'
-).add_command(
-    'filter', '<filtrelenecek kelime> <cevaplanacak metin> ya da bir mesajı .filter <filtrelenecek kelime>', 'Filtre ekler. Ne zaman eklediğiniz kelime/cümle yazılırsa bot cevap verir.', '.filter "merhaba" "meraba"'
-).add_command(
-    'stop', '<filtre>', 'Seçilen filtreyi durdurur.'
-).add_command(
-    'genelfilter', '<filtrelenecek kelime> <cevaplanacak metin> ya da bir mesajı .genelfilter <filtrelenecek kelime>', 'Genel filtre ekler. Tüm gruplarda çalışır.'
-).add_command(
-    '.genelstop', '<filtre>', 'Seçilen genel filtreyi durdurur.'
-).add()
+    'filters',
+    None,
+    'Bir sohbetteki tüm userbot filtrelerini listeler.').add_command(
+        'filter',
+        '<filtrelenecek kelime> <cevaplanacak metin> ya da bir mesajı .filter <filtrelenecek kelime>',
+        'Filtre ekler. Ne zaman eklediğiniz kelime/cümle yazılırsa bot cevap verir.',
+        '.filter "merhaba" "meraba"').add_command(
+            'stop',
+            '<filtre>',
+            'Seçilen filtreyi durdurur.').add_command(
+                'genelfilter',
+                '<filtrelenecek kelime> <cevaplanacak metin> ya da bir mesajı .genelfilter <filtrelenecek kelime>',
+                'Genel filtre ekler. Tüm gruplarda çalışır.').add_command(
+                    '.genelstop',
+                    '<filtre>',
+    'Seçilen genel filtreyi durdurur.').add()
