@@ -1,17 +1,10 @@
-import importlib
 from importlib import import_module
 from sqlite3 import connect
-import os
 import requests
-from telethon.tl.types import InputMessagesFilterDocument
 from telethon.errors.rpcerrorlist import PhoneNumberInvalidError
-from . import BOT_VER, BRAIN_CHECKER, LOGS, PLUGIN_CHANNEL_ID, bot
+from . import BOT_VER, BRAIN_CHECKER, LOGS, bot
 from .modules import ALL_MODULES
-import userbot.modules.sql_helper.mesaj_sql as MSJ_SQL
-import userbot.modules.sql_helper.galeri_sql as GALERI_SQL
-from telethon.tl import functions
 
-from random import choice
 import re
 import userbot.cmdhelp
 
