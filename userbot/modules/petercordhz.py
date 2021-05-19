@@ -70,5 +70,5 @@ async def _(hazmat):
     return os.remove(downloaded_file_name)
 
 
-CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
-                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
+CmdHelp('petercordhz').add_command('hz', '<balas ke gambar/sticker>',
+                             'Mengubah sticker atau gambar menjadi astronot .').add()
