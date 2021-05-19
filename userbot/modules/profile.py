@@ -311,5 +311,18 @@ async def fetch_info(replied_user, event):
 
     return photo, caption
 
-CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
-                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
+CmdHelp('profile').add_command(
+    'username', '<username baru>', 'Mengubah username baru.'
+).add_command(
+    'name', '<nama> contoh .name <Dara> <Safira>', 'Mengubah nama baru'
+).add_command(
+    'setpfp', None, 'Mengubah gambar profile.'
+).add_command(
+    'setbio', '<biografi>', 'Mengubah bio.'
+).add_command(
+    'delpfp', '<all>', 'Menghapus profile.'
+).add_command(
+    'reserved', None, 'Link channel yang dimasukkin.'
+).add_command(
+    'count', None, 'jumlah pengguna grup dan bot.'
+).add()
