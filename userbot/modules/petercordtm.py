@@ -39,4 +39,4 @@ async def _(event):
 # Ported For Petercord Userbot From Ultroid
 
 CmdHelp('petercordtm').add_command('tm', '<alamat email>',
-                             'Untuk mendapatkan Tempail email.').add()
+                                   'Untuk mendapatkan Tempail email.').add()
