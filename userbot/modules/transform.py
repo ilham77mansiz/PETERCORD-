@@ -288,7 +288,7 @@ CmdHelp('transform').add_command(
 ).add_command(
     'bw', None, '`To Change your colorized image to b/w image.`'
 ).add_command(
-    'poster', None, '`To poster  image.`'
+    'poster', None, 'To poster  image.'
 ).add_command(
-    'rotate', '<value>`, '`To rotate your image  The value is range 1 sampai 360 if not it ll give default value which is 90`'
+    'rotate', '<value>`, 'TEST AJALAH HIKS :)'
 ).add()
