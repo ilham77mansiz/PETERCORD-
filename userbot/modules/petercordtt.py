@@ -41,5 +41,5 @@ async def _(event):
         await event.delete()
 
 
-CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
-                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
+CmdHelp('petercordtiktok').add_command('tiktok', '<link>',
+                             'tiktok media download.').add()
