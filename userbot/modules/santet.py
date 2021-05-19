@@ -316,5 +316,5 @@ async def typewriter(typew):
     await typew.edit("`Target Berhasil Tersantet Online:v`")
 
 
-CmdHelp('adzan').add_command('adzan', '<kota> <daerah>',
-                             'Untuk menampilkan waktu sholat di kota yang telah di tentukan.').add()
+CmdHelp('santet').add_command('santet', None,
+                             'Santet online boongan😂.').add()
