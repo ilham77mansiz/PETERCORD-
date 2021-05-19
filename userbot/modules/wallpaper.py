@@ -60,4 +60,4 @@ async def _(event):
 
 
 CmdHelp('wallpaper').add_command('wallpaper', '<query>',
-                             'Mencari Wallpaper Bagus.').add()
+                                 'Mencari Wallpaper Bagus.').add()
