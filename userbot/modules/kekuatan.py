@@ -3,7 +3,7 @@ from telethon.errors.rpcerrorlist import YouBlockedUserError
 
 from userbot.events import register
 from userbot import bot, TEMP_DOWNLOAD_DIRECTORY, CMD_HELP
-
+from userbot.cmdhelp import CmdHelp
 
 @register(outgoing=True, pattern=r'^.kekuatan(:? |$)([1-8])?')
 async def _(fry):
@@ -129,8 +129,14 @@ async def _(fry):
     return os.remove(downloaded_file_name)
 
 
-CMD_HELP.update({
-    "kekuatan":
-    "`.kekuatan` or `.kekuatan` [level(1-8)]"
-    "\nUsage: untuk mengubah foto/sticker."
-})
+CmdHelp('kekuatan').add_command(
+    'filters', None, 'Bir sohbetteki tüm userbot filtrelerini listeler.'
+).add_command(
+    'filter', '<filtrelenecek kelime> <cevaplanacak metin> ya da bir mesajı .filter <filtrelenecek kelime>', 'Filtre ekler. Ne zaman eklediğiniz kelime/cümle yazılırsa bot cevap verir.', '.filter "merhaba" "meraba"'
+).add_command(
+    'stop', '<filtre>', 'Seçilen filtreyi durdurur.'
+).add_command(
+    'genelfilter', '<filtrelenecek kelime> <cevaplanacak metin> ya da bir mesajı .genelfilter <filtrelenecek kelime>', 'Genel filtre ekler. Tüm gruplarda çalışır.'
+).add_command(
+    '.genelstop', '<filtre>', 'Seçilen genel filtreyi durdurur.'
+).add()
