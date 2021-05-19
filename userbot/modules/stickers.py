@@ -2,9 +2,9 @@
 #
 # Licensed under the Raphielscape Public License, Version 1.c (the "License");
 # you may not use this file except in compliance with the License.
-#PORT BY ILHAM MANSIZ
-#TENTABG AKU DAN DIA
-#PETERCORD
+# PORT BY ILHAM MANSIZ
+# TENTABG AKU DAN DIA
+# PETERCORD
 
 import io
 import math
