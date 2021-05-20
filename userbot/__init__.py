@@ -385,7 +385,6 @@ else:
 
 def butonlastir(sayfa, moduller):
     Satir = 5
-    Kolun = 2
     moduller = sorted(
         [modul for modul in moduller if not modul.startswith("_")])
     pairs = list(map(list, zip(moduller[::2], moduller[1::2])))
@@ -482,7 +481,9 @@ with bot:
                 link_preview=False
             )
 
-        @tgbot.on(callbackquery.CallbackQuery(data=compile(b"bilgi\\[(\\d*)\\]\\((.*)\\)")))
+        @tgbot.on(
+            callbackquery.CallbackQuery(
+                data=compile(b"bilgi\\[(\\d*)\\]\\((.*)\\)")))
         async def bilgi(event):
             if not event.query.user_id == uid:
                 return await event.answer("Warning! Hey! kamu harus buat sendiri deploy! silakan anda join @TEAMSquadUserbotSupport grup.", cache_time=0, alert=True)
@@ -514,7 +515,9 @@ with bot:
                 reply_pop_up_alert = f"Harap Deploy Master Userbot Anda Sendiri, Jangan Menggunakan Milik MASTER ORANG"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        @tgbot.on(callbackquery.CallbackQuery(data=compile(b"komut\\[(.*)\\[(\\d*)\\]\\]\\((.*)\\)")))
+        @tgbot.on(
+            callbackquery.CallbackQuery(
+                data=compile(b"komut\\[(.*)\\[(\\d*)\\]\\]\\((.*)\\)")))
         async def komut(event):
             if not event.query.user_id == uid:
                 return await event.answer("Warning! Hey! kamu harus buat sendiri deploy! silakan anda join @TEAMSquadUserbotSupport grup.", cache_time=0, alert=True)
