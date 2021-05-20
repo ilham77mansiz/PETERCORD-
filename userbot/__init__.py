@@ -519,7 +519,7 @@ with bot:
 
                 str(CMD_HELP[modul_name])
                 if CMD_HELP_BOT[cmd]['info']['info'] == '':
-                    
+
             command = CMD_HELP_BOT[cmd]['commands'][komut]
             if command['params'] is None:
                 result += f"**🎖DAFTAR PETERCORD:** `{PATTERNS[:1]}{command['command']}`\n"
