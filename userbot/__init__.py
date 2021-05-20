@@ -518,7 +518,6 @@ with bot:
 
                 cmdhel = str(CMD_HELP[modul_name])
                 if CMD_HELP_BOT[cmd]['info']['info'] == '':
-                if not CMD_HELP_BOT[cmd]['info']['warning'] == '':
                     result += f"**🎖PETERCORD:** {'🎖' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n"
                     result += f"**⛔ Berbahaya:** {CMD_HELP_BOT[cmd]['info']['warning']}\n\n"
                 else:
