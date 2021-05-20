@@ -374,7 +374,6 @@ AFKREASON = None
 ZALG_LIST = {}
 
 
-
 # Copyright (C) 2019 The Raphielscape Company LLC.
 #
 # Licensed under the Raphielscape Public License, Version 1.d (the "License");
@@ -383,23 +382,6 @@ ZALG_LIST = {}
 # Pengguna Petercord-Userbot
 """ Userbot initialization. """
 
-import os
-import time
-import re
-
-from sys import version_info
-from logging import basicConfig, getLogger, INFO, DEBUG
-from distutils.util import strtobool as sb
-from math import ceil
-
-from pylast import LastFMNetwork, md5
-from pySmartDL import SmartDL
-from pymongo import MongoClient
-from redis import StrictRedis
-from dotenv import load_dotenv
-from requests import get
-from telethon.sync import TelegramClient, custom, events
-from telethon.sessions import StringSession
 
 load_dotenv("config.env")
 
@@ -827,10 +809,10 @@ with bot:
                     current_page_number + 1, dugmeler, "helpme")
                 # https://t.me/TelethonChat/115200
                 await event.edit(
-                f"**🎖 DAFTAR PETERCORD:** `{komut}`\n\n**🎖JUMLAH PERINTAH🎖:** `{len(CMD_HELP_BOT[komut]['commands'])}`",
-                buttons=butonlar,
-                link_preview=False
-            )
+                    f"**🎖 DAFTAR PETERCORD:** `{komut}`\n\n**🎖JUMLAH PERINTAH🎖:** `{len(CMD_HELP_BOT[komut]['commands'])}`",
+                    buttons=butonlar,
+                    link_preview=False
+                )
 
             else:
                 reply_pop_up_alert = f"Harap Deploy Petercord Userbot Anda Sendiri, Jangan Menggunakan Milik Petercord {ALIVE_NAME} ツ"
@@ -858,10 +840,10 @@ with bot:
                 )
                 # https://t.me/TelethonChat/115200
                 await event.edit(
-                f"**🎖 DAFTAR PETERCORD:** `{komut}`\n\n**🎖JUMLAH PERINTAH🎖:** `{len(CMD_HELP_BOT[komut]['commands'])}`",
-                buttons=butonlar,
-                link_preview=False
-            )
+                    f"**🎖 DAFTAR PETERCORD:** `{komut}`\n\n**🎖JUMLAH PERINTAH🎖:** `{len(CMD_HELP_BOT[komut]['commands'])}`",
+                    buttons=butonlar,
+                    link_preview=False
+                )
 
             else:
                 reply_pop_up_alert = f"Harap Deploy Petercord Userbot Anda Sendiri, Jangan Menggunakan Milik Petercord {ALIVE_NAME} ツ"
