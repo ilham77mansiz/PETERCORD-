@@ -9,6 +9,7 @@
 import os
 import time
 import re
+import userbot.cmdhelp
 
 from sys import version_info
 from logging import basicConfig, getLogger, INFO, DEBUG
