@@ -13,7 +13,6 @@ import importlib
 
 from userbot import CMD_HELP, PLUGIN_CHANNEL_ID
 from userbot.events import register
-from userbot.main import extractCommands
 import userbot.cmdhelp
 
 # ██████ LANGUAGE CONSTANTS ██████ #
