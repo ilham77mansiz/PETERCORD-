@@ -516,7 +516,7 @@ with bot:
             if event.query.user_id == uid:  # pylint:disable=E0602
                 modul_name = event.data_match.group(1).decode("UTF-8")
 
-                cmdhel = str(CMD_HELP[modul_name])
+                str(CMD_HELP[modul_name])
                 if CMD_HELP_BOT[cmd]['info']['info'] == '':
                     result += f"**🎖PETERCORD:** {'🎖' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n"
                     result += f"**⛔ Berbahaya:** {CMD_HELP_BOT[cmd]['info']['warning']}\n\n"
