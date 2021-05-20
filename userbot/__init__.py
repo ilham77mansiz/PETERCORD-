@@ -516,15 +516,14 @@ with bot:
             if event.query.user_id == uid:  # pylint:disable=E0602
                 modul_name = event.data_match.group(1).decode("UTF-8")
 
-                str(CMD_HELP[modul_name])
+                cmdhel = str(CMD_HELP[modul_name])
                 if CMD_HELP_BOT[cmd]['info']['info'] == '':
                     result += f"**🎖PETERCORD:** {'🎖' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n"
                     result += f"**⛔ Berbahaya:** {CMD_HELP_BOT[cmd]['info']['warning']}\n\n"
                 else:
                     result += f"**🎖PETERCORD:** {'🎖' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n\n"
             else:
-                result += f"**🎖PETERCORD:** {'🎖' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n"
-                if not CMD_HELP_BOT[cmd]['info']['warning'] == '':
+                result += f"**🎖PETERCORD:** {'🎖' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n\n"
                     result += f"**⛔ Berbahaya:** {CMD_HELP_BOT[cmd]['info']['warning']}\n"
                 result += f"**INFORMASI:** {CMD_HELP_BOT[cmd]['info']['info']}\n\n"
 
