@@ -20,7 +20,6 @@ import userbot.modules.sql_helper.galeri_sql as GALERI_SQL
 from telethon.tl import functions
 
 from random import choice
-import chromedriver_autoinstaller
 import re
 import userbot.cmdhelp
 
@@ -70,7 +69,6 @@ UNAPPROVED_MSG = (
 
 DB = connect("learning-data-root.check")
 CURSOR = DB.cursor()
-CURSOR.execute("""SELECT * FROM BRAIN1""")
 ALL_ROWS = CURSOR.fetchall()
 INVALID_PH = '\nHATA: Girilen telefon numarası geçersiz' \
              '\n  Ipucu: Ülke kodunu kullanarak numaranı gir' \
@@ -119,11 +117,11 @@ def extractCommands(file):
                         Komutlar.append(KomutStr)
 
             # MasterPY
-            Masterpy = re.search(
-                '\"\"\"MASTERPY(.*)\"\"\"', FileRead, re.DOTALL)
-            if Masterpy is not None:
-                Masterpy = Masterpy.group(0)
-                for Satir in Masterpy.splitlines():
+            Petercordpy = re.search(
+                '\"\"\"PETERCORDPY(.*)\"\"\"', FileRead, re.DOTALL)
+            if Petercordpy is not None:
+                Petercordpy = Petercordpy.group(0)
+                for Satir in Petercordpy.splitlines():
                     if ('"""' not in Satir) and (':' in Satir):
                         Satir = Satir.split(':')
                         Isim = Satir[0]
