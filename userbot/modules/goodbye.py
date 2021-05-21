@@ -1,19 +1,14 @@
-# Port ilham mansiz
-from datetime import datetime
-
-from pytz import timezone
 from userbot.events import register
-from userbot import BOTLOG_CHATID, CLEAN_WELCOME, LOGS, bot
+from userbot import CMD_HELP, bot, LOGS, CLEAN_WELCOME, BOTLOG_CHATID
 from telethon.events import ChatAction
 from userbot.cmdhelp import CmdHelp
-
 
 @bot.on(ChatAction)
 async def goodbye_to_chat(event):
     try:
         from userbot.modules.sql_helper.goodbye_sql import get_current_goodbye_settings
         from userbot.modules.sql_helper.goodbye_sql import update_previous_goodbye
-    except AttributeError:
+    except:
         return
     cws = get_current_goodbye_settings(event.chat_id)
     if cws:
@@ -21,8 +16,8 @@ async def goodbye_to_chat(event):
         user_joined=False,
         user_left=True,
         user_kicked=True"""
-        if (event.user_joined
-                or event.user_added) and not (await event.get_user()).bot:
+        if (event.user_left
+                or event.user_kicked) and not (await event.get_user()).bot:
             if CLEAN_WELCOME:
                 try:
                     await event.client.delete_messages(event.chat_id,
@@ -33,29 +28,7 @@ async def goodbye_to_chat(event):
             chat = await event.get_chat()
             me = await event.client.get_me()
 
-            # Current time in UTC
-            now_utc = datetime.now(timezone("UTC"))
-
-            # Convert to Jakarta time zone
-            jakarta_timezone = now_utc.astimezone(timezone("Asia/Jakarta"))
-            if jakarta_timezone.hour < 4:
-                pass
-            elif 4 <= jakarta_timezone.hour < 6:
-                pass
-            elif 6 <= jakarta_timezone.hour < 11:
-                pass
-            elif 11 <= jakarta_timezone.hour < 13:
-                pass
-            elif 13 <= jakarta_timezone.hour < 15:
-                pass
-            elif 15 <= jakarta_timezone.hour < 17:
-                pass
-            elif 17 <= jakarta_timezone.hour < 19:
-                pass
-            else:
-                pass
-
-            title = chat.title if chat.title else "Grup Ini"
+            title = chat.title if chat.title else "this chat"
             participants = await event.client.get_participants(chat)
             count = len(participants)
             mention = "[{}](tg://user?id={})".format(a_user.first_name,
@@ -107,17 +80,18 @@ async def goodbye_to_chat(event):
 async def save_goodbye(event):
     try:
         from userbot.modules.sql_helper.goodbye_sql import add_goodbye_setting
-    except AttributeError:
-        return await event.edit("`Berjalan Pada Mode Non-SQL!`")
+    except:
+        await event.edit("`SQL dışı modda çalışıyor!`")
+        return
     msg = await event.get_reply_message()
     string = event.pattern_match.group(1)
     msg_id = None
     if msg and msg.media and not string:
         if BOTLOG_CHATID:
             await event.client.send_message(
-                BOTLOG_CHATID, f"📢GOODBYE PETERCORD📢 \nID GRUP: {event.chat_id}"
-                "\nPetercord Memasang Pesan Perintah GOODBYE Digrup, Ini Adalah Catatan Pesan Goodbye "
-                "Mohon Jangan Dihapus 🎸Petercord!🎸"
+                BOTLOG_CHATID, f"#GOODBYE\
+            \nGRUP ID: {event.chat_id}\
+            \nGoodbye by Tentang Aku dan dia jangan dihapus !!"
             )
             msg_o = await event.client.forward_messages(
                 entity=BOTLOG_CHATID,
@@ -126,39 +100,40 @@ async def save_goodbye(event):
                 silent=True)
             msg_id = msg_o.id
         else:
-            return await event.edit(
-                "`Untuk membuat media sebagai pesan Goodbye, BOTLOG_CHATID Harus disetel.`"
+            await event.edit(
+                "`Karşılama notunu kaydetmek için BOTLOG_CHATID ayarlanması gerekir.`"
             )
+            return
     elif event.reply_to_msg_id and not string:
         rep_msg = await event.get_reply_message()
         string = rep_msg.text
-    success = "`Berhasil Menyimpan Pesan Goodbye {} ツ`"
+    success = "`Görüşürüz mesajı bu sohbet için {} `"
     if add_goodbye_setting(event.chat_id, 0, string, msg_id) is True:
-        await event.edit(success.format('Disini'))
+        await event.edit(success.format('kaydedildi'))
     else:
-        await event.edit(success.format('Disini'))
+        await event.edit(success.format('güncellendi'))
 
 
 @register(outgoing=True, pattern="^.checkgoodbye$")
 async def show_goodbye(event):
     try:
         from userbot.modules.sql_helper.goodbye_sql import get_current_goodbye_settings
-    except BaseException:
-        await event.edit("`Berjalan Pada Mode Non-SQL!`")
+    except:
+        await event.edit("`SQL dışı modda çalışıyor!`")
         return
     cws = get_current_goodbye_settings(event.chat_id)
     if not cws:
-        await event.edit("`Pesan goodbye belum ada mohon buat.`")
+        await event.edit("`Tentang Aku dan dia.`")
         return
     elif cws and cws.f_mesg_id:
         msg_o = await event.client.get_messages(entity=BOTLOG_CHATID,
                                                 ids=int(cws.f_mesg_id))
         await event.edit(
-            "`Anda telah menyimpan goodbye disini.`")
+            "`Tidak ada goodbye disini by.Tentang aku dan dia.`")
         await event.reply(msg_o.message, file=msg_o.media)
     elif cws and cws.reply:
         await event.edit(
-            "`Anda telah menyimpan goodbye disini.`")
+            "` Tidak ada goodbye disini by.Tentang aku dan dia.`")
         await event.reply(cws.reply)
 
 
@@ -166,28 +141,18 @@ async def show_goodbye(event):
 async def del_goodbye(event):
     try:
         from userbot.modules.sql_helper.goodbye_sql import rm_goodbye_setting
-    except AttributeError:
-        return await event.edit("`Running on Non-SQL mode!`")
+    except:
+        await event.edit("`Tentang aku dan dia!`")
+        return
     if rm_goodbye_setting(event.chat_id) is True:
-        await event.edit("`Menghapus Pesan goodbye Berhasil Dilakukan ツ`")
+        await event.edit("`Tentang aku dan dia.`")
     else:
-        await event.edit("`Anda Tidak Menyimpan Pesan goodbye Apapun Disini Petercord ツ`")
+        await event.edit("`Tentang Aku dan dia ?`")
 
-
-CmdHelp('filter').add_command(
-    'filters',
-    None,
-    'Bir sohbetteki tüm userbot filtrelerini listeler.').add_command(
-        'filter',
-        '<filtrelenecek kelime> <cevaplanacak metin> ya da bir mesajı .filter <filtrelenecek kelime>',
-        'Filtre ekler. Ne zaman eklediğiniz kelime/cümle yazılırsa bot cevap verir.',
-        '.filter "merhaba" "meraba"').add_command(
-            'stop',
-            '<filtre>',
-            'Seçilen filtreyi durdurur.').add_command(
-                'genelfilter',
-                '<filtrelenecek kelime> <cevaplanacak metin> ya da bir mesajı .genelfilter <filtrelenecek kelime>',
-                'Genel filtre ekler. Tüm gruplarda çalışır.').add_command(
-                    '.genelstop',
-                    '<filtre>',
-    'Seçilen genel filtreyi durdurur.').add()
+CmdHelp('goodbye').add_command(
+    'setgoodbye', '<text> contoh .setgoodbye awas kau masuk lagi ku banned:).'
+).add_command(
+    'checkgoodbye', None, 'Mengecek goodbye di grup.'
+).add_command(
+    'rmgoodbye', None, 'Menghapus goodbye digrup.'
+).add()
