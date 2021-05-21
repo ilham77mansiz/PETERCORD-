@@ -3,12 +3,13 @@ from userbot import CMD_HELP, bot, LOGS, CLEAN_WELCOME, BOTLOG_CHATID
 from telethon.events import ChatAction
 from userbot.cmdhelp import CmdHelp
 
+
 @bot.on(ChatAction)
 async def welcome_to_chat(event):
     try:
         from userbot.modules.sql_helper.welcome_sql import get_current_welcome_settings
         from userbot.modules.sql_helper.welcome_sql import update_previous_welcome
-    except:
+    except BaseException:
         return
     cws = get_current_welcome_settings(event.chat_id)
     if cws:
@@ -80,7 +81,7 @@ async def welcome_to_chat(event):
 async def save_welcome(event):
     try:
         from userbot.modules.sql_helper.welcome_sql import add_welcome_setting
-    except:
+    except BaseException:
         await event.edit("`SQL dışı modda çalışıyor!`")
         return
     msg = await event.get_reply_message()
@@ -118,7 +119,7 @@ async def save_welcome(event):
 async def show_welcome(event):
     try:
         from userbot.modules.sql_helper.welcome_sql import get_current_welcome_settings
-    except:
+    except BaseException:
         await event.edit("`SQL dışı modda çalışıyor!`")
         return
     cws = get_current_welcome_settings(event.chat_id)
@@ -141,7 +142,7 @@ async def show_welcome(event):
 async def del_welcome(event):
     try:
         from userbot.modules.sql_helper.welcome_sql import rm_welcome_setting
-    except:
+    except BaseException:
         await event.edit("`SQL dışı modda çalışıyor!`")
         return
     if rm_welcome_setting(event.chat_id) is True:
