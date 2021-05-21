@@ -1,18 +1,14 @@
-from datetime import datetime
-
-from pytz import timezone
 from userbot.events import register
-from userbot import BOTLOG_CHATID, CLEAN_WELCOME, LOGS, bot
+from userbot import CMD_HELP, bot, LOGS, CLEAN_WELCOME, BOTLOG_CHATID
 from telethon.events import ChatAction
 from userbot.cmdhelp import CmdHelp
-
 
 @bot.on(ChatAction)
 async def welcome_to_chat(event):
     try:
         from userbot.modules.sql_helper.welcome_sql import get_current_welcome_settings
         from userbot.modules.sql_helper.welcome_sql import update_previous_welcome
-    except AttributeError:
+    except:
         return
     cws = get_current_welcome_settings(event.chat_id)
     if cws:
@@ -32,29 +28,7 @@ async def welcome_to_chat(event):
             chat = await event.get_chat()
             me = await event.client.get_me()
 
-            # Current time in UTC
-            now_utc = datetime.now(timezone("UTC"))
-
-            # Convert to Jakarta time zone
-            jakarta_timezone = now_utc.astimezone(timezone("Asia/Jakarta"))
-            if jakarta_timezone.hour < 4:
-                pass
-            elif 4 <= jakarta_timezone.hour < 6:
-                pass
-            elif 6 <= jakarta_timezone.hour < 11:
-                pass
-            elif 11 <= jakarta_timezone.hour < 13:
-                pass
-            elif 13 <= jakarta_timezone.hour < 15:
-                pass
-            elif 15 <= jakarta_timezone.hour < 17:
-                pass
-            elif 17 <= jakarta_timezone.hour < 19:
-                pass
-            else:
-                pass
-
-            title = chat.title if chat.title else "Grup Ini"
+            title = chat.title if chat.title else "this chat"
             participants = await event.client.get_participants(chat)
             count = len(participants)
             mention = "[{}](tg://user?id={})".format(a_user.first_name,
@@ -106,17 +80,18 @@ async def welcome_to_chat(event):
 async def save_welcome(event):
     try:
         from userbot.modules.sql_helper.welcome_sql import add_welcome_setting
-    except AttributeError:
-        return await event.edit("`Berjalan Pada Mode Non-SQL!`")
+    except:
+        await event.edit("`SQL dışı modda çalışıyor!`")
+        return
     msg = await event.get_reply_message()
     string = event.pattern_match.group(1)
     msg_id = None
     if msg and msg.media and not string:
         if BOTLOG_CHATID:
             await event.client.send_message(
-                BOTLOG_CHATID, f"📢WELCOME PETERCORD📢 \nID GRUP: {event.chat_id}"
-                "\nPetercord Memasang Pesan Perintah Welcome Digrup, Ini Adalah Catatan Pesan Welcome "
-                "Mohon Jangan Dihapus 🎸Petercord!🎸"
+                BOTLOG_CHATID, f"#KARSILAMA_NOTU\
+            \nGRUP ID: {event.chat_id}\
+            \nAşağıdaki mesaj sohbet için yeni Karşılama notu olarak kaydedildi, lütfen silmeyin !!"
             )
             msg_o = await event.client.forward_messages(
                 entity=BOTLOG_CHATID,
@@ -125,37 +100,40 @@ async def save_welcome(event):
                 silent=True)
             msg_id = msg_o.id
         else:
-            return await event.edit(
-                "`Untuk membuat media sebagai pesan Welcome, BOTLOG_CHATID Harus disetel.`"
+            await event.edit(
+                "`Karşılama notunu kaydetmek için BOTLOG_CHATID ayarlanması gerekir.`"
             )
+            return
     elif event.reply_to_msg_id and not string:
         rep_msg = await event.get_reply_message()
         string = rep_msg.text
-    success = "`Berhasil Menyimpan Pesan Welcome {} ツ`"
+    success = "`Karşılama mesajı bu sohbet için {} `"
     if add_welcome_setting(event.chat_id, 0, string, msg_id) is True:
-        await event.edit(success.format('Disini'))
+        await event.edit(success.format('kaydedildi'))
     else:
-        await event.edit(success.format('Disini'))
+        await event.edit(success.format('güncellendi'))
 
 
 @register(outgoing=True, pattern="^.checkwelcome$")
 async def show_welcome(event):
     try:
         from userbot.modules.sql_helper.welcome_sql import get_current_welcome_settings
-    except AttributeError:
-        return await event.edit("`Running on Non-SQL mode!`")
+    except:
+        await event.edit("`SQL dışı modda çalışıyor!`")
+        return
     cws = get_current_welcome_settings(event.chat_id)
     if not cws:
-        return await event.edit("`Disini Tidak Ada Pesan Welcome Yang Anda Simpan 🐲Petercord🐲 ツ`")
+        await event.edit("`Burada kayıtlı karşılama mesajı yok.`")
+        return
     elif cws and cws.f_mesg_id:
         msg_o = await event.client.get_messages(entity=BOTLOG_CHATID,
                                                 ids=int(cws.f_mesg_id))
         await event.edit(
-            "`Anda Telah Membuat Pesan Welcome Disini ツ`")
+            "`Şu anda bu karşılama notu ile yeni kullanıcıları ağırlıyorum.`")
         await event.reply(msg_o.message, file=msg_o.media)
     elif cws and cws.reply:
         await event.edit(
-            "`Anda Telah Membuat Pesan Welcome Disini ツ`")
+            "`Şu anda bu karşılama notu ile yeni kullanıcıları ağırlıyorum.`")
         await event.reply(cws.reply)
 
 
@@ -163,13 +141,28 @@ async def show_welcome(event):
 async def del_welcome(event):
     try:
         from userbot.modules.sql_helper.welcome_sql import rm_welcome_setting
-    except AttributeError:
-        return await event.edit("`Running on Non-SQL mode!`")
+    except:
+        await event.edit("`SQL dışı modda çalışıyor!`")
+        return
     if rm_welcome_setting(event.chat_id) is True:
-        await event.edit("`Menghapus Pesan Welcome Berhasil Dilakukan ツ`")
+        await event.edit("`Karşılama mesajı bu sohbet için silindi.`")
     else:
-        await event.edit("`Anda Tidak Menyimpan Pesan Welcome Apapun Disini 🐲Petercord🐲 ツ`")
+        await event.edit("`Burada karşılama notu var mı ?`")
 
+
+CMD_HELP.update({
+    "welcome":
+    "\
+.setwelcome <karışlama mesajı> veya .setwelcome ile bir mesaja cevap verin\
+\nKullanım: Mesajı sohbete karşılama notu olarak kaydeder.\
+\n\nKarşılama mesajlarını biçimlendirmek için kullanılabilir değişkenler :\
+\n`{mention}, {title}, {count}, {first}, {last}, {fullname}, {userid}, {username}, {my_first}, {my_fullname}, {my_last}, {my_mention}, {my_username}`\
+\n\n.checkwelcome\
+\nKullanım: Sohbette karşılama notu olup olmadığını kontrol edin.\
+\n\n.rmwelcome\
+\nKullanım: Geçerli sohbet için karşılama notunu siler.\
+"
+})
 
 CmdHelp('welcome').add_command(
     'setwelcome', '<text>', 'contoh .setwelcome selamat bergabung:).'
