@@ -1,14 +1,15 @@
 from userbot.events import register
-from userbot import CMD_HELP, bot, LOGS, CLEAN_WELCOME, BOTLOG_CHATID
+from userbot import BOTLOG_CHATID, CLEAN_WELCOME, LOGS, bot
 from telethon.events import ChatAction
 from userbot.cmdhelp import CmdHelp
+
 
 @bot.on(ChatAction)
 async def goodbye_to_chat(event):
     try:
         from userbot.modules.sql_helper.goodbye_sql import get_current_goodbye_settings
         from userbot.modules.sql_helper.goodbye_sql import update_previous_goodbye
-    except:
+    except BaseException:
         return
     cws = get_current_goodbye_settings(event.chat_id)
     if cws:
@@ -80,7 +81,7 @@ async def goodbye_to_chat(event):
 async def save_goodbye(event):
     try:
         from userbot.modules.sql_helper.goodbye_sql import add_goodbye_setting
-    except:
+    except BaseException:
         await event.edit("`SQL dışı modda çalışıyor!`")
         return
     msg = await event.get_reply_message()
@@ -118,7 +119,7 @@ async def save_goodbye(event):
 async def show_goodbye(event):
     try:
         from userbot.modules.sql_helper.goodbye_sql import get_current_goodbye_settings
-    except:
+    except BaseException:
         await event.edit("`SQL dışı modda çalışıyor!`")
         return
     cws = get_current_goodbye_settings(event.chat_id)
@@ -141,7 +142,7 @@ async def show_goodbye(event):
 async def del_goodbye(event):
     try:
         from userbot.modules.sql_helper.goodbye_sql import rm_goodbye_setting
-    except:
+    except BaseException:
         await event.edit("`Tentang aku dan dia!`")
         return
     if rm_goodbye_setting(event.chat_id) is True:
