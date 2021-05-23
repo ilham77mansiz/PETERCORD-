@@ -14,7 +14,7 @@ import time
 from datetime import datetime
 import psutil
 
-from userbot import ALIVE_LOGO, ALIVE_NAME, BOT_VER, CMD_HELP, StartTime, UPSTREAM_REPO_BRANCH, bot
+from userbot import ALIVE_LOGO, ALIVE_NAME, PETERCORD_USERBOT, CMD_HELP, StartTime, UPSTREAM_REPO_BRANCH, bot
 from userbot.events import register
 
 from userbot.cmdhelp import CmdHelp
@@ -233,7 +233,7 @@ async def amireallyalive(alive):
         f"┣|🌟 `Telethon :`Ver {version.__version__} \n"
         f"┣|🌟 `Python   :`Ver {python_version()} \n"
         f"┣|🌟 `Branch   :`{UPSTREAM_REPO_BRANCH} \n"
-        f"┣|🌟 `Bot Ver  :`{BOT_VER} \n"
+        f"┣|🌟 `Bot Ver  :`{PETERCORD_USERBOT} \n"
         f"┣|🌟 `Modules  :`{len(modules)} Modules \n"
         f"┗━━━━━━━━━━━━━━━━━━━ \n\n"
         f"┏━━━━━━━━━━━━━━━━━━━ \n"
@@ -270,7 +270,7 @@ async def amireallyalive(alive):
         f"🛡 **Username** \n   ➥ `@{user.username}` \n"
         f"🛡 **Telethon** \n   ➥ `Versi {version.__version__}` \n"
         f"🛡 **Python**   \n   ➥ `Versi {python_version()}` \n"
-        f"🛡 **Versi Bot**\n   ➥ `{BOT_VER}` \n"
+        f"🛡 **Versi Bot**\n   ➥ `{PETERCORD_USERBOT}` \n"
         f"🛡 **Modul**    \n   ➥ `{len(modules)}` \n\n"
         f"🛡 **Repo Userbot:** [Petercord-Userbot](https://github.com/ilham77mansiz/-PETERCORD-)\n🛡 **Grup Userbot: **[Tekan](https://t.me/TEAMSquadUserbotSupport)\n🛡 **Pemilik:** [IlhamMansiez](t.me/diemmmmmmmmmm)\n"
         f"**▬▬▬▬▬▬❙۩🛡🛡۩❙▬▬▬▬▬▬**")
@@ -306,7 +306,7 @@ async def amireallyalive(alive):
         f"┣|⚡ `Telethon :`Ver {version.__version__} \n"
         f"┣|⚡ `Python   :`Ver {python_version()} \n"
         f"┣|⚡ `Branch   :`{UPSTREAM_REPO_BRANCH} \n"
-        f"┣|⚡ `Bot Ver  :`{BOT_VER} \n"
+        f"┣|⚡ `Bot Ver  :`{PETERCORD_USERBOT} \n"
         f"┣|⚡ `Modules  :`{len(modules)} Modules \n"
         f"┗━━━━━━━━━━━━━━━━━━━ \n\n")
     if ALIVE_LOGO:
