@@ -13,7 +13,7 @@ import os
 import requests
 from telethon.tl.types import InputMessagesFilterDocument
 from telethon.errors.rpcerrorlist import PhoneNumberInvalidError
-from . import BOT_VER, BRAIN_CHECKER, LOGS, PLUGIN_CHANNEL_ID, bot
+from . import PETERCORD_USERBOT, BRAIN_CHECKER, LOGS, PLUGIN_CHANNEL_ID, bot
 from .modules import ALL_MODULES
 import userbot.modules.sql_helper.mesaj_sql as MSJ_SQL
 import userbot.modules.sql_helper.galeri_sql as GALERI_SQL
@@ -268,7 +268,7 @@ for module_name in ALL_MODULES:
 LOGS.info(
     "Pesanmu sedang berjalan! Uji dengan mengetik .alive di obrolan apa pun."
     " Jika Anda membutuhkan bantuan, datanglah ke grup Dukungan kami https://t.me/TEAMSquadUserbotSupport")
-LOGS.info(f"Bot Version: 🎖PETERCORD USERBOT🎖 {BOT_VER}")
+LOGS.info(f"Bot Version: 🎖PETERCORD USERBOT🎖 {PETERCORD_USERBOT}")
 
 """
 if len(argv) not in (1, 3, 4):
