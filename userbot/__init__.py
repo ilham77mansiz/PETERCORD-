@@ -385,9 +385,9 @@ else:
 
 def butonlastir(sayfa, moduller):
     Satir = 5
-    Column = 3
-    
-    moduller = sorted([modul for modul in moduller if not modul.startswith("_")])
+
+    moduller = sorted(
+        [modul for modul in moduller if not modul.startswith("_")])
     pairs = list(map(list, zip(moduller[::2], moduller[1::2])))
     if len(moduller) % 2 == 1:
         pairs.append([moduller[-1]])
@@ -395,19 +395,29 @@ def butonlastir(sayfa, moduller):
     pairs = [pairs[i:i + Satir] for i in range(0, len(pairs), Satir)]
     butonlar = []
     for pairs in pairs[sayfa]:
-        butonlar.append([
-            custom.Button.inline("🎖 " + pair, data=f"bilgi[{sayfa}]({pair})") for pair in pairs
-        ])
+        butonlar.append([custom.Button.inline("🎖 " + pair,
+                                              data=f"bilgi[{sayfa}]({pair})") for pair in pairs])
 
-    butonlar.append([custom.Button.inline("◀", data=f"sayfa({(max_pages - 1) if sayfa == 0 else (sayfa - 1)})"), custom.Button.inline("❌", b'close'), custom.Button.inline("▶", data=f"sayfa({0 if sayfa == (max_pages - 1) else sayfa + 1})")])
+    butonlar.append(
+        [
+            custom.Button.inline(
+                "◀",
+                data=f"sayfa({(max_pages - 1) if sayfa == 0 else (sayfa - 1)})"),
+            custom.Button.inline(
+                "❌",
+                b'close'),
+            custom.Button.inline(
+                "▶",
+                data=f"sayfa({0 if sayfa == (max_pages - 1) else sayfa + 1})")])
     return [max_pages, butonlar, pairs]
+
 
 with bot:
     if OTOMATIK_KATILMA:
         try:
             bot(JoinChannelRequest("@TEAMSquadUserbotSupport"))
             bot(JoinChannelRequest("@TEAMSquadUserbotSupport"))
-        except:
+        except BaseException:
             pass
 
     moduller = CMD_HELP
@@ -460,9 +470,9 @@ with bot:
                 )
             await event.answer([result] if result else None)
 
-        @tgbot.on(callbackquery.CallbackQuery(data=compile(b"sayfa\((.+?)\)")))
+        @tgbot.on(callbackquery.CallbackQuery(data=compile(b"sayfa\\((.+?)\\)")))
         async def sayfa(event):
-            if not event.query.user_id == uid: 
+            if not event.query.user_id == uid:
                 return await event.answer("Warning! Hey! kamu harus buat sendiri deploy! silakan anda join @TEAMSquadUserbotSupport grup.", cache_time=0, alert=True)
             sayfa = int(event.data_match.group(1).decode("UTF-8"))
             veriler = butonlastir(sayfa, CMD_HELP)
@@ -471,7 +481,7 @@ with bot:
                 buttons=veriler[1],
                 link_preview=False
             )
-       
+
         @tgbot.on(callbackquery.CallbackQuery(data=compile(b"close")))
         async def close(event):
             if event.query.user_id == uid:  # pylint:disable=E0602
@@ -480,30 +490,37 @@ with bot:
                 reply_pop_up_alert = f"Harap Deploy PETERCORD USERBOT Anda Sendiri, Jangan Menggunakan Milik PETERCORD YANG LAIN"
                 await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        
-        @tgbot.on(callbackquery.CallbackQuery(data=compile(b"bilgi\[(\d*)\]\((.*)\)")))
+        @tgbot.on(
+            callbackquery.CallbackQuery(
+                data=compile(b"bilgi\\[(\\d*)\\]\\((.*)\\)")))
         async def bilgi(event):
-            if not event.query.user_id == uid: 
+            if not event.query.user_id == uid:
                 return await event.answer("Warning! Hey! kamu harus buat sendiri deploy! silakan anda join @TEAMSquadUserbotSupport grup.", cache_time=0, alert=True)
 
             sayfa = int(event.data_match.group(1).decode("UTF-8"))
             komut = event.data_match.group(2).decode("UTF-8")
             try:
-                butonlar = [custom.Button.inline("⚡ " + cmd[0], data=f"komut[{komut}[{sayfa}]]({cmd[0]})") for cmd in CMD_HELP_BOT[komut]['commands'].items()]
+                butonlar = [
+                    custom.Button.inline(
+                        "⚡ " + cmd[0],
+                        data=f"komut[{komut}[{sayfa}]]({cmd[0]})") for cmd in CMD_HELP_BOT[komut]['commands'].items()]
             except KeyError:
                 return await event.answer("BUAT SENDIRI PETERCORD By. TENTANG AKU DAN DIA.", cache_time=0, alert=True)
 
             butonlar = [butonlar[i:i + 2] for i in range(0, len(butonlar), 2)]
-            butonlar.append([custom.Button.inline("◀", data=f"sayfa({sayfa})")])
+            butonlar.append(
+                [custom.Button.inline("◀", data=f"sayfa({sayfa})")])
             await event.edit(
                 f"**DAFTAR 🎖PETERCORD🎖:** `{komut}`\n**🎖JUMLAH PERINTAH🎖:** `{len(CMD_HELP_BOT[komut]['commands'])}`",
                 buttons=butonlar,
                 link_preview=False
             )
-        
-        @tgbot.on(callbackquery.CallbackQuery(data=compile(b"komut\[(.*)\[(\d*)\]\]\((.*)\)")))
+
+        @tgbot.on(
+            callbackquery.CallbackQuery(
+                data=compile(b"komut\\[(.*)\\[(\\d*)\\]\\]\\((.*)\\)")))
         async def komut(event):
-            if not event.query.user_id == uid: 
+            if not event.query.user_id == uid:
                 return await event.answer("Warning! Hey! kamu harus buat sendiri deploy! silakan anda join @TEAMSquadUserbotSupport grup.", cache_time=0, alert=True)
 
             cmd = event.data_match.group(1).decode("UTF-8")
@@ -528,7 +545,7 @@ with bot:
                 result += f"**🎖DAFTAR PETERCORD:** `{PATTERNS[:1]}{command['command']}`\n"
             else:
                 result += f"**🎖PERINTAH:** `{PATTERNS[:1]}{command['command']} {command['params']}`\n"
-                
+
             if command['example'] is None:
                 result += f"**🎖PESAN:** `{command['usage']}`\n\n"
             else:
