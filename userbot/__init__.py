@@ -392,30 +392,26 @@ def button(page, modules):
     if len(modules) % 2 == 1:
         pairs.append([modules[-1]])
     max_pages = ceil(len(pairs) / Row)
-    pairs = [pairs[i : i + Row] for i in range(0, len(pairs), Row)]
+    pairs = [pairs[i: i + Row] for i in range(0, len(pairs), Row)]
     buttons = []
     for pairs in pairs[page]:
-        buttons.append(
-            [
-                custom.Button.inline(f"🎖 " + pair, data=f"Information[{page}]({pair})")
-                for pair in pairs
-            ]
-        )
+        buttons.append([custom.Button.inline(f"🎖 " + pair,
+                                             data=f"Information[{page}]({pair})") for pair in pairs])
 
     buttons.append(
         [
             custom.Button.inline(
-               f"◀️ ᏴᎪᏟᏦ 🎖", data=f"page({(max_pages - 1) if page == 0 else (page - 1)})"
-            ),
+                f"◀️ ᏴᎪᏟᏦ 🎖",
+                data=f"page({(max_pages - 1) if page == 0 else (page - 1)})"),
             custom.Button.inline(
-               f"•🎖 ❌ 🎖•", data="close"
-            ),
+                f"•🎖 ❌ 🎖•",
+                data="close"),
             custom.Button.inline(
-               f"🎖 ΝᎬХͲ ▶️", data=f"page({0 if page == (max_pages - 1) else page + 1})"
-            ),
-        ]
-    )
+                f"🎖 ΝᎬХͲ ▶️",
+                data=f"page({0 if page == (max_pages - 1) else page + 1})"),
+        ])
     return [max_pages, buttons]
+
 
 with bot:
     if OTOMATIK_KATILMA:
@@ -479,15 +475,14 @@ with bot:
     async def on_plug_in_callback_query_handler(event):
         if event.query.user_id == uid:
             await delete_mafia(event,
-              "👑MafiaBot Menu Provider Is now Closed👑\n\n         **[© MafiaBot ™](t.me/MafiaBot_Support)**", 5, link_preview=False
-            )
+                               "👑MafiaBot Menu Provider Is now Closed👑\n\n         **[© MafiaBot ™](t.me/MafiaBot_Support)**", 5, link_preview=False
+                               )
         else:
             mafia_alert = "HELLO THERE. PLEASE MAKE YOUR OWN MAFIABOT AND USE. © MafiaBot ™"
             await event.answer(mafia_alert, cache_time=0, alert=True)
-          
-    @tgbot.on(
-        callbackquery.CallbackQuery(data=compile(b"Information\[(\d*)\]\((.*)\)"))
-    )
+
+    @tgbot.on(callbackquery.CallbackQuery(
+        data=compile(b"Information\\[(\\d*)\\]\\((.*)\\)")))
     async def Information(event):
         if not event.query.user_id == uid:
             return await event.answer(
@@ -510,7 +505,7 @@ with bot:
                 "No Description is written for this plugin", cache_time=0, alert=True
             )
 
-        buttons = [buttons[i : i + 2] for i in range(0, len(buttons), 2)]
+        buttons = [buttons[i: i + 2] for i in range(0, len(buttons), 2)]
         buttons.append([custom.Button.inline("◀️ ᏴᎪᏟᏦ", data=f"page({page})")])
         await event.edit(
             f"**📗 File:** `{commands}`\n**🔢 Number of commands :** `{len(CMD_HELP_BOT[commands]['commands'])}`",
@@ -518,9 +513,8 @@ with bot:
             link_preview=False,
         )
 
-    @tgbot.on(
-        callbackquery.CallbackQuery(data=compile(b"commands\[(.*)\[(\d*)\]\]\((.*)\)"))
-    )
+    @tgbot.on(callbackquery.CallbackQuery(data=compile(
+        b"commands\\[(.*)\\[(\\d*)\\]\\]\\((.*)\\)")))
     async def commands(event):
         if not event.query.user_id == uid:
             return await event.answer(
