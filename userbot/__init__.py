@@ -472,7 +472,7 @@ with bot:
             await event.answer([result] if result else None)
 
         @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
-    async def close(event):
+    async def on_plug_in_callback_query_handler(event):
         if event.query.user_id == uid:
             await event.edit("MENU CLOSE PETERCORD By. Tentang Aku Dan Dia\n [OWNER](https://t.me/diemmmmmmmmmm)\n")
         else:
@@ -481,7 +481,7 @@ with bot:
 
     @tgbot.on(callbackquery.CallbackQuery(
         data=compile(b"Information\\[(\\d*)\\]\\((.*)\\)")))
-    async def Information(event):
+    async def on_plug_in_callback_query_handler(event):
         if not event.query.user_id == uid:
             return await event.answer(
                 "HELLO THERE. PLEASE MAKE YOUR OWN MAFIABOT AND USE. © MafiaBot ™",
@@ -513,7 +513,7 @@ with bot:
 
     @tgbot.on(callbackquery.CallbackQuery(data=compile(
         b"commands\\[(.*)\\[(\\d*)\\]\\]\\((.*)\\)")))
-    async def commands(event):
+    async def on_plug_in_callback_query_handler(event):
         if not event.query.user_id == uid:
             return await event.answer(
                 "HELLO THERE. PLEASE MAKE YOUR OWN MAFIABOT AND USE. © MafiaBot ™",
