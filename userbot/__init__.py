@@ -472,7 +472,7 @@ with bot:
             await event.answer([result] if result else None)
 
         @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
-    async def on_plug_in_callback_query_handler(event):
+    async def close(event):
         if event.query.user_id == uid:
             await event.edit("MENU CLOSE PETERCORD By. Tentang Aku Dan Dia\n [OWNER](https://t.me/diemmmmmmmmmm)\n")
         else:
