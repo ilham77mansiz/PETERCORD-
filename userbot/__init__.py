@@ -383,42 +383,34 @@ else:
     tgbot = None
 
 
-def button(page, modules):
-    Row = 5
+def butonlastir(sayfa, moduller):
+    Satir = 5
     Column = 3
-
-    modules = sorted([modul for modul in modules if not modul.startswith("_")])
-    pairs = list(map(list, zip(modules[::2], modules[1::2])))
-    if len(modules) % 2 == 1:
-        pairs.append([modules[-1]])
-    max_pages = ceil(len(pairs) / Row)
-    pairs = [pairs[i: i + Row] for i in range(0, len(pairs), Row)]
-    buttons = []
-    for pairs in pairs[page]:
-        buttons.append([custom.Button.inline(f"🎖 " + pair,
-                                             data=f"Information[{page}]({pair})") for pair in pairs])
-
-    buttons.append(
-        [
-            custom.Button.inline(
-                f"◀️ ᏴᎪᏟᏦ 🎖",
-                data=f"page({(max_pages - 1) if page == 0 else (page - 1)})"),
-            custom.Button.inline(
-                f"🎖 ΝᎬХͲ ▶️",
-                data=f"page({0 if page == (max_pages - 1) else page + 1})"),
+    
+    moduller = sorted([modul for modul in moduller if not modul.startswith("_")])
+    pairs = list(map(list, zip(moduller[::2], moduller[1::2])))
+    if len(moduller) % 2 == 1:
+        pairs.append([moduller[-1]])
+    max_pages = ceil(len(pairs) / Satir)
+    pairs = [pairs[i:i + Satir] for i in range(0, len(pairs), Satir)]
+    butonlar = []
+    for pairs in pairs[sayfa]:
+        butonlar.append([
+            custom.Button.inline("🎖 " + pair, data=f"bilgi[{sayfa}]({pair})") for pair in pairs
         ])
-    return [max_pages, buttons]
 
+    butonlar.append([custom.Button.inline("◀", data=f"sayfa({(max_pages - 1) if sayfa == 0 else (sayfa - 1)})"), custom.Button.inline("❌", b'close'), custom.Button.inline("▶", data=f"sayfa({0 if sayfa == (max_pages - 1) else sayfa + 1})")])
+    return [max_pages, butonlar, pairs]
 
 with bot:
     if OTOMATIK_KATILMA:
         try:
             bot(JoinChannelRequest("@TEAMSquadUserbotSupport"))
             bot(JoinChannelRequest("@TEAMSquadUserbotSupport"))
-        except BaseException:
+        except:
             pass
 
-    modules = CMD_HELP
+    moduller = CMD_HELP
     me = bot.get_me()
     uid = me.id
 
@@ -426,29 +418,29 @@ with bot:
         @tgbot.on(NewMessage(pattern='/start'))
         async def start_bot_handler(event):
             if not event.message.from_id == uid:
-                await event.reply(f'`JOIN GRUP` @TEAMSquadUserbotSupport`! Saya adalah pemiliknya (`@{me.username}`) HARAP JOIN GRUP SUPPORT` @TEAMSquadUserbotSupport')
+                await event.reply(f'`Join grup` @TEAMSquadUserbotSupport`! Ben sahibime (`@{me.username}`) yardımcı olmak için varım, yaani sana yardımcı olamam :/ Ama sen de bir Asena açabilirsin; Kanala bak` @AsenaUserBot')
             else:
-                await event.reply(f'`🎖PETERCORD USERBOT🎖`')
+                await event.reply(f'`PETERCORD USERBOT ... 🎖`')
 
         @tgbot.on(InlineQuery)  # pylint:disable=E0602
         async def inline_handler(event):
             builder = event.builder
             result = None
             query = event.text
-            if event.query.user_id == uid and query == "@TEAMSquadUserbotSupport":
+            if event.query.user_id == uid and query == "@PetercordIlhamMansiz":
                 rev_text = query[::-1]
                 veriler = (butonlastir(0, sorted(CMD_HELP)))
                 result = await builder.article(
-                    f"GUNAKAN KATA PERINTAH .help",
-                    text=f"**🎖PETERCORD🎖**\n\n [GRUP SUPPORT](https://t.me/TEAMSquadUserbotSupport) \n\n**🎖 SIMBOL PETERCORD**\n\n**Jumlah Modul Terpasang:** `{len(CMD_HELP)}`\n**Halaman:** 1/{veriler[0]}",
+                    f"Perintah .help petercird",
+                    text=f"**🎖PETERCORD USERBOT** [SUPPORT](https://t.me/TEAMSquadUserbotSupport) __TENTANG AKU DAN DIA__\n\n**JUMLAH PLUGINS🎖:** `{len(CMD_HELP)}`\n**HALAMAN:** 1/{veriler[0]}",
                     buttons=veriler[1],
                     link_preview=False
                 )
             elif query.startswith("http"):
                 parca = query.split(" ")
                 result = builder.article(
-                    "PERINTAH ",
-                    text=f"**MENGUPLOAD {parca[2]} UPLOAD!**\n\nKECEPATAN: {parca[1][:3]} saniye\n[‏‏‎ ‎]({parca[0]})",
+                    "TENTANG AKU DAN DIA",
+                    text=f"**TENTANG AKU DAN DIA {parca[2]} LANJUTKAN PETERCORD**\n\nWAKTU TAK LAGI SAMA: {parca[1][:3]} Petercord\n[‏‏‎ ‎]({parca[0]})",
                     buttons=[
                         [custom.Button.url('URL', parca[0])]
                     ],
@@ -457,10 +449,10 @@ with bot:
             else:
                 result = builder.article(
                     "@TEAMSquadUserbotSupport",
-                    text="""@TEAMSquadUserbotSupport coba gunakan itu! Anda dapat mengubah akun Anda menjadi bot dan menggunakannya. Ingat, Anda tidak dapat mengelola bot orang lain! Semua detail pengaturan dijelaskan dari alamat GitHub di bawah ini..""",
+                    text="""@TEAMSquadUserbotSupport TENTANG AKU DAN DIA.""",
                     buttons=[
-                        [custom.Button.url("SUPPORT", "https://t.me/TEAMSquadUserbotSupport"), custom.Button.url(
-                            "Grup Support", "https://t.me/TEAMSquadUserbotSupport")],
+                        [custom.Button.url("GRUP SUPPORT", "@TEAMSquadUserbotSupport"), custom.Button.url(
+                            "OWNERS", "https://t.me/diemmmmmmmmmm")],
                         [custom.Button.url(
                             "GitHub", "https://github.com/ilham77mansiz/-PETERCORD-")]
                     ],
@@ -468,84 +460,86 @@ with bot:
                 )
             await event.answer([result] if result else None)
 
-    @tgbot.on(callbackquery.CallbackQuery(
-        data=compile(b"Information\\[(\\d*)\\]\\((.*)\\)")))
-    async def Information(event):
-        if not event.query.user_id == uid:
-            return await event.answer(
-                "HELLO THERE. PLEASE MAKE YOUR OWN MAFIABOT AND USE. © MafiaBot ™",
-                cache_time=0,
-                alert=True,
+        @tgbot.on(callbackquery.CallbackQuery(data=compile(b"sayfa\((.+?)\)")))
+        async def sayfa(event):
+            if not event.query.user_id == uid: 
+                return await event.answer("Warning! Hey! kamu harus buat sendiri deploy! silakan anda join @TEAMSquadUserbotSupport grup.", cache_time=0, alert=True)
+            sayfa = int(event.data_match.group(1).decode("UTF-8"))
+            veriler = butonlastir(sayfa, CMD_HELP)
+            await event.edit(
+                f"**🎖PETERCORD🎖** [SUPPORT](https://t.me/TEAMSquadUserbotSupport) __PLUGINS...__\n\n**🎖JUMLAH PLUGINS🎖:** `{len(CMD_HELP)}`\n**🎖HALAMAN🎖:** {sayfa + 1}/{veriler[0]}",
+                buttons=veriler[1],
+                link_preview=False
             )
-
-        page = int(event.data_match.group(1).decode("UTF-8"))
-        commands = event.data_match.group(2).decode("UTF-8")
-        try:
-            buttons = [
-                custom.Button.inline(
-                    "⚡ " + cmd[0], data=f"commands[{commands}[{page}]]({cmd[0]})"
-                )
-                for cmd in CMD_HELP_BOT[commands]["commands"].items()
-            ]
-        except KeyError:
-            return await event.answer(
-                "No Description is written for this plugin", cache_time=0, alert=True
-            )
-
-        buttons = [buttons[i: i + 2] for i in range(0, len(buttons), 2)]
-        buttons.append([custom.Button.inline("◀️ ᏴᎪᏟᏦ", data=f"page({page})")])
-        await event.edit(
-            f"**📗 File:** `{commands}`\n**🔢 Number of commands :** `{len(CMD_HELP_BOT[commands]['commands'])}`",
-            buttons=buttons,
-            link_preview=False,
-        )
-
-    @tgbot.on(callbackquery.CallbackQuery(data=compile(
-        b"commands\\[(.*)\\[(\\d*)\\]\\]\\((.*)\\)")))
-    async def commands(event):
-        if not event.query.user_id == uid:
-            return await event.answer(
-                "HELLO THERE. PLEASE MAKE YOUR OWN MAFIABOT AND USE. © MafiaBot ™",
-                cache_time=0,
-                alert=True,
-            )
-
-        cmd = event.data_match.group(1).decode("UTF-8")
-        page = int(event.data_match.group(2).decode("UTF-8"))
-        commands = event.data_match.group(3).decode("UTF-8")
-
-        result = f"**📗 File:** `{cmd}`\n"
-        if CMD_HELP_BOT[cmd]["info"]["info"] == "":
-            if not CMD_HELP_BOT[cmd]["info"]["warning"] == "":
-                result += f"**⬇️ Official:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n"
-                result += f"**⚠️ Warning :** {CMD_HELP_BOT[cmd]['info']['warning']}\n\n"
+       
+        @tgbot.on(callbackquery.CallbackQuery(data=compile(b"close")))
+        async def close(event):
+            if event.query.user_id == uid:  # pylint:disable=E0602
+                await event.edit("**🎖MENU CLOSE PETERCORD🎖**\n\n By. Tentang Aku Dan Dia \n")
             else:
-                result += f"**⬇️ Official:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n\n"
-        else:
-            result += f"**⬇️ Official:** {'✅' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n"
-            if not CMD_HELP_BOT[cmd]["info"]["warning"] == "":
-                result += f"**⚠️ Warning:** {CMD_HELP_BOT[cmd]['info']['warning']}\n"
-            result += f"**ℹ️ Info:** {CMD_HELP_BOT[cmd]['info']['info']}\n\n"
+                reply_pop_up_alert = f"Harap Deploy PETERCORD USERBOT Anda Sendiri, Jangan Menggunakan Milik PETERCORD YANG LAIN"
+                await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
-        command = CMD_HELP_BOT[cmd]["commands"][commands]
-        if command["params"] is None:
-            result += f"**🛠 Commands:** `{COMMAND_HAND_LER[:1]}{command['command']}`\n"
-        else:
-            result += f"**🛠 Commands:** `{COMMAND_HAND_LER[:1]}{command['command']} {command['params']}`\n"
+        
+        @tgbot.on(callbackquery.CallbackQuery(data=compile(b"bilgi\[(\d*)\]\((.*)\)")))
+        async def bilgi(event):
+            if not event.query.user_id == uid: 
+                return await event.answer("Warning! Hey! kamu harus buat sendiri deploy! silakan anda join @TEAMSquadUserbotSupport grup.", cache_time=0, alert=True)
 
-        if command["example"] is None:
-            result += f"**💬 Explanation:** `{command['usage']}`\n\n"
-        else:
-            result += f"**💬 Explanation:** `{command['usage']}`\n"
-            result += f"**⌨️ For Example:** `{COMMAND_HAND_LER[:1]}{command['example']}`\n\n"
+            sayfa = int(event.data_match.group(1).decode("UTF-8"))
+            komut = event.data_match.group(2).decode("UTF-8")
+            try:
+                butonlar = [custom.Button.inline("⚡ " + cmd[0], data=f"komut[{komut}[{sayfa}]]({cmd[0]})") for cmd in CMD_HELP_BOT[komut]['commands'].items()]
+            except KeyError:
+                return await event.answer("BUAT SENDIRI PETERCORD By. TENTANG AKU DAN DIA.", cache_time=0, alert=True)
 
-        await event.edit(
-            result,
-            buttons=[
-                custom.Button.inline("◀️ ᏴᎪᏟᏦ", data=f"Information[{page}]({cmd})")
-            ],
-            link_preview=False,
-        )
+            butonlar = [butonlar[i:i + 2] for i in range(0, len(butonlar), 2)]
+            butonlar.append([custom.Button.inline("◀", data=f"sayfa({sayfa})")])
+            await event.edit(
+                f"**DAFTAR 🎖PETERCORD🎖:** `{komut}`\n**🎖JUMLAH PERINTAH🎖:** `{len(CMD_HELP_BOT[komut]['commands'])}`",
+                buttons=butonlar,
+                link_preview=False
+            )
+        
+        @tgbot.on(callbackquery.CallbackQuery(data=compile(b"komut\[(.*)\[(\d*)\]\]\((.*)\)")))
+        async def komut(event):
+            if not event.query.user_id == uid: 
+                return await event.answer("Warning! Hey! kamu harus buat sendiri deploy! silakan anda join @TEAMSquadUserbotSupport grup.", cache_time=0, alert=True)
+
+            cmd = event.data_match.group(1).decode("UTF-8")
+            sayfa = int(event.data_match.group(2).decode("UTF-8"))
+            komut = event.data_match.group(3).decode("UTF-8")
+
+            result = f"**🎖DAFTAR PETERCORD:** `{cmd}`\n"
+            if CMD_HELP_BOT[cmd]['info']['info'] == '':
+                if not CMD_HELP_BOT[cmd]['info']['warning'] == '':
+                    result += f"**🎖PETERCORD:** {'⚡' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n"
+                    result += f"**❌ BERBAHAYA:** {CMD_HELP_BOT[cmd]['info']['warning']}\n\n"
+                else:
+                    result += f"**🎖PETERCORD:** {'⚡' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n\n"
+            else:
+                result += f"**🎖PETERCORD:** {'⚡' if CMD_HELP_BOT[cmd]['info']['official'] else '❌'}\n"
+                if not CMD_HELP_BOT[cmd]['info']['warning'] == '':
+                    result += f"**❌ BERBAHAYA:** {CMD_HELP_BOT[cmd]['info']['warning']}\n"
+                result += f"**🎖 INFORMASI:** {CMD_HELP_BOT[cmd]['info']['info']}\n\n"
+
+            command = CMD_HELP_BOT[cmd]['commands'][komut]
+            if command['params'] is None:
+                result += f"**🎖DAFTAR PETERCORD:** `{PATTERNS[:1]}{command['command']}`\n"
+            else:
+                result += f"**🎖PERINTAH:** `{PATTERNS[:1]}{command['command']} {command['params']}`\n"
+                
+            if command['example'] is None:
+                result += f"**🎖PESAN:** `{command['usage']}`\n\n"
+            else:
+                result += f"**🎖DAFTAR PETERCORD:** `{command['usage']}`\n"
+                result += f"**🎖SAMPEL MODULES:** `{PATTERNS[:1]}{command['example']}`\n\n"
+
+            await event.edit(
+                result,
+                buttons=[custom.Button.inline("◀", data=f"bilgi[{sayfa}]({cmd})")],
+                link_preview=False
+            )
     except BaseException:
         LOGS.info(
             "Mode Inline Bot Mu Aktifkan. "
