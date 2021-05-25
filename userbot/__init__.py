@@ -474,12 +474,10 @@ with bot:
         @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
     async def on_plug_in_callback_query_handler(event):
         if event.query.user_id == uid:
-            await delete_mafia(event,
-                               "👑MafiaBot Menu Provider Is now Closed👑\n\n         **[© MafiaBot ™](t.me/MafiaBot_Support)**", 5, link_preview=False
-                               )
+            await event.edit("MENU CLOSE PETERCORD By. Tentang Aku Dan Dia\n [OWNER](https://t.me/diemmmmmmmmmm)\n")
         else:
-            mafia_alert = "HELLO THERE. PLEASE MAKE YOUR OWN MAFIABOT AND USE. © MafiaBot ™"
-            await event.answer(mafia_alert, cache_time=0, alert=True)
+            reply_pop_up_alert = f"Harap Deploy Petercord Userbot Anda Sendiri, Jangan Menggunakan Milik Petercord {ALIVE_NAME} ツ"
+            await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
 
     @tgbot.on(callbackquery.CallbackQuery(
         data=compile(b"Information\\[(\\d*)\\]\\((.*)\\)")))
