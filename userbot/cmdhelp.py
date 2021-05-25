@@ -15,11 +15,15 @@ class CmdHelp:
     WARNING = ""
     INFO = ""
 
-    def __init__(self, file: str, official: bool = True, file_name: str = None):
+    def __init__(
+            self,
+            file: str,
+            official: bool = True,
+            file_name: str = None):
         self.FILE = file
         self.ORIGINAL_FILE = file
         self.IS_OFFICIAL = official
-        self.FILE_NAME = file_name if not file_name == None else file + ".py"
+        self.FILE_NAME = file_name if file_name is not None else file + ".py"
         self.COMMANDS = {}
         self.FILE_AUTHOR = ""
         self.WARNING = ""
@@ -32,7 +36,12 @@ class CmdHelp:
             self.FILE_AUTHOR = value
         return self
 
-    def add_command(self, command: str, params=None, usage: str = "", example=None):
+    def add_command(
+            self,
+            command: str,
+            params=None,
+            usage: str = "",
+            example=None):
         """
         Inserts commands..
         """
@@ -74,12 +83,12 @@ class CmdHelp:
 
         for command in self.COMMANDS:
             command = self.COMMANDS[command]
-            if command["params"] == None:
+            if command["params"] is None:
                 result += f"**🛠 Command :** `{COMMAND_HAND_LER[:1]}{command['command']}`\n"
             else:
                 result += f"**🛠 Command :** `{COMMAND_HAND_LER[:1]}{command['command']} {command['params']}`\n"
 
-            if command["example"] == None:
+            if command["example"] is None:
                 result += f"**💬 Details :** `{command['usage']}`\n\n"
             else:
                 result += f"**💬 Details :** `{command['usage']}`\n"
