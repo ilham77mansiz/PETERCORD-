@@ -384,15 +384,16 @@ else:
 
 
 def butonlastir(sayfa, moduller):
-    Satir = 5
+    Row = 5
+    Column = 3
 
     moduller = sorted(
         [modul for modul in moduller if not modul.startswith("_")])
     pairs = list(map(list, zip(moduller[::2], moduller[1::2])))
     if len(moduller) % 2 == 1:
         pairs.append([moduller[-1]])
-    max_pages = ceil(len(pairs) / Satir)
-    pairs = [pairs[i:i + Satir] for i in range(0, len(pairs), Satir)]
+    max_pages = ceil(len(pairs) / Row)
+    pairs = [pairs[i:i + Row] for i in range(0, len(pairs), Row)]
     butonlar = []
     for pairs in pairs[sayfa]:
         butonlar.append([custom.Button.inline("🎖 " + pair,
