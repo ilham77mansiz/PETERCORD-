@@ -468,7 +468,6 @@ with bot:
                 )
             await event.answer([result] if result else None)
 
-        
     @tgbot.on(callbackquery.CallbackQuery(
         data=compile(b"Information\\[(\\d*)\\]\\((.*)\\)")))
     async def Information(event):
