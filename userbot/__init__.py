@@ -404,9 +404,6 @@ def button(page, modules):
                 f"◀️ ᏴᎪᏟᏦ 🎖",
                 data=f"page({(max_pages - 1) if page == 0 else (page - 1)})"),
             custom.Button.inline(
-                f"•🎖 ❌ 🎖•",
-                data="close"),
-            custom.Button.inline(
                 f"🎖 ΝᎬХͲ ▶️",
                 data=f"page({0 if page == (max_pages - 1) else page + 1})"),
         ])
@@ -471,17 +468,10 @@ with bot:
                 )
             await event.answer([result] if result else None)
 
-        @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
-    async def on_plug_in_callback_query_handler(event):
-        if event.query.user_id == uid:
-            await event.edit("MENU CLOSE PETERCORD By. Tentang Aku Dan Dia\n [OWNER](https://t.me/diemmmmmmmmmm)\n")
-        else:
-            reply_pop_up_alert = f"Harap Deploy Petercord Userbot Anda Sendiri, Jangan Menggunakan Milik Petercord {ALIVE_NAME} ツ"
-            await event.answer(reply_pop_up_alert, cache_time=0, alert=True)
-
+        
     @tgbot.on(callbackquery.CallbackQuery(
         data=compile(b"Information\\[(\\d*)\\]\\((.*)\\)")))
-    async def on_plug_in_callback_query_handler(event):
+    async def Information(event):
         if not event.query.user_id == uid:
             return await event.answer(
                 "HELLO THERE. PLEASE MAKE YOUR OWN MAFIABOT AND USE. © MafiaBot ™",
@@ -513,7 +503,7 @@ with bot:
 
     @tgbot.on(callbackquery.CallbackQuery(data=compile(
         b"commands\\[(.*)\\[(\\d*)\\]\\]\\((.*)\\)")))
-    async def on_plug_in_callback_query_handler(event):
+    async def commands(event):
         if not event.query.user_id == uid:
             return await event.answer(
                 "HELLO THERE. PLEASE MAKE YOUR OWN MAFIABOT AND USE. © MafiaBot ™",
