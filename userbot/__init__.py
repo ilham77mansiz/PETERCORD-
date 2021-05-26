@@ -383,11 +383,11 @@ else:
     tgbot = None
 
 
-def butonlastir(sayfa, moduller):
+def butonlastir(sayfa, loaded_modules, moduller):
     Row = 5
-
-    moduller = sorted(
-        [modul for modul in moduller if not modul.startswith("_")])
+    Column = 3
+    helpable_modules = [p for p in loaded_modules if not p.startswith("_")]
+    helpable_modules = sorted(helpable_modules)
     pairs = list(map(list, zip(moduller[::2], moduller[1::2])))
     if len(moduller) % 2 == 1:
         pairs.append([moduller[-1]])
