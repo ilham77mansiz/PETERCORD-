@@ -41,7 +41,7 @@ SUDO_LIST = {}
 CMD_HELP_BOT = {}
 PATTERNS = os.environ.get("PATTERNS", ".;!,")
 GALERI_SURE = int(os.environ.get("GALERI_SURE", 60))
-
+PETERCORD_USERBOT = "PETERCORD.21.By.Ilham Mansiz"
 LANGUAGE = os.environ.get("LANGUAGE", "DEFAULT").upper()
 
 if LANGUAGE not in ["DEFAULT"]:
