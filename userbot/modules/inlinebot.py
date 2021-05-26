@@ -33,7 +33,7 @@ def button(page, modules):
                f"◀️ ᏴᎪᏟᏦ 🎖", data=f"page({(max_pages - 1) if page == 0 else (page - 1)})"
             ),
             custom.Button.inline(
-               f"•{mafia_emoji} ❌ {mafia_emoji}•", data="close"
+               f"•🎖 ❌ 🎖•", data="close"
             ),
             custom.Button.inline(
                f"🎖 ΝᎬХͲ ▶️", data=f"page({0 if page == (max_pages - 1) else page + 1})"
