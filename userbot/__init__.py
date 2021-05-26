@@ -385,7 +385,6 @@ else:
 
 def butonlastir(sayfa, loaded_modules, moduller):
     Row = 5
-    Column = 3
     moduller = sorted([p for p in loaded_modules if not modul.startswith("_")])
     pairs = list(map(list, zip(moduller[::2], moduller[1::2])))
     if len(moduller) % 2 == 1:
