@@ -8,6 +8,7 @@ from telethon.tl.functions.channels import JoinChannelRequest
 from userbot import *
 from userbot.cmdhelp import *
 
+
 def button(page, modules):
     Row = 5
     Column = 3
@@ -17,12 +18,13 @@ def button(page, modules):
     if len(modules) % 2 == 1:
         pairs.append([modules[-1]])
     max_pages = ceil(len(pairs) / Row)
-    pairs = [pairs[i : i + Row] for i in range(0, len(pairs), Row)]
+    pairs = [pairs[i: i + Row] for i in range(0, len(pairs), Row)]
     buttons = []
     for pairs in pairs[page]:
         buttons.append(
             [
-                custom.Button.inline(f"🎖 " + pair, data=f"Information[{page}]({pair})")
+                custom.Button.inline(
+    f"🎖 " + pair, data=f"Information[{page}]({pair})")
                 for pair in pairs
             ]
         )
@@ -54,6 +56,8 @@ with bot:
         dugmeler = CMD_HELP
         me = bot.get_me()
         uid = me.id
+
+
 @ tgbot.on(events.NewMessage(pattern="/start"))
         async def handler(event):
             if event.message.from_id != uid:
@@ -103,7 +107,8 @@ with bot:
                 )
             await event.answer([result] if result else None)
 
-@tgbot.on(callbackquery.CallbackQuery(data=compile(b"page\((.+?)\)")))
+
+@tgbot.on(callbackquery.CallbackQuery(data=compile(b"page\\((.+?)\\)")))
     async def page(event):
         if not event.query.user_id == uid:
             return await event.answer(
@@ -118,7 +123,7 @@ with bot:
             buttons=veriler[1],
             link_preview=False,
         )
-        
+
     @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"close")))
     async def on_plug_in_callback_query_handler(event):
         if event.query.user_id == uid:
